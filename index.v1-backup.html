@@ -1,0 +1,1715 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- ============================================================
+     SEO & META — sesuai copy deck JKreasi
+     GANTI: ganti https://jkreasi.co.id/ dengan domain final saat publish
+     ============================================================ -->
+<title>JKreasi — Mitra Transformasi Digital Pemerintah &amp; Korporasi</title>
+<meta name="description" content="Sejak 2019 JKreasi membangun sistem digital untuk kementerian, pemda, dan korporasi Indonesia. Konsultasi IT, aplikasi web & mobile, cloud, dan managed service.">
+<meta name="keywords" content="jasa pengembangan aplikasi pemerintah, konsultan IT Jakarta, vendor aplikasi kementerian, managed service cloud Indonesia, jasa UI/UX pemerintahan">
+<meta name="author" content="PT Jaya Kreasi Teknologi">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0080E0">
+<link rel="canonical" href="https://jkreasi.co.id/">
+<link rel="icon" href="asset/Logo-01.png">
+<link rel="apple-touch-icon" href="asset/Logo-01.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<meta property="og:site_name" content="JKreasi">
+<meta property="og:url" content="https://jkreasi.co.id/">
+<meta property="og:title" content="Solusi Digital yang Memberi Dampak Nyata — JKreasi">
+<meta property="og:description" content="Dipercaya Sekretariat Kabinet RI, Kementerian Desa, InJourney (TWC), dan pemerintah daerah. Bangun sistem yang aman, scalable, dan berkelanjutan bersama JKreasi.">
+<meta property="og:image" content="https://jkreasi.co.id/asset/Logo-01.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Solusi Digital yang Memberi Dampak Nyata — JKreasi">
+<meta name="twitter:description" content="Dipercaya Sekretariat Kabinet RI, Kementerian Desa, InJourney (TWC), dan pemerintah daerah.">
+<meta name="twitter:image" content="https://jkreasi.co.id/asset/Logo-01.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "PT Jaya Kreasi Teknologi",
+  "alternateName": "JKreasi",
+  "url": "https://jkreasi.co.id/",
+  "logo": "https://jkreasi.co.id/asset/Logo-01.png",
+  "description": "Mitra transformasi digital bagi pemerintah dan korporasi di Indonesia sejak 2019.",
+  "foundingDate": "2019",
+  "email": "info@jkreasi.co.id",
+  "telephone": "+62-21-5290-5299",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ESTUBIZI Business Center, Gedung Setiabudi 2, Lantai 2 Suite 207 B-C",
+    "addressLocality": "Jakarta Selatan",
+    "addressRegion": "DKI Jakarta",
+    "postalCode": "12920",
+    "addressCountry": "ID"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+62-811-1033-334",
+    "contactType": "sales",
+    "areaServed": "ID",
+    "availableLanguage": ["id", "en"]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   1. DESIGN TOKENS — warna diambil langsung dari file logo
+   ============================================================ */
+:root{
+  --blue-50:#EFF7FE;
+  --blue-100:#DCEEFC;
+  --blue-200:#B9DCF9;
+  --blue-400:#38A5F0;
+  --blue-500:#0080E0;   /* biru utama logo */
+  --blue-600:#0868C8;
+  --blue-700:#1060C0;
+  --blue-900:#283090;   /* indigo gelap ujung gradient logo */
+
+  --ink:#0B1B33;        /* judul */
+  --body:#4A5A72;       /* teks isi */
+  --muted:#7C8AA0;      /* teks samar */
+  --line:#E4EBF3;       /* garis & border */
+  --bg:#FFFFFF;
+  --bg-soft:#F5F9FD;
+
+  --grad:linear-gradient(120deg,var(--blue-500) 0%,var(--blue-700) 55%,var(--blue-900) 100%);
+  --grad-soft:linear-gradient(120deg,var(--blue-50),#FFFFFF);
+
+  --shadow-sm:0 1px 2px rgba(11,27,51,.06),0 2px 8px rgba(11,27,51,.04);
+  --shadow-md:0 4px 12px rgba(11,27,51,.06),0 12px 32px rgba(11,27,51,.07);
+  --shadow-lg:0 8px 24px rgba(11,27,51,.08),0 24px 64px rgba(11,27,51,.10);
+  --shadow-blue:0 10px 30px rgba(0,128,224,.28);
+
+  --r-sm:10px; --r-md:16px; --r-lg:22px; --r-full:999px;
+  --container:1200px;
+  --nav-h:76px;
+  --section-y:clamp(72px,9vw,120px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+/* ============================================================
+   2. RESET & DASAR
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px);-webkit-text-size-adjust:100%}
+body{
+  font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:16px;line-height:1.7;color:var(--body);background:var(--bg);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+ul{list-style:none}
+
+h1,h2,h3,h4{color:var(--ink);line-height:1.18;letter-spacing:-.022em;font-weight:800}
+h1{font-size:clamp(2.15rem,1.35rem + 3.4vw,3.85rem)}
+h2{font-size:clamp(1.7rem,1.15rem + 2.2vw,2.75rem)}
+h3{font-size:1.15rem;font-weight:700;letter-spacing:-.012em}
+p{text-wrap:pretty}
+
+:focus-visible{outline:3px solid var(--blue-400);outline-offset:3px;border-radius:6px}
+
+.container{width:100%;max-width:var(--container);margin-inline:auto;padding-inline:clamp(20px,4vw,32px)}
+.section{padding-block:var(--section-y);position:relative}
+.section--soft{background:var(--bg-soft);border-block:1px solid var(--line)}
+
+/* Header tiap seksi */
+.head{max-width:680px;margin-bottom:clamp(40px,5vw,64px)}
+.head--center{margin-inline:auto;text-align:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:18px;
+  padding:7px 15px 7px 11px;border-radius:var(--r-full);
+  background:var(--blue-50);border:1px solid var(--blue-100);
+  color:var(--blue-700);font-size:.78rem;font-weight:700;
+  letter-spacing:.07em;text-transform:uppercase;
+}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue-500);box-shadow:0 0 0 3px rgba(0,128,224,.18)}
+.head p{margin-top:16px;font-size:clamp(1rem,.95rem + .25vw,1.1rem);color:var(--body)}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Tombol */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:14px 26px;border-radius:var(--r-full);border:1px solid transparent;
+  font-weight:700;font-size:.95rem;cursor:pointer;white-space:nowrap;
+  transition:transform .22s var(--ease),box-shadow .22s var(--ease),background .22s var(--ease),color .22s var(--ease),border-color .22s var(--ease);
+}
+.btn svg{width:17px;height:17px;flex:none;transition:transform .22s var(--ease)}
+.btn--primary{background:var(--grad);color:#fff;box-shadow:var(--shadow-blue);background-size:150% 150%}
+.btn--primary:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(0,128,224,.38);background-position:100% 0}
+.btn--primary:hover svg{transform:translateX(3px)}
+.btn--ghost{background:#fff;color:var(--ink);border-color:var(--line);box-shadow:var(--shadow-sm)}
+.btn--ghost:hover{transform:translateY(-2px);border-color:var(--blue-200);color:var(--blue-700);box-shadow:var(--shadow-md)}
+.btn--light{background:#fff;color:var(--blue-700);box-shadow:0 8px 24px rgba(0,0,0,.14)}
+.btn--light:hover{transform:translateY(-2px)}
+.btn--outline-light{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.34);backdrop-filter:blur(6px)}
+.btn--outline-light:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+.btn--block{width:100%}
+
+/* ============================================================
+   3. NAVBAR
+   ============================================================ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;height:var(--nav-h);
+  display:flex;align-items:center;
+  background:rgba(255,255,255,.72);backdrop-filter:blur(14px) saturate(180%);
+  border-bottom:1px solid transparent;
+  transition:box-shadow .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease);
+}
+.nav.is-stuck{background:rgba(255,255,255,.92);border-bottom-color:var(--line);box-shadow:0 2px 16px rgba(11,27,51,.06)}
+.nav__inner{display:flex;align-items:center;gap:20px;width:100%}
+.nav__logo img{height:34px;width:auto}
+.nav__links{display:flex;align-items:center;gap:4px;margin-left:auto}
+.nav__links a{
+  position:relative;padding:9px 15px;border-radius:var(--r-full);
+  font-size:.93rem;font-weight:600;color:var(--body);
+  transition:color .2s var(--ease),background .2s var(--ease);
+}
+.nav__links a:hover{color:var(--blue-700);background:var(--blue-50)}
+.nav__links a.is-active{color:var(--blue-700)}
+.nav__links a.is-active::after{
+  content:"";position:absolute;left:50%;bottom:2px;translate:-50% 0;
+  width:16px;height:2.5px;border-radius:2px;background:var(--grad);
+}
+.nav__cta{margin-left:10px;padding:11px 22px;font-size:.9rem}
+.nav__burger{
+  display:none;margin-left:auto;width:44px;height:44px;flex:none;
+  align-items:center;justify-content:center;gap:5px;flex-direction:column;
+  background:#fff;border:1px solid var(--line);border-radius:12px;cursor:pointer;
+}
+.nav__burger span{display:block;width:19px;height:2px;border-radius:2px;background:var(--ink);transition:transform .3s var(--ease),opacity .2s var(--ease)}
+.nav__burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav__burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.drawer{
+  position:fixed;top:var(--nav-h);left:0;right:0;z-index:99;
+  background:#fff;border-bottom:1px solid var(--line);box-shadow:var(--shadow-lg);
+  padding:14px clamp(20px,4vw,32px) 26px;
+  display:none;flex-direction:column;gap:2px;
+  opacity:0;transform:translateY(-10px);transition:opacity .25s var(--ease),transform .25s var(--ease);
+}
+.drawer.is-open{display:flex;opacity:1;transform:translateY(0)}
+.drawer a{padding:14px 12px;border-radius:12px;font-weight:600;color:var(--ink);border-bottom:1px solid var(--line)}
+.drawer a:last-of-type{border-bottom:0}
+.drawer a:hover{background:var(--blue-50);color:var(--blue-700)}
+.drawer .btn{margin-top:14px}
+
+/* ============================================================
+   4. HERO
+   ============================================================ */
+.hero{position:relative;padding-top:calc(var(--nav-h) + clamp(48px,7vw,84px));padding-bottom:clamp(64px,8vw,110px);overflow:hidden}
+.hero__bg{position:absolute;inset:0;z-index:-1;background:var(--grad-soft)}
+.hero__bg::before{ /* grid halus */
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(var(--blue-100) 1px,transparent 1px),linear-gradient(90deg,var(--blue-100) 1px,transparent 1px);
+  background-size:56px 56px;opacity:.5;
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000 30%,transparent 78%);
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 30%,#000 30%,transparent 78%);
+}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;pointer-events:none}
+.orb--1{width:520px;height:520px;top:-190px;right:-130px;background:radial-gradient(circle,rgba(0,128,224,.5),transparent 68%)}
+.orb--2{width:440px;height:440px;bottom:-210px;left:-150px;background:radial-gradient(circle,rgba(40,48,144,.34),transparent 68%)}
+
+.hero__grid{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(40px,5vw,72px);align-items:center}
+.hero h1{margin-bottom:22px}
+.hero__lead{font-size:clamp(1.02rem,.96rem + .38vw,1.19rem);max-width:56ch;color:var(--body)}
+.hero__actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero__note{display:flex;align-items:center;gap:9px;margin-top:24px;font-size:.88rem;color:var(--muted);font-weight:500}
+.hero__note svg{width:17px;height:17px;color:var(--blue-500);flex:none}
+
+/* Statistik */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:52px;padding-top:34px;border-top:1px solid var(--line)}
+.stat__num{font-size:clamp(1.5rem,1.2rem + 1.1vw,2.1rem);font-weight:800;color:var(--ink);letter-spacing:-.03em;line-height:1.1}
+.stat__num .suf{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat__label{font-size:.8rem;color:var(--muted);font-weight:600;margin-top:5px;line-height:1.45}
+
+/* Visual hero (murni CSS — ganti dengan <img> kalau aset sudah siap) */
+.hero__visual{position:relative;perspective:1400px}
+.mock{
+  position:relative;border-radius:var(--r-lg);background:#fff;
+  border:1px solid var(--line);box-shadow:var(--shadow-lg);overflow:hidden;
+  transform:rotateY(-8deg) rotateX(4deg);transform-style:preserve-3d;
+  animation:floaty 7s ease-in-out infinite;
+}
+@keyframes floaty{0%,100%{transform:rotateY(-8deg) rotateX(4deg) translateY(0)}50%{transform:rotateY(-8deg) rotateX(4deg) translateY(-14px)}}
+.mock__bar{display:flex;align-items:center;gap:7px;padding:14px 18px;background:var(--bg-soft);border-bottom:1px solid var(--line)}
+.mock__dot{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.mock__dot:nth-child(1){background:#FF6058}.mock__dot:nth-child(2){background:#FFBD2E}.mock__dot:nth-child(3){background:#28C840}
+.mock__url{margin-left:10px;height:9px;flex:1;max-width:170px;border-radius:5px;background:var(--line)}
+.mock__body{padding:22px}
+.mock__row{display:flex;gap:12px;margin-bottom:16px}
+.mock__kpi{flex:1;padding:14px;border-radius:12px;background:var(--bg-soft);border:1px solid var(--line)}
+.mock__kpi b{display:block;font-size:1.2rem;color:var(--ink);letter-spacing:-.02em}
+.mock__kpi span{font-size:.68rem;color:var(--muted);font-weight:600}
+.mock__kpi--hi{background:var(--grad);border-color:transparent}
+.mock__kpi--hi b,.mock__kpi--hi span{color:#fff}
+.mock__chart{display:flex;align-items:flex-end;gap:9px;height:118px;padding:14px;border-radius:12px;background:var(--bg-soft);border:1px solid var(--line)}
+.mock__chart i{flex:1;border-radius:5px 5px 2px 2px;background:var(--blue-100);transform-origin:bottom;animation:grow 1s var(--ease) backwards}
+.mock__chart i:nth-child(4),.mock__chart i:nth-child(6){background:var(--grad)}
+@keyframes grow{from{transform:scaleY(.15);opacity:0}to{transform:scaleY(1);opacity:1}}
+
+.chip{
+  position:absolute;display:flex;align-items:center;gap:10px;
+  padding:12px 17px;border-radius:14px;background:#fff;
+  border:1px solid var(--line);box-shadow:var(--shadow-md);
+  font-size:.82rem;font-weight:700;color:var(--ink);white-space:nowrap;
+}
+.chip small{display:block;font-size:.68rem;font-weight:600;color:var(--muted)}
+.chip__ico{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--grad);color:#fff;flex:none}
+.chip__ico svg{width:17px;height:17px}
+.chip--a{top:8%;left:-34px;animation:floaty2 5.5s ease-in-out infinite}
+.chip--b{bottom:9%;right:-26px;animation:floaty2 6.5s ease-in-out .7s infinite}
+@keyframes floaty2{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* ============================================================
+   5. STRIP KLIEN
+   ============================================================ */
+.clients{padding-block:clamp(38px,4.5vw,58px);border-bottom:1px solid var(--line)}
+.clients__label{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:26px}
+.clients__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(28px,5vw,64px)}
+.clients__row span{
+  font-size:clamp(1rem,.9rem + .5vw,1.35rem);font-weight:800;letter-spacing:-.02em;
+  color:var(--muted);opacity:.62;transition:opacity .25s var(--ease),color .25s var(--ease),transform .25s var(--ease);
+}
+.clients__row span:hover{opacity:1;color:var(--blue-700);transform:translateY(-2px)}
+
+/* ============================================================
+   6. LAYANAN
+   ============================================================ */
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{
+  position:relative;padding:30px 28px 32px;border-radius:var(--r-lg);
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);
+  overflow:hidden;
+}
+.card::before{ /* garis aksen atas saat hover */
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--grad);transform:scaleX(0);transform-origin:left;
+  transition:transform .35s var(--ease);
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--blue-100)}
+.card:hover::before{transform:scaleX(1)}
+.card__ico{
+  display:grid;place-items:center;width:52px;height:52px;margin-bottom:20px;
+  border-radius:15px;background:var(--blue-50);color:var(--blue-600);
+  border:1px solid var(--blue-100);
+  transition:background .3s var(--ease),color .3s var(--ease),transform .3s var(--ease);
+}
+.card__ico svg{width:25px;height:25px}
+.card:hover .card__ico{background:var(--grad);color:#fff;border-color:transparent;transform:scale(1.06) rotate(-4deg)}
+.card h3{margin-bottom:11px}
+.card p{font-size:.93rem}
+.card__tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+.card__tags li{
+  padding:5px 11px;border-radius:var(--r-full);background:var(--bg-soft);
+  border:1px solid var(--line);font-size:.74rem;font-weight:600;color:var(--muted);
+}
+
+/* ============================================================
+   7. KEUNGGULAN (split: teks kiri + list kanan)
+   ============================================================ */
+.split{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(40px,5vw,76px);align-items:center}
+.feat{display:flex;gap:18px;padding:22px 0;border-bottom:1px solid var(--line)}
+.feat:last-child{border-bottom:0;padding-bottom:0}
+.feat:first-child{padding-top:0}
+.feat__ico{
+  display:grid;place-items:center;width:46px;height:46px;flex:none;border-radius:13px;
+  background:var(--grad);color:#fff;box-shadow:var(--shadow-blue);
+}
+.feat__ico svg{width:22px;height:22px}
+.feat h3{margin-bottom:6px}
+.feat p{font-size:.92rem}
+
+.panel{
+  position:relative;padding:clamp(30px,4vw,44px);border-radius:var(--r-lg);
+  background:var(--grad);color:#fff;box-shadow:var(--shadow-lg);overflow:hidden;
+}
+.panel::before{
+  content:"";position:absolute;top:-90px;right:-90px;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.22),transparent 68%);
+}
+.panel h3{color:#fff;font-size:clamp(1.25rem,1.05rem + .7vw,1.6rem);font-weight:800;margin-bottom:14px;position:relative}
+.panel p{color:rgba(255,255,255,.86);font-size:.96rem;position:relative}
+.panel__list{margin-top:26px;display:grid;gap:13px;position:relative}
+.panel__list li{display:flex;align-items:flex-start;gap:11px;font-size:.94rem;font-weight:600;color:rgba(255,255,255,.95)}
+.panel__list svg{width:20px;height:20px;flex:none;margin-top:2px;color:#fff}
+
+/* ============================================================
+   8. PROSES KERJA
+   ============================================================ */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
+.steps::before{ /* garis penghubung */
+  content:"";position:absolute;top:29px;left:8%;right:8%;height:2px;
+  background:linear-gradient(90deg,var(--blue-200),var(--blue-100),var(--blue-200));z-index:0;
+}
+.step{position:relative;z-index:1;text-align:center}
+.step__num{
+  display:grid;place-items:center;width:58px;height:58px;margin:0 auto 20px;
+  border-radius:50%;background:#fff;border:2px solid var(--blue-100);
+  font-weight:800;font-size:1rem;color:var(--blue-600);letter-spacing:-.02em;
+  box-shadow:0 0 0 6px #fff,var(--shadow-sm);
+  transition:background .3s var(--ease),color .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease);
+}
+.step:hover .step__num{background:var(--grad);color:#fff;border-color:transparent;transform:scale(1.09)}
+.step h3{margin-bottom:9px}
+.step p{font-size:.9rem}
+
+/* ============================================================
+   9. PORTOFOLIO
+   ============================================================ */
+.work{
+  border-radius:var(--r-lg);overflow:hidden;background:#fff;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.work:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.work__img{ /* GANTI: taruh <img> proyek di sini */
+  position:relative;aspect-ratio:16/10;background:var(--grad);
+  display:grid;place-items:center;overflow:hidden;
+}
+.work__img img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.work:hover .work__img img{transform:scale(1.05)}
+.work__img::after{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.14) 1px,transparent 1px);
+  background-size:34px 34px;
+}
+.work__ph{position:relative;z-index:1;font-size:1.5rem;font-weight:800;color:rgba(255,255,255,.9);letter-spacing:-.02em}
+.work__body{padding:24px 26px 28px}
+.work__cat{font-size:.74rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--blue-600)}
+.work h3{margin:9px 0 10px}
+.work p{font-size:.9rem}
+.work__link{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:.88rem;font-weight:700;color:var(--blue-700)}
+.work__link svg{width:15px;height:15px;transition:transform .22s var(--ease)}
+.work:hover .work__link svg{transform:translateX(4px)}
+
+/* ============================================================
+   10. TESTIMONI
+   ============================================================ */
+.quote{
+  padding:30px 28px;border-radius:var(--r-lg);background:#fff;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);
+  display:flex;flex-direction:column;
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease);
+}
+.quote:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.quote__stars{display:flex;gap:3px;margin-bottom:16px;color:#FFB020}
+.quote__stars svg{width:17px;height:17px}
+.quote p{font-size:.96rem;color:var(--ink);font-weight:500;line-height:1.68;flex:1}
+.quote__by{display:flex;align-items:center;gap:13px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+.quote__av{
+  display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:50%;
+  background:var(--grad);color:#fff;font-weight:800;font-size:.92rem;
+}
+.quote__by b{display:block;font-size:.9rem;color:var(--ink);font-weight:700}
+.quote__by span{font-size:.8rem;color:var(--muted)}
+
+/* ============================================================
+   11. FAQ (accordion)
+   ============================================================ */
+.faq{max-width:820px;margin-inline:auto;display:grid;gap:12px}
+.acc{border:1px solid var(--line);border-radius:var(--r-md);background:#fff;overflow:hidden;transition:border-color .25s var(--ease),box-shadow .25s var(--ease)}
+.acc.is-open{border-color:var(--blue-200);box-shadow:var(--shadow-md)}
+.acc__q{
+  width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:20px 24px;background:none;border:0;cursor:pointer;text-align:left;
+  font-size:1rem;font-weight:700;color:var(--ink);
+}
+.acc__q:hover{color:var(--blue-700)}
+.acc__ico{
+  display:grid;place-items:center;width:28px;height:28px;flex:none;border-radius:50%;
+  background:var(--blue-50);color:var(--blue-600);
+  transition:transform .3s var(--ease),background .3s var(--ease),color .3s var(--ease);
+}
+.acc__ico svg{width:15px;height:15px}
+.acc.is-open .acc__ico{transform:rotate(45deg);background:var(--grad);color:#fff}
+.acc__a{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.acc__a p{padding:0 24px 22px;font-size:.94rem}
+
+/* ============================================================
+   12. CTA + KONTAK
+   ============================================================ */
+.cta{position:relative;background:var(--grad);color:#fff;overflow:hidden;border-radius:var(--r-lg);padding:clamp(44px,6vw,72px) clamp(28px,5vw,64px);text-align:center}
+.cta::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse 70% 90% at 50% 50%,#000,transparent 76%);
+  mask-image:radial-gradient(ellipse 70% 90% at 50% 50%,#000,transparent 76%);
+}
+.cta > *{position:relative}
+.cta h2{color:#fff;max-width:18ch;margin-inline:auto}
+.cta p{color:rgba(255,255,255,.88);max-width:52ch;margin:16px auto 0;font-size:1.03rem}
+.cta__actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:34px}
+
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(34px,4.5vw,64px);align-items:start}
+.info{display:grid;gap:8px;margin-top:30px}
+.info li{display:flex;gap:15px;padding:16px 0;border-bottom:1px solid var(--line)}
+.info li:last-child{border-bottom:0}
+.info__ico{display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:12px;background:var(--blue-50);color:var(--blue-600);border:1px solid var(--blue-100)}
+.info__ico svg{width:19px;height:19px}
+.info b{display:block;font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.info span{font-size:.96rem;color:var(--ink);font-weight:600;line-height:1.55}
+.info a:hover{color:var(--blue-700)}
+
+.form{padding:clamp(26px,3.5vw,40px);border-radius:var(--r-lg);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-md)}
+.form__grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field--full{grid-column:1/-1}
+.field label{font-size:.83rem;font-weight:700;color:var(--ink)}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 16px;border-radius:12px;
+  border:1px solid var(--line);background:var(--bg-soft);
+  font-size:.94rem;color:var(--ink);
+  transition:border-color .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease);
+}
+.field textarea{resize:vertical;min-height:118px;font-family:inherit}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;background:#fff;border-color:var(--blue-400);box-shadow:0 0 0 4px rgba(0,128,224,.13);
+}
+.field select{appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%237C8AA0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;padding-right:42px;
+}
+.field .err{font-size:.78rem;color:#D93025;font-weight:600;display:none}
+.field.is-invalid input,.field.is-invalid textarea,.field.is-invalid select{border-color:#D93025;background:#FEF4F3}
+.field.is-invalid .err{display:block}
+.form__note{margin-top:16px;font-size:.8rem;color:var(--muted);text-align:center}
+
+/* ============================================================
+   13. FOOTER
+   ============================================================ */
+.footer{background:var(--ink);color:rgba(255,255,255,.66);padding-block:clamp(52px,6vw,76px) 0}
+.footer__grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:clamp(30px,4vw,56px)}
+.footer__logo img{height:32px;width:auto;filter:brightness(0) invert(1)} /* logo dibuat putih di background gelap */
+.footer__about{margin-top:18px;font-size:.92rem;max-width:34ch;line-height:1.72}
+.footer__social{display:flex;gap:10px;margin-top:22px}
+.footer__social a{
+  display:grid;place-items:center;width:38px;height:38px;border-radius:11px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);color:#fff;
+  transition:background .22s var(--ease),transform .22s var(--ease),border-color .22s var(--ease);
+}
+.footer__social a:hover{background:var(--blue-500);border-color:transparent;transform:translateY(-3px)}
+.footer__social svg{width:17px;height:17px}
+.footer h4{color:#fff;font-size:.83rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px}
+.footer__links{display:grid;gap:11px}
+.footer__links a{font-size:.92rem;transition:color .2s var(--ease),padding-left .2s var(--ease)}
+.footer__links a:hover{color:#fff;padding-left:5px}
+.footer__bottom{
+  margin-top:clamp(40px,5vw,60px);padding-block:26px;
+  border-top:1px solid rgba(255,255,255,.1);
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center;
+  font-size:.86rem;
+}
+.footer__bottom a:hover{color:#fff}
+
+/* Tombol WhatsApp mengambang — hapus blok ini kalau tidak dipakai */
+.wa{
+  position:fixed;right:22px;bottom:22px;z-index:90;
+  display:grid;place-items:center;width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#fff;box-shadow:0 8px 26px rgba(37,211,102,.42);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+.wa:hover{transform:scale(1.09) translateY(-2px);box-shadow:0 12px 32px rgba(37,211,102,.55)}
+.wa svg{width:29px;height:29px}
+
+/* ============================================================
+   14. ANIMASI SCROLL REVEAL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}
+.reveal[data-d="2"]{transition-delay:.2s}
+.reveal[data-d="3"]{transition-delay:.3s}
+.reveal[data-d="4"]{transition-delay:.4s}
+.reveal[data-d="5"]{transition-delay:.5s}
+
+/* ============================================================
+   15. RESPONSIVE
+   ============================================================ */
+@media (max-width:1024px){
+  .hero__grid{grid-template-columns:1fr;gap:56px}
+  .hero__visual{max-width:560px;margin-inline:auto;width:100%}
+  .mock{transform:none;animation:none}
+  .chip--a{left:-10px}.chip--b{right:-10px}
+  .split{grid-template-columns:1fr;gap:44px}
+  .contact{grid-template-columns:1fr;gap:40px}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:34px 20px}
+  .steps::before{display:none}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:38px}
+}
+@media (max-width:820px){
+  .nav__links,.nav__cta{display:none}
+  .nav__burger{display:flex}
+}
+@media (max-width:640px){
+  :root{--nav-h:66px}
+  .grid-3{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr;gap:28px}
+  .stats{grid-template-columns:1fr 1fr;gap:24px 12px}
+  .form__grid{grid-template-columns:1fr}
+  .footer__grid{grid-template-columns:1fr;gap:34px}
+  .footer__bottom{flex-direction:column;text-align:center}
+  .hero__actions .btn{flex:1;min-width:180px}
+  .chip{display:none}
+  .wa{right:16px;bottom:16px;width:52px;height:52px}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ============================================================
+   16. TAMBAHAN — sesuai copy deck JKreasi
+   ============================================================ */
+
+/* --- Grid layanan: 5 pilar (3 atas + 2 bawah) --- */
+.grid-svc{display:grid;grid-template-columns:repeat(6,1fr);gap:22px}
+.grid-svc > *{grid-column:span 2}
+.grid-svc > *:nth-child(4){grid-column:1/4}
+.grid-svc > *:nth-child(5){grid-column:4/7}
+
+/* Daftar poin di dalam kartu layanan */
+.card__list{display:grid;gap:9px;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.card__list li{display:flex;align-items:flex-start;gap:9px;font-size:.86rem;line-height:1.55;color:var(--body)}
+.card__list svg{width:15px;height:15px;flex:none;margin-top:5px;color:var(--blue-500)}
+
+/* --- Section Masalah (pain point) --- */
+.problem{text-align:center;max-width:780px;margin-inline:auto}
+.problem h2{margin-bottom:22px;text-wrap:balance}
+.problem__body{font-size:clamp(1rem,.95rem + .35vw,1.14rem);line-height:1.78}
+.problem__close{
+  display:inline-block;margin-top:30px;padding:15px 30px;border-radius:var(--r-full);
+  background:var(--blue-50);border:1px solid var(--blue-100);
+  font-size:clamp(1rem,.95rem + .3vw,1.14rem);font-weight:700;color:var(--blue-700);
+}
+
+/* --- Stats band mandiri --- */
+.statband{background:var(--grad);color:#fff;position:relative;overflow:hidden;padding-block:clamp(48px,6vw,72px)}
+.statband::before{
+  content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
+  background-size:48px 48px;
+  -webkit-mask-image:radial-gradient(ellipse 75% 100% at 50% 50%,#000,transparent 78%);
+  mask-image:radial-gradient(ellipse 75% 100% at 50% 50%,#000,transparent 78%);
+}
+.statband .container{position:relative}
+.statband .stats{margin-top:0;padding-top:0;border-top:0;gap:20px}
+.statband .stat{text-align:center}
+.statband .stat__num{color:#fff;font-size:clamp(1.9rem,1.4rem + 1.9vw,2.9rem)}
+.statband .stat__num .suf{background:none;-webkit-text-fill-color:#fff;color:#fff}
+.statband .stat__label{color:rgba(255,255,255,.8);font-size:.85rem;max-width:22ch;margin-inline:auto}
+
+/* --- Proses kerja: 6 tahap, kartu bernomor --- */
+.steps{grid-template-columns:repeat(3,1fr);gap:22px}
+.steps::before{display:none}
+.step{
+  text-align:left;padding:28px 26px 30px;border-radius:var(--r-lg);
+  background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);
+}
+.step:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--blue-100)}
+.step__num{
+  width:48px;height:48px;margin:0 0 18px;border-radius:14px;
+  background:var(--blue-50);border:1px solid var(--blue-100);
+  font-size:.95rem;box-shadow:none;
+}
+.step:hover .step__num{transform:none;background:var(--grad);color:#fff;border-color:transparent}
+
+/* --- Portofolio: metadata klien & teknologi --- */
+.work__meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:12px}
+.work__client{font-size:.86rem;font-weight:700;color:var(--ink)}
+.work__sector{
+  padding:4px 10px;border-radius:var(--r-full);background:var(--blue-50);
+  border:1px solid var(--blue-100);font-size:.7rem;font-weight:700;
+  letter-spacing:.05em;text-transform:uppercase;color:var(--blue-700);
+}
+.work__tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
+.work__tech li{
+  padding:4px 10px;border-radius:6px;background:var(--bg-soft);
+  border:1px solid var(--line);font-size:.72rem;font-weight:600;color:var(--muted);
+}
+
+/* --- Tim --- */
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.member{
+  display:flex;align-items:center;gap:16px;padding:20px 22px;
+  border-radius:var(--r-md);background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-sm);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease);
+}
+.member:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--blue-100)}
+.member__av{
+  display:grid;place-items:center;width:54px;height:54px;flex:none;border-radius:50%;
+  background:var(--grad);color:#fff;font-weight:800;font-size:1.05rem;letter-spacing:-.02em;
+  box-shadow:var(--shadow-blue);
+}
+.member b{display:block;font-size:.98rem;color:var(--ink);font-weight:700;letter-spacing:-.01em}
+.member span{font-size:.85rem;color:var(--muted);font-weight:600}
+
+/* --- Pesan status form --- */
+.form__msg{
+  display:none;align-items:flex-start;gap:11px;margin-top:18px;padding:14px 16px;
+  border-radius:12px;font-size:.9rem;font-weight:600;line-height:1.55;
+}
+.form__msg.is-shown{display:flex}
+.form__msg svg{width:19px;height:19px;flex:none;margin-top:1px}
+.form__msg--ok{background:#EDF9F0;border:1px solid #BFE6CA;color:#1A7F3C}
+.form__msg--err{background:#FEF4F3;border:1px solid #F5C7C2;color:#C5372C}
+
+/* --- Responsive tambahan --- */
+@media (max-width:1024px){
+  .grid-svc{grid-template-columns:repeat(2,1fr)}
+  .grid-svc > *,
+  .grid-svc > *:nth-child(4),
+  .grid-svc > *:nth-child(5){grid-column:auto}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .team{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .grid-svc{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .team{grid-template-columns:1fr}
+  .statband .stats{grid-template-columns:1fr 1fr;gap:30px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- ========================= NAVBAR ========================= -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="#beranda" class="nav__logo" aria-label="JKreasi — kembali ke atas">
+      <img src="asset/Logo-01.png" alt="JKreasi" width="1180" height="267">
+    </a>
+
+    <nav class="nav__links" aria-label="Navigasi utama">
+      <a href="#beranda">Beranda</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#portofolio">Portofolio</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <a href="#kontak" class="btn btn--primary nav__cta">Konsultasi Gratis</a>
+
+    <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="drawer" aria-label="Buka menu navigasi">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="#beranda">Beranda</a>
+  <a href="#layanan">Layanan</a>
+  <a href="#portofolio">Portofolio</a>
+  <a href="#tentang">Tentang Kami</a>
+  <a href="#kontak">Kontak</a>
+  <a href="#kontak" class="btn btn--primary btn--block">Konsultasi Gratis</a>
+</div>
+
+<main>
+
+<!-- ========================= HERO ========================= -->
+<section class="hero" id="beranda">
+  <div class="hero__bg"><span class="orb orb--1"></span><span class="orb orb--2"></span></div>
+
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <span class="eyebrow reveal">Mitra Transformasi Digital Sejak 2019</span>
+
+      <!-- Headline opsi A (rekomendasi copy deck).
+           Opsi B: Membangun Sistem Digital untuk Pemerintah dan Korporasi Indonesia
+           Opsi C: Dari kebutuhan instansi menjadi sistem yang andal, aman, dan berkelanjutan. -->
+      <h1 class="reveal" data-d="1">
+        Sistem digital yang <span class="grad-text">benar-benar dipakai</span>, bukan sekadar selesai dibangun.
+      </h1>
+
+      <p class="hero__lead reveal" data-d="2">
+        JKreasi mendampingi kementerian, pemerintah daerah, dan korporasi merancang, membangun,
+        dan mengoperasikan sistem digital — mulai dari konsultasi, aplikasi web &amp; mobile,
+        hingga cloud dan managed service.
+      </p>
+
+      <div class="hero__actions reveal" data-d="3">
+        <a href="#kontak" class="btn btn--primary">
+          Jadwalkan Konsultasi
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#portofolio" class="btn btn--ghost">Lihat Portofolio Kami</a>
+      </div>
+
+      <p class="hero__note reveal" data-d="4">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+        Dipercaya oleh Sekretariat Kabinet RI, Kementerian Desa PDTT, InJourney Destination Management, dan pemerintah daerah di Indonesia.
+      </p>
+    </div>
+
+    <!-- Visual hero: mockup murni CSS.
+         GANTI: kalau aset visual sudah siap, ganti seluruh blok .mock dengan <img src="asset/hero.png" alt="..."> -->
+    <div class="hero__visual reveal" data-d="2">
+      <div class="mock">
+        <div class="mock__bar">
+          <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+          <span class="mock__url"></span>
+        </div>
+        <div class="mock__body">
+          <div class="mock__row">
+            <div class="mock__kpi mock__kpi--hi"><b>99,9%</b><span>Uptime layanan</span></div>
+            <div class="mock__kpi"><b>24/7</b><span>Pemantauan sistem</span></div>
+          </div>
+          <div class="mock__chart">
+            <i style="height:42%;animation-delay:.05s"></i>
+            <i style="height:58%;animation-delay:.12s"></i>
+            <i style="height:35%;animation-delay:.19s"></i>
+            <i style="height:78%;animation-delay:.26s"></i>
+            <i style="height:52%;animation-delay:.33s"></i>
+            <i style="height:95%;animation-delay:.40s"></i>
+            <i style="height:66%;animation-delay:.47s"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="chip chip--a">
+        <span class="chip__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <span>DevSecOps<small>Aman sejak baris pertama</small></span>
+      </div>
+
+      <div class="chip chip--b">
+        <span class="chip__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97 6 6 0 0 0-11.66 1.3A3.5 3.5 0 0 0 6.5 19h11Z"/></svg></span>
+        <span>Cloud &amp; Managed<small>Didampingi setelah rilis</small></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= LOGO BAR KLIEN ========================= -->
+<!-- GANTI: setelah logo klien tersedia, ganti tiap <span> jadi
+     <img src="asset/klien/nama.png" alt="Nama Instansi" style="height:38px;width:auto"> -->
+<section class="clients">
+  <div class="container">
+    <p class="clients__label reveal">Dipercaya oleh instansi pemerintah dan korporasi</p>
+    <div class="clients__row reveal" data-d="1">
+      <span>Sekretariat Kabinet</span>
+      <span>Kementerian Desa</span>
+      <span>TWC / InJourney</span>
+      <span>Baseus</span>
+      <span>Deli Serdang</span>
+      <span>Mamasa</span>
+      <span>LPP</span>
+      <span>Deras.id</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= STATS BAND ========================= -->
+<section class="statband">
+  <div class="container">
+    <div class="stats">
+      <div class="stat reveal">
+        <div class="stat__num">2019</div>
+        <div class="stat__label">Tahun berdiri, melayani sektor publik dan swasta</div>
+      </div>
+      <!-- KONFIRMASI: jumlah sistem digital yang telah dioperasikan -->
+      <div class="stat reveal" data-d="1">
+        <div class="stat__num"><span data-count="8">0</span><span class="suf">+</span></div>
+        <div class="stat__label">Sistem digital yang telah dioperasikan</div>
+      </div>
+      <div class="stat reveal" data-d="2">
+        <div class="stat__num"><span data-count="6">0</span></div>
+        <div class="stat__label">Tenaga ahli senior lintas disiplin</div>
+      </div>
+      <!-- KONFIRMASI: klaim 100% pendampingan pasca-implementasi -->
+      <div class="stat reveal" data-d="3">
+        <div class="stat__num"><span data-count="100">0</span><span class="suf">%</span></div>
+        <div class="stat__label">Proyek dengan pendampingan pasca-implementasi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= MASALAH ========================= -->
+<section class="section">
+  <div class="container">
+    <div class="problem">
+      <h2 class="reveal">Digitalisasi gagal bukan karena teknologinya kurang canggih.</h2>
+      <p class="problem__body reveal" data-d="1">
+        Sistem yang tidak dipakai pengguna. Aplikasi yang berhenti berkembang setelah vendor pergi.
+        Infrastruktur yang tidak siap saat trafik melonjak di hari pertama layanan dibuka.
+        Masalahnya jarang pada teknologi — lebih sering pada perencanaan, desain pengalaman pengguna,
+        dan dukungan setelah sistem berjalan.
+      </p>
+      <p class="problem__close reveal" data-d="2">JKreasi bekerja di tiga titik itu sekaligus.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= LAYANAN ========================= -->
+<section class="section section--soft" id="layanan">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Layanan Kami</span>
+      <h2>Lima pilar layanan JKreasi</h2>
+      <p>Satu mitra untuk seluruh siklus hidup sistem digital Anda — dari perencanaan sampai operasional harian.</p>
+    </div>
+
+    <div class="grid-svc">
+
+      <!-- 1. Konsultasi IT -->
+      <article class="card reveal">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 6H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h9a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-4"/>
+            <circle cx="17" cy="6" r="3"/><circle cx="7" cy="18" r="3"/>
+          </svg>
+        </div>
+        <h3>Konsultasi IT</h3>
+        <p>Menerjemahkan kebutuhan organisasi menjadi peta jalan teknologi yang realistis dan dapat dianggarkan. Kami membantu menyusun kebutuhan, memilih arsitektur, dan menyiapkan dokumen teknis yang siap masuk proses pengadaan.</p>
+        <ul class="card__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Asesmen kondisi sistem dan infrastruktur saat ini</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Penyusunan roadmap dan blueprint transformasi digital</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Penyusunan kebutuhan teknis (KAK/TOR) dan estimasi anggaran</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Pendampingan tata kelola TI dan manajemen risiko</li>
+        </ul>
+      </article>
+
+      <!-- 2. Pengembangan Aplikasi -->
+      <article class="card reveal" data-d="1">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m8 6-6 6 6 6M16 6l6 6-6 6"/>
+          </svg>
+        </div>
+        <h3>Pengembangan Aplikasi</h3>
+        <p>Aplikasi web dan mobile yang menggabungkan desain antarmuka intuitif dengan arsitektur modern — menghasilkan sistem yang andal, scalable, aman, dan nyaman digunakan.</p>
+        <ul class="card__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Aplikasi web berbasis framework modern, fokus pada performa</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Aplikasi mobile native maupun hybrid</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Arsitektur decoupled, microservices, event sourcing, headless CMS</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Integrasi pembayaran, ticketing, dan layanan pihak ketiga</li>
+        </ul>
+      </article>
+
+      <!-- 3. Desain UI/UX -->
+      <article class="card reveal" data-d="2">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19.5 19 12a3.5 3.5 0 0 0-5-5l-7.5 7.5"/>
+            <path d="M6.5 14.5 4 21l6.5-2.5"/><path d="M15 5.5 18.5 9"/>
+          </svg>
+        </div>
+        <h3>Desain UI/UX</h3>
+        <p>Desain yang berangkat dari perilaku pengguna sebenarnya, bukan asumsi. Penting terutama untuk layanan publik yang penggunanya sangat beragam.</p>
+        <ul class="card__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Riset pengguna dan pemetaan alur layanan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Wireframe, prototipe interaktif, dan uji kegunaan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Design system yang konsisten dan mudah dikembangkan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Penyelarasan dengan pedoman identitas visual instansi</li>
+        </ul>
+      </article>
+
+      <!-- 4. Cloud & DevOps -->
+      <article class="card reveal" data-d="1">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19a4.5 4.5 0 0 0 .5-8.97 6 6 0 0 0-11.66 1.3A3.5 3.5 0 0 0 6.5 19h11Z"/>
+          </svg>
+        </div>
+        <h3>Cloud &amp; DevOps</h3>
+        <p>Mengotomatiskan siklus pengembangan, mengoptimalkan infrastruktur, dan memastikan sistem tetap andal saat beban puncak.</p>
+        <ul class="card__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Manajemen infrastruktur cloud AWS, GCP, dan Azure</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Pipeline CI/CD otomatis dan Infrastructure as Code (Terraform)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Containerization dengan Docker dan Kubernetes</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Monitoring dan logging (Grafana, ELK)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Arsitektur high availability dan skalabilitas</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Konsultasi DevSecOps — keamanan sejak baris kode pertama</li>
+        </ul>
+      </article>
+
+      <!-- 5. Managed Service & System Integration -->
+      <article class="card reveal" data-d="2">
+        <div class="card__ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12a9 9 0 0 1-9 9 9 9 0 0 1-7.8-4.5"/><path d="M3 12a9 9 0 0 1 9-9 9 9 0 0 1 7.8 4.5"/>
+            <path d="M3 16.5v-4.5h4.5"/><path d="M21 7.5V12h-4.5"/>
+          </svg>
+        </div>
+        <h3>Managed Service &amp; System Integration</h3>
+        <p>Sistem tidak berhenti saat serah terima. Kami menjaga operasional, memantau performa, dan menghubungkan sistem baru dengan sistem yang sudah berjalan.</p>
+        <ul class="card__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Pemeliharaan, pemantauan, dan dukungan teknis berkelanjutan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Integrasi antar-sistem dan API internal maupun eksternal</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Migrasi data dan modernisasi sistem lama</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Pelatihan dan alih pengetahuan untuk tim internal</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PORTOFOLIO ========================= -->
+<!-- CATATAN: deskripsi proyek di bawah masih draf dari copy deck dan bertanda KONFIRMASI.
+     Screenshot / thumbnail proyek belum ada di folder asset — ganti blok .work__img
+     dengan <img src="asset/portofolio/nama-proyek.jpg" alt="..."> begitu tersedia.
+     Tambahkan juga <ul class="work__tech"><li>React</li>...</ul> setelah <p> bila stack sudah dikonfirmasi. -->
+<section class="section" id="portofolio">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Portofolio</span>
+      <h2>Pekerjaan yang Sudah Berjalan</h2>
+      <p>Sebagian sistem yang kami rancang, bangun, dan dampingi hingga digunakan setiap hari.</p>
+    </div>
+
+    <div class="grid-3">
+
+      <article class="work reveal">
+        <div class="work__img"><span class="work__ph">TWC</span></div>
+        <div class="work__body">
+          <div class="work__meta">
+            <span class="work__client">PT Taman Wisata Candi (InJourney)</span>
+            <span class="work__sector">Pariwisata &amp; BUMN</span>
+          </div>
+          <h3>TWC Ticketing System</h3>
+          <!-- KONFIRMASI: detail sistem & angka dampak (jumlah tiket, uptime musim liburan) -->
+          <p>Sistem ticketing untuk destinasi wisata dengan volume kunjungan tinggi, dirancang agar tetap stabil pada musim liburan.</p>
+        </div>
+      </article>
+
+      <article class="work reveal" data-d="1">
+        <div class="work__img"><span class="work__ph">IDM</span></div>
+        <div class="work__body">
+          <div class="work__meta">
+            <span class="work__client">InJourney Destination Management</span>
+            <span class="work__sector">Pariwisata &amp; BUMN</span>
+          </div>
+          <h3>IDM Application</h3>
+          <!-- KONFIRMASI: cakupan & fungsi aplikasi -->
+          <p>Aplikasi pendukung operasional pengelolaan destinasi.</p>
+        </div>
+      </article>
+
+      <article class="work reveal" data-d="2">
+        <div class="work__img"><span class="work__ph">BSU</span></div>
+        <div class="work__body">
+          <div class="work__meta">
+            <span class="work__client">Baseus Indonesia</span>
+            <span class="work__sector">Ritel &amp; Konsumen</span>
+          </div>
+          <h3>Baseus E-commerce</h3>
+          <!-- KONFIRMASI: fitur & angka transaksi -->
+          <p>Platform e-commerce brand global untuk pasar Indonesia.</p>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work__img"><span class="work__ph">SRK</span></div>
+        <div class="work__body">
+          <div class="work__meta">
+            <span class="work__client">Sekretariat Kabinet RI</span>
+            <span class="work__sector">Pemerintah Pusat</span>
+          </div>
+          <h3>SIRKULASI System</h3>
+          <!-- KONFIRMASI: izin pencantuman nama instansi & detail sistem -->
+          <p>Sistem persuratan dan sirkulasi dokumen di lingkungan instansi.</p>
+        </div>
+      </article>
+
+      <article class="work reveal" data-d="1">
+        <div class="work__img"><span class="work__ph">MHR</span></div>
+        <div class="work__body">
+          <div class="work__meta">
+            <span class="work__client">Pemerintah Kabupaten Mamasa</span>
+            <span class="work__sector">Pemerintah Daerah</span>
+          </div>
+          <h3>Mamasa HR System</h3>
+          <!-- KONFIRMASI: cakupan modul kepegawaian -->
+          <p>Sistem manajemen kepegawaian daerah.</p>
+        </div>
+      </article>
+
+      <article class="work reveal" data-d="2">
+        <div class="work__img"><span class="work__ph">DRS</span></div>
+        <div class="work__body">
+          <div class="work__meta">
+            <span class="work__client">Deras.id</span>
+            <span class="work__sector">Media</span>
+          </div>
+          <h3>Deras News Portal</h3>
+          <!-- KONFIRMASI: detail arsitektur & trafik -->
+          <p>Portal berita dengan arsitektur headless CMS.</p>
+          <ul class="work__tech"><li>Headless CMS</li></ul>
+        </div>
+      </article>
+
+      <article class="work reveal">
+        <div class="work__img"><span class="work__ph">LPP</span></div>
+        <div class="work__body">
+          <div class="work__meta">
+            <span class="work__client">LPP</span>
+            <!-- KONFIRMASI: nama lengkap & sektor klien LPP -->
+          </div>
+          <h3>LPP Assessment</h3>
+          <p>Platform asesmen dan penilaian daring.</p>
+        </div>
+      </article>
+
+      <article class="work reveal" data-d="1">
+        <div class="work__img"><span class="work__ph">EJFP</span></div>
+        <div class="work__body">
+          <div class="work__meta">
+            <!-- KONFIRMASI: klien, sektor, dan fungsi sistem EJFP -->
+            <span class="work__client">—</span>
+          </div>
+          <h3>EJFP System</h3>
+          <p>Detail sistem menyusul konfirmasi dari tim JKreasi.</p>
+        </div>
+      </article>
+
+      <!-- TAMBAHKAN DI SINI: proyek lain dari screenshot yang belum masuk.
+           Salin satu blok <article class="work"> di atas lalu ganti isinya. -->
+
+    </div>
+
+    <div class="head head--center reveal" style="margin:48px auto 0;text-align:center">
+      <a href="#kontak" class="btn btn--primary">
+        Diskusikan Kebutuhan Serupa
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= KENAPA JKREASI ========================= -->
+<section class="section section--soft" id="tentang">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Kenapa JKreasi</span>
+      <h2>Alasan Instansi Memilih Kami</h2>
+    </div>
+
+    <div class="grid-3">
+      <article class="card reveal">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Terbiasa dengan ritme sektor publik</h3>
+        <p>Kami memahami siklus anggaran, dokumen pengadaan, dan standar pelaporan instansi pemerintah — sehingga proyek berjalan tanpa kejutan administratif.</p>
+      </article>
+
+      <article class="card reveal" data-d="1">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Satu tim, seluruh siklus</h3>
+        <p>Konsultan, desainer, developer, dan DevOps engineer berada di tim yang sama. Tidak ada saling lempar tanggung jawab antar vendor.</p>
+      </article>
+
+      <article class="card reveal" data-d="2">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Keamanan sejak awal, bukan tambalan</h3>
+        <p>Praktik DevSecOps kami menempatkan keamanan di dalam proses pengembangan, bukan sebagai pemeriksaan di akhir.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0 1 16 0"/><rect x="2" y="13" width="5" height="7" rx="2"/><rect x="17" y="13" width="5" height="7" rx="2"/><path d="M20 20a3 3 0 0 1-3 3h-3"/></svg></div>
+        <h3>Dukungan setelah serah terima</h3>
+        <p>Managed service memastikan sistem tetap terpantau, diperbarui, dan berkembang setelah proyek dinyatakan selesai.</p>
+      </article>
+
+      <article class="card reveal" data-d="1">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg></div>
+        <h3>Arsitektur yang siap tumbuh</h3>
+        <p>Microservices, containerization, dan cloud membuat sistem dapat diperluas tanpa membangun ulang dari nol.</p>
+      </article>
+
+      <article class="card reveal" data-d="2">
+        <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v18H6a2 2 0 0 1-2-2Z"/><path d="M19 17H6a2 2 0 0 0-2 2"/><path d="M9 7h6"/></svg></div>
+        <h3>Alih pengetahuan ke tim internal</h3>
+        <p>Dokumentasi dan pelatihan diserahkan bersama sistem, agar organisasi Anda tidak bergantung selamanya pada satu vendor.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= PROSES KERJA ========================= -->
+<section class="section">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Proses</span>
+      <h2>Cara Kami Bekerja</h2>
+      <p>Enam tahap yang membuat progres terlihat sejak awal, bukan hanya di akhir proyek.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step reveal">
+        <div class="step__num">01</div>
+        <h3>Discovery</h3>
+        <p>Memahami kebutuhan, pengguna, dan kendala teknis maupun regulasi.</p>
+      </article>
+      <article class="step reveal" data-d="1">
+        <div class="step__num">02</div>
+        <h3>Perancangan</h3>
+        <p>Menyusun arsitektur, alur layanan, dan prototipe yang bisa diuji sejak dini.</p>
+      </article>
+      <article class="step reveal" data-d="2">
+        <div class="step__num">03</div>
+        <h3>Pengembangan</h3>
+        <p>Iterasi bertahap dengan demo berkala, bukan hasil akhir yang baru terlihat di akhir proyek.</p>
+      </article>
+      <article class="step reveal">
+        <div class="step__num">04</div>
+        <h3>Pengujian &amp; Keamanan</h3>
+        <p>Uji fungsional, uji beban, dan pemeriksaan keamanan sebelum rilis.</p>
+      </article>
+      <article class="step reveal" data-d="1">
+        <div class="step__num">05</div>
+        <h3>Peluncuran</h3>
+        <p>Deployment terkendali dengan pipeline otomatis dan rencana rollback.</p>
+      </article>
+      <article class="step reveal" data-d="2">
+        <div class="step__num">06</div>
+        <h3>Pendampingan</h3>
+        <p>Pemantauan, pemeliharaan, dan pengembangan lanjutan.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= TIM ========================= -->
+<section class="section section--soft">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Tim</span>
+      <h2>Tim di Balik JKreasi</h2>
+      <p>Tenaga ahli senior yang menangani langsung proyek Anda — bukan tim yang berganti di tengah jalan.</p>
+    </div>
+
+    <!-- GANTI: bila foto tim sudah ada, ganti .member__av dengan
+         <img class="member__av" src="asset/tim/nama.jpg" alt="Nama" style="object-fit:cover"> -->
+    <div class="team">
+      <article class="member reveal"><span class="member__av">DO</span><span><b>Dhachri Oskandar</b><span>Director</span></span></article>
+      <article class="member reveal" data-d="1"><span class="member__av">IM</span><span><b>Ibnu Munandar</b><span>Lead Consultant</span></span></article>
+      <article class="member reveal" data-d="2"><span class="member__av">R</span><span><b>Rizky</b><span>Project Manager</span></span></article>
+      <article class="member reveal"><span class="member__av">AQ</span><span><b>Ahmad Qorib</b><span>Senior Developer</span></span></article>
+      <article class="member reveal" data-d="1"><span class="member__av">W</span><span><b>Wardhana</b><span>Senior DevOps Engineer</span></span></article>
+      <article class="member reveal" data-d="2"><span class="member__av">AR</span><span><b>Ahmad Rizal</b><span>Senior UI/UX Designer</span></span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= TESTIMONI =========================
+     Sengaja dikosongkan: belum ada testimoni tertulis dari klien (lihat copy deck §11).
+     Begitu tersedia, hidupkan blok di bawah dan isi kutipannya.
+
+<section class="section">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">Testimoni</span>
+      <h2>Kata Klien Kami</h2>
+    </div>
+    <div class="grid-3">
+      <article class="quote reveal">
+        <div class="quote__stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 2.9 6.2 6.6.9-4.8 4.7 1.2 6.7L12 17.3 6.1 20.5l1.2-6.7L2.5 9.1l6.6-.9L12 2Z"/></svg>
+        </div>
+        <p>"Kutipan testimoni di sini."</p>
+        <div class="quote__by">
+          <span class="quote__av">NN</span>
+          <span><b>Nama Narasumber</b><span>Jabatan, Instansi</span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+============================================================== -->
+
+<!-- ========================= FAQ ========================= -->
+<section class="section">
+  <div class="container">
+    <div class="head head--center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Pertanyaan yang Sering Diajukan</h2>
+    </div>
+
+    <div class="faq">
+      <!-- KONFIRMASI: legalitas pengadaan — NIB, SBU, ISO 27001 / sertifikasi lain -->
+      <div class="acc reveal">
+        <button class="acc__q" aria-expanded="false">
+          Apakah JKreasi bisa mengikuti proses pengadaan pemerintah?
+          <span class="acc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="acc__a"><p>Ya. Kami terbiasa bekerja dengan instansi pemerintah pusat dan daerah, termasuk penyusunan dokumen teknis dan pelaporan sesuai ketentuan.</p></div>
+      </div>
+
+      <!-- KONFIRMASI: rentang durasi proyek 3–6 bulan -->
+      <div class="acc reveal" data-d="1">
+        <button class="acc__q" aria-expanded="false">
+          Berapa lama satu proyek biasanya berjalan?
+          <span class="acc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="acc__a"><p>Bergantung pada cakupan. Sistem berskala menengah umumnya 3–6 bulan sejak discovery hingga peluncuran, dengan demo berkala di setiap tahap.</p></div>
+      </div>
+
+      <div class="acc reveal" data-d="2">
+        <button class="acc__q" aria-expanded="false">
+          Apakah sistem yang dibangun menjadi milik kami sepenuhnya?
+          <span class="acc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="acc__a"><p>Ya. Kode sumber, dokumentasi, dan hak atas sistem diserahkan kepada klien sesuai kesepakatan kontrak.</p></div>
+      </div>
+
+      <div class="acc reveal">
+        <button class="acc__q" aria-expanded="false">
+          Bagaimana jika kami sudah punya sistem lama?
+          <span class="acc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="acc__a"><p>Kami menangani integrasi dan migrasi bertahap, sehingga layanan tetap berjalan selama proses modernisasi.</p></div>
+      </div>
+
+      <div class="acc reveal" data-d="1">
+        <button class="acc__q" aria-expanded="false">
+          Apakah ada dukungan setelah proyek selesai?
+          <span class="acc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="acc__a"><p>Ada. Managed service mencakup pemantauan, pemeliharaan, dan dukungan teknis dengan tingkat layanan yang disepakati.</p></div>
+      </div>
+
+      <div class="acc reveal" data-d="2">
+        <button class="acc__q" aria-expanded="false">
+          Bisakah tim kami dilatih untuk mengelola sendiri?
+          <span class="acc__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </button>
+        <div class="acc__a"><p>Bisa. Alih pengetahuan dan pelatihan tim internal adalah bagian standar dari penyerahan proyek kami.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CTA + KONTAK ========================= -->
+<section class="section section--soft" id="kontak">
+  <div class="container">
+
+    <div class="cta reveal">
+      <h2>Punya kebutuhan sistem yang belum menemukan bentuknya?</h2>
+      <p>Ceritakan situasinya. Sesi konsultasi awal tanpa biaya — kami bantu petakan kebutuhan, opsi arsitektur, dan estimasi cakupan sebelum Anda memutuskan apa pun.</p>
+      <div class="cta__actions">
+        <a href="#form" class="btn btn--light">Jadwalkan Konsultasi</a>
+        <a href="https://wa.me/628111033334" target="_blank" rel="noopener" class="btn btn--outline-light">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.2 1.3-2 1.4-.5.1-1.2.1-3.4-.8-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2 .9c.3.2.5.2.6.3.1.2.1.7-.1 1.5Z"/></svg>
+          Chat via WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <div class="contact" id="form" style="margin-top:clamp(48px,6vw,80px)">
+      <div class="reveal">
+        <span class="eyebrow">Hubungi Kami</span>
+        <h2>Mari bicara kebutuhan Anda</h2>
+        <p style="margin-top:14px">Tim kami akan menghubungi Anda dalam 1×24 jam kerja.</p>
+
+        <ul class="info">
+          <li>
+            <span class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-5.3 7-11a7 7 0 1 0-14 0c0 5.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+            <span><b>Kantor</b><span>ESTUBIZI Business Center<br>Gedung Setiabudi 2, Lantai 2 Suite 207 B-C<br>Jakarta Selatan 12920, Indonesia</span></span>
+          </li>
+          <li>
+            <span class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+            <span><b>Telepon</b><span><a href="tel:+622152905299">021 5290 5299</a></span></span>
+          </li>
+          <li>
+            <span class="info__ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.2 1.3-2 1.4-.5.1-1.2.1-3.4-.8-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2 .9c.3.2.5.2.6.3.1.2.1.7-.1 1.5Z"/></svg></span>
+            <span><b>WhatsApp</b><span><a href="https://wa.me/628111033334" target="_blank" rel="noopener">0811 1033 334</a></span></span>
+          </li>
+          <li>
+            <span class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg></span>
+            <span><b>Email</b><span><a href="mailto:info@jkreasi.co.id">info@jkreasi.co.id</a></span></span>
+          </li>
+        </ul>
+      </div>
+
+      <form class="form reveal" data-d="1" id="contactForm" novalidate>
+        <div class="form__grid">
+          <div class="field">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama Anda" required>
+            <span class="err">Mohon isi nama Anda.</span>
+          </div>
+          <div class="field">
+            <label for="instansi">Instansi / Perusahaan</label>
+            <input type="text" id="instansi" name="instansi" placeholder="Nama instansi atau perusahaan" required>
+            <span class="err">Mohon isi nama instansi atau perusahaan.</span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="nama@instansi.go.id" required>
+            <span class="err">Mohon isi email yang valid.</span>
+          </div>
+          <div class="field">
+            <label for="telepon">Nomor Telepon / WhatsApp</label>
+            <input type="tel" id="telepon" name="telepon" placeholder="08xx xxxx xxxx" required>
+            <span class="err">Mohon isi nomor yang bisa dihubungi.</span>
+          </div>
+          <div class="field field--full">
+            <label for="kebutuhan">Kebutuhan</label>
+            <select id="kebutuhan" name="kebutuhan" required>
+              <option value="" disabled selected>Pilih kebutuhan Anda</option>
+              <option>Konsultasi IT</option>
+              <option>Pengembangan Aplikasi</option>
+              <option>Desain UI/UX</option>
+              <option>Cloud &amp; DevOps</option>
+              <option>Managed Service</option>
+              <option>Lainnya</option>
+            </select>
+            <span class="err">Mohon pilih salah satu kebutuhan.</span>
+          </div>
+          <div class="field field--full">
+            <label for="pesan">Ceritakan kebutuhan Anda</label>
+            <textarea id="pesan" name="pesan" placeholder="Sistem seperti apa yang ingin dibangun atau diperbaiki?" required></textarea>
+            <span class="err">Mohon ceritakan sedikit kebutuhan Anda.</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--block" style="margin-top:24px">
+          Kirim Pesan
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+
+        <div class="form__msg form__msg--ok" id="formOk" role="status">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>
+          <span>Terima kasih. Tim kami akan menghubungi Anda dalam 1×24 jam kerja.</span>
+        </div>
+        <div class="form__msg form__msg--err" id="formErr" role="alert">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7.5v5M12 16.2h.01"/></svg>
+          <span>Pengiriman gagal. Silakan hubungi kami langsung di <a href="mailto:info@jkreasi.co.id" style="text-decoration:underline">info@jkreasi.co.id</a> atau <a href="tel:+6208111033334" style="text-decoration:underline">0811 1033 334</a>.</span>
+        </div>
+
+        <p class="form__note">Informasi yang Anda kirimkan hanya digunakan untuk menindaklanjuti kebutuhan ini.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ========================= FOOTER ========================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__logo"><img src="asset/Logo-01.png" alt="JKreasi" width="1180" height="267"></div>
+        <p class="footer__about">JKreasi (PT Jaya Kreasi Teknologi) adalah mitra transformasi digital bagi pemerintah dan korporasi di Indonesia sejak 2019.</p>
+        <!-- KONFIRMASI: tautan sosial media masih placeholder "#" -->
+        <div class="footer__social">
+          <a href="#" aria-label="LinkedIn JKreasi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.5 4.76 5.75V21h-4v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8h-4V9Z"/></svg></a>
+          <a href="#" aria-label="Instagram JKreasi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="mailto:info@jkreasi.co.id" aria-label="Email JKreasi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Layanan</h4>
+        <div class="footer__links">
+          <a href="#layanan">Konsultasi IT</a>
+          <a href="#layanan">Pengembangan Aplikasi</a>
+          <a href="#layanan">Desain UI/UX</a>
+          <a href="#layanan">Cloud &amp; DevOps</a>
+          <a href="#layanan">Managed Service</a>
+          <a href="#layanan">System Integration</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Kontak</h4>
+        <div class="footer__links">
+          <a href="https://wa.me/628111033334" target="_blank" rel="noopener">WhatsApp: 0811 1033 334</a>
+          <a href="tel:+622152905299">Telepon: 021 5290 5299</a>
+          <a href="mailto:info@jkreasi.co.id">info@jkreasi.co.id</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Lokasi</h4>
+        <p class="footer__about" style="margin-top:0">
+          ESTUBIZI Business Center<br>
+          Gedung Setiabudi 2, Lantai 2 Suite 207 B-C<br>
+          Jakarta Selatan 12920, Indonesia
+        </p>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> PT Jaya Kreasi Teknologi. Seluruh hak cipta dilindungi.</span>
+      <span>Dibangun untuk instansi pemerintah &amp; korporasi Indonesia.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Tombol WhatsApp mengambang — hapus elemen ini bila tidak diinginkan -->
+<a class="wa" href="https://wa.me/628111033334" target="_blank" rel="noopener" aria-label="Chat JKreasi via WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.2 1.3-2 1.4-.5.1-1.2.1-3.4-.8-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2 .9c.3.2.5.2.6.3.1.2.1.7-.1 1.5Z"/></svg>
+</a>
+
+<noscript><style>.reveal{opacity:1;transform:none}.acc__a{max-height:none}</style></noscript>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ==========================================================
+     KONFIGURASI — ubah di sini saja
+     ========================================================== */
+  var CONFIG = {
+    waNumber: '628111033334',            // 0811 1033 334 dalam format internasional
+    // Kosongkan = form dikirim lewat WhatsApp.
+    // Isi dengan URL endpoint (Formspree, Google Apps Script, API sendiri)
+    // untuk mengirim lewat POST JSON.
+    formEndpoint: ''
+  };
+
+  var $  = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* ==========================================================
+     1. NAVBAR — bayangan saat scroll
+     ========================================================== */
+  var nav = $('#nav');
+  var onScroll = function () {
+    nav.classList.toggle('is-stuck', window.scrollY > 8);
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  /* ==========================================================
+     2. MENU MOBILE
+     ========================================================== */
+  var burger = $('#burger');
+  var drawer = $('#drawer');
+
+  var closeDrawer = function () {
+    drawer.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Buka menu navigasi');
+  };
+
+  burger.addEventListener('click', function () {
+    var open = drawer.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(open));
+    burger.setAttribute('aria-label', open ? 'Tutup menu navigasi' : 'Buka menu navigasi');
+  });
+
+  $$('#drawer a').forEach(function (a) { a.addEventListener('click', closeDrawer); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeDrawer();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 820) closeDrawer();
+  });
+
+  /* ==========================================================
+     3. SCROLL REVEAL
+     ========================================================== */
+  var reveals = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ==========================================================
+     4. ANGKA STATISTIK MENGHITUNG NAIK
+     ========================================================== */
+  var counters = $$('[data-count]');
+  var runCounter = function (el) {
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var dur = 1400;
+    var t0 = null;
+    var tick = function (t) {
+      if (t0 === null) t0 = t;
+      var p = Math.min((t - t0) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);          // ease-out cubic
+      el.textContent = Math.round(target * eased).toLocaleString('id-ID');
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { runCounter(en.target); cio.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { cio.observe(el); });
+  } else {
+    counters.forEach(function (el) { el.textContent = el.getAttribute('data-count'); });
+  }
+
+  /* ==========================================================
+     5. SCROLLSPY — menu aktif mengikuti seksi
+     ========================================================== */
+  var links = $$('.nav__links a');
+  var targets = links.map(function (a) { return $(a.getAttribute('href')); }).filter(Boolean);
+
+  var spy = function () {
+    var pos = window.scrollY + (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10) || 76) + 40;
+    var current = targets[0];
+    targets.forEach(function (sec) { if (sec.offsetTop <= pos) current = sec; });
+    links.forEach(function (a) {
+      a.classList.toggle('is-active', a.getAttribute('href') === '#' + current.id);
+    });
+  };
+  if (targets.length) {
+    spy();
+    window.addEventListener('scroll', spy, { passive: true });
+  }
+
+  /* ==========================================================
+     6. ACCORDION FAQ
+     ========================================================== */
+  $$('.acc').forEach(function (acc) {
+    var btn = $('.acc__q', acc);
+    var panel = $('.acc__a', acc);
+
+    btn.addEventListener('click', function () {
+      var isOpen = acc.classList.contains('is-open');
+
+      // tutup semua yang lain
+      $$('.acc.is-open').forEach(function (other) {
+        other.classList.remove('is-open');
+        $('.acc__q', other).setAttribute('aria-expanded', 'false');
+        $('.acc__a', other).style.maxHeight = null;
+      });
+
+      if (!isOpen) {
+        acc.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // jaga tinggi panel tetap benar saat layar diubah
+  window.addEventListener('resize', function () {
+    $$('.acc.is-open .acc__a').forEach(function (p) { p.style.maxHeight = p.scrollHeight + 'px'; });
+  });
+
+  /* ==========================================================
+     7. FORM KONTAK
+     ========================================================== */
+  var form = $('#contactForm');
+  var okBox = $('#formOk');
+  var errBox = $('#formErr');
+
+  var setInvalid = function (input, bad) {
+    input.closest('.field').classList.toggle('is-invalid', bad);
+  };
+
+  var validate = function () {
+    var valid = true;
+    $$('input[required], select[required], textarea[required]', form).forEach(function (input) {
+      var v = input.value.trim();
+      var bad = !v;
+      if (!bad && input.type === 'email') bad = !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+      if (!bad && input.type === 'tel')   bad = v.replace(/\D/g, '').length < 8;
+      setInvalid(input, bad);
+      if (bad) valid = false;
+    });
+    return valid;
+  };
+
+  // hilangkan tanda error begitu pengguna memperbaiki isian
+  $$('input, select, textarea', form).forEach(function (input) {
+    var ev = input.tagName === 'SELECT' ? 'change' : 'input';
+    input.addEventListener(ev, function () {
+      if (input.closest('.field').classList.contains('is-invalid')) validate();
+    });
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    okBox.classList.remove('is-shown');
+    errBox.classList.remove('is-shown');
+
+    if (!validate()) {
+      var firstBad = $('.field.is-invalid input, .field.is-invalid select, .field.is-invalid textarea', form);
+      if (firstBad) firstBad.focus();
+      return;
+    }
+
+    var data = {
+      nama:      $('#nama').value.trim(),
+      instansi:  $('#instansi').value.trim(),
+      email:     $('#email').value.trim(),
+      telepon:   $('#telepon').value.trim(),
+      kebutuhan: $('#kebutuhan').value,
+      pesan:     $('#pesan').value.trim()
+    };
+
+    var done = function () {
+      okBox.classList.add('is-shown');
+      form.reset();
+    };
+    var fail = function () {
+      errBox.classList.add('is-shown');
+    };
+
+    if (CONFIG.formEndpoint) {
+      // Mode API: kirim JSON ke endpoint
+      fetch(CONFIG.formEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); done(); })
+        .catch(fail);
+    } else {
+      // Mode WhatsApp: buka chat dengan pesan yang sudah terisi
+      var text =
+        'Halo JKreasi, saya ' + data.nama + ' dari ' + data.instansi + '. ' +
+        'Saya ingin berdiskusi mengenai kebutuhan ' + data.kebutuhan + '.\n\n' +
+        data.pesan + '\n\n' +
+        'Email: ' + data.email + '\n' +
+        'Telepon: ' + data.telepon;
+
+      var win = window.open('https://wa.me/' + CONFIG.waNumber + '?text=' + encodeURIComponent(text), '_blank');
+      if (win) { done(); } else { fail(); }
+    }
+  });
+
+  /* ==========================================================
+     8. TAHUN OTOMATIS DI FOOTER
+     ========================================================== */
+  $('#year').textContent = new Date().getFullYear();
+
+})();
+</script>
+
+</body>
+</html>
