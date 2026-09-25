@@ -1,0 +1,50 @@
+.gate {
+  display: none;
+}
+.gated {
+  overflow: auto;
+}
+.cases {
+  height: auto;
+}
+.cases__pin {
+  display: none;
+}
+.projects[hidden] {
+  display: grid;
+  gap: 28px;
+  padding: var(--sec) var(--pad);
+}
+.up {
+  opacity: 1;
+  transform: none;
+}
+.qa__a {
+  max-height: none;
+}
+.stage {
+  height: auto;
+}
+.stage__pin {
+  position: relative;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-block: 120px;
+}
+.stage__body {
+  position: relative;
+  inset: auto;
+}
+.act {
+  display: none;
+}
+.act--3 {
+  display: block;
+  opacity: 1;
+  transform: none;
+}
+.hud {
+  display: none;
+}

@@ -1,0 +1,18 @@
+.up,
+.hero .fade {
+  opacity: 1;
+  transform: none;
+}
+.ln > * {
+  transform: none;
+}
+.stamp {
+  opacity: 0.9;
+  transform: rotate(-11deg);
+}
+.tix__docs path {
+  stroke-dashoffset: 0;
+}
+.trackbox {
+  --p: 1;
+}

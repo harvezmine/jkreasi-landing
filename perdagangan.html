@@ -1,1773 +1,1590 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Perdagangan Sulfur Industri · JKreasi</title>
-<meta name="description" content="PT Jaya Kreasi Teknologi (KBLI 46651) memasok sulfur untuk pabrik pupuk, asam, dan industri kimia di Indonesia. Setiap pengiriman disertai kontrak, COA, surat jalan, BAST, dan faktur pajak.">
-<meta name="keywords" content="supplier sulfur industri Indonesia, jual belerang curah, perdagangan bahan kimia KBLI 46651, sulfur asam sulfat pupuk, pemasok sulfur pabrik">
-<meta name="author" content="PT Jaya Kreasi Teknologi">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#08122B">
-<link rel="canonical" href="https://jkreasi.co.id/perdagangan.html">
-<link rel="icon" href="asset/Logo-01.png">
-<link rel="apple-touch-icon" href="asset/Logo-01.png">
-
-<meta property="og:type" content="website">
-<meta property="og:locale" content="id_ID">
-<meta property="og:site_name" content="JKreasi">
-<meta property="og:url" content="https://jkreasi.co.id/perdagangan.html">
-<meta property="og:title" content="Pemasok sulfur untuk industri di Indonesia · JKreasi">
-<meta property="og:description" content="Pasokan sulfur untuk pabrik pupuk, asam, dan industri kimia, dengan kontrak, COA, surat jalan, BAST, dan faktur pajak di setiap pengiriman.">
-<meta property="og:image" content="https://jkreasi.co.id/asset/perdagangan/sulfur-tongkang.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Pemasok sulfur untuk industri di Indonesia · JKreasi">
-<meta name="twitter:description" content="Pasokan sulfur untuk industri, dengan dokumen lengkap di setiap pengiriman.">
-<meta name="twitter:image" content="https://jkreasi.co.id/asset/perdagangan/sulfur-tongkang.jpg">
-
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org","@type":"Product",
-  "name":"Sulfur Industri (Belerang)",
-  "description":"Sulfur industri untuk asam sulfat, asam fosfat, pupuk, petrokimia, karet, gula, pestisida, serta smelter dan metalurgi. Pasokan domestik terverifikasi, curah maupun kemasan, disertai sertifikat analisis (COA).",
-  "image":"https://jkreasi.co.id/asset/perdagangan/sulfur-tekstur.jpg",
-  "category":"Bahan Kimia Industri",
-  "brand":{"@type":"Organization","name":"JKreasi"},
-  "offers":{
-    "@type":"Offer","availability":"https://schema.org/InStock","priceCurrency":"IDR",
-    "url":"https://jkreasi.co.id/perdagangan.html",
-    "seller":{
-      "@type":"Organization","name":"PT Jaya Kreasi Teknologi","alternateName":"JKreasi",
-      "url":"https://jkreasi.co.id/","logo":"https://jkreasi.co.id/asset/Logo-01.png",
-      "email":"info@jkreasi.co.id","telephone":"+62-21-5290-5299",
-      "address":{"@type":"PostalAddress","streetAddress":"ESTUBIZI Business Center, Gedung Setiabudi 2, Lantai 2 Suite 207 B-C, Jl. H.R. Rasuna Said Kav. 62","addressLocality":"Jakarta Selatan","addressRegion":"DKI Jakarta","postalCode":"12920","addressCountry":"ID"}
-    }
-  }
-}
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-/* ============================================================
-   HALAMAN LINI PERDAGANGAN
-   Konsep: "manifes muatan". Perdagangan komoditas hidup dari
-   dokumen, jadi halaman ini memakai bahasa visual dokumen kapal:
-   label data mono, jalur dokumen, tiket transaksi, dan cap.
-   Warna mengikuti palet situs (60 navy · 30 putih · 10 biru),
-   tanpa hue tambahan. Aksen di atas latar gelap memakai biru muda
-   yang sama dengan seksi Masalah dan Ajakan di index.
-
-   Urutan:  0 Token · 1 Dasar · 2 Tombol · 3 Navigasi · 4 Hero
-            5 Komoditas · 6 Pemakaian · 7 Alur · 8 Transaksi
-            9 Legal · 10 Ajakan · 11 Footer
-   Token, tombol, navigasi, dan footer disamakan dengan index.html.
-   Bila token di sana berubah, ubah juga di sini.
-
-   Gerak diatur JS lewat satu loop gulir (lihat skrip di bawah).
-   Tanpa JS atau dengan prefers-reduced-motion, semua tampil statis.
-   ============================================================ */
-
-/* ---------- 0 · TOKEN ---------- */
-:root{
-  --paper:#FFFFFF;
-  --paper-2:#F2F5F9;
-  --rule:#DCE2EB;
-  --rule-2:#BFC9D8;
-
-  --ink:#0A1424;
-  --ink-2:#41506B;
-  --ink-3:#7C8AA3;
-
-  --blue:#0080E0;
-  --blue-deep:#0A62AE;     /* blok biru dengan teks putih (kontras 6:1) */
-  --blue-lt:#5FB4F5;       /* aksen di atas latar gelap */
-  --navy:#0C1533;
-  --abyss:#08122B;
-
-  --sans:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
-  --mono:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
-
-  --pad:clamp(20px,4.5vw,64px);
-  --edge:max(var(--pad),calc((100vw - 1400px) / 2 + var(--pad)));   /* tepi kiri konten .wrap */
-  --nav-h:74px;
-  --sec:clamp(80px,9vw,140px);
-  --ease:cubic-bezier(.22,.75,.3,1);
-
-  /* Bayangan berlapis: satu dekat & tajam, satu jauh & lebar */
-  --lift-1:0 1px 2px rgba(10,20,36,.06),0 8px 24px -8px rgba(10,20,36,.12);
-  --lift-2:0 2px 4px rgba(10,20,36,.06),0 24px 48px -16px rgba(10,20,36,.24);
-}
-
-/* ---------- 1 · DASAR ---------- */
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
-body{
-  font-family:var(--sans);font-size:16px;line-height:1.66;
-  color:var(--ink-2);background:var(--paper);
-  -webkit-font-smoothing:antialiased;overflow-x:clip;
-}
-img,svg{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:none}
-ol,ul{list-style:none}
-sub{font-size:.58em;line-height:0;vertical-align:-.28em}
-::selection{background:var(--blue);color:#fff}
-:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-
-h1,h2,h3{color:var(--ink);font-weight:700;letter-spacing:-.035em;line-height:1.04;text-wrap:balance}
-h2{font-size:clamp(1.9rem,1.25rem + 2.6vw,3.3rem);line-height:1.06}
-h3{font-size:1.05rem;font-weight:600;letter-spacing:-.018em;line-height:1.3}
-p{text-wrap:pretty}
-
-.wrap{width:100%;max-width:1400px;margin-inline:auto;padding-inline:var(--pad)}
-
-.label{
-  display:block;font-family:var(--mono);font-size:.69rem;font-weight:500;
-  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3);
-}
-
-.up{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.up.in{opacity:1;transform:none}
-.up[data-d="1"]{transition-delay:.08s}
-.up[data-d="2"]{transition-delay:.16s}
-.up[data-d="3"]{transition-delay:.24s}
-
-/* ---------- 2 · TOMBOL ---------- */
-.btn{
-  display:inline-flex;align-items:center;gap:11px;padding:17px 30px;
-  font-size:.88rem;font-weight:600;letter-spacing:.01em;cursor:pointer;
-  transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
-}
-.btn svg{width:15px;height:15px;flex:none;transition:transform .28s var(--ease)}
-.btn:hover svg{transform:translateX(5px)}
-.btn--blue{background:var(--blue);color:#fff}
-.btn--blue:hover{background:var(--ink)}
-.btn--wht{background:#fff;color:var(--ink)}
-.btn--wht:hover{background:var(--blue);color:#fff}
-.btn--wht-line{border:1.5px solid rgba(255,255,255,.34);color:#fff}
-.btn--wht-line:hover{background:#fff;color:var(--ink);border-color:#fff}
-.btn--block{width:100%;justify-content:center}
-
-/* ---------- 3 · NAVIGASI ---------- */
-.prog{position:fixed;top:0;left:0;height:2px;width:100%;z-index:200;pointer-events:none}
-.prog__f{height:100%;width:0;background:var(--blue)}
-
-.nav{
-  position:fixed;top:0;left:0;right:0;z-index:150;height:var(--nav-h);display:flex;align-items:center;
-  border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s var(--ease);
-}
-.nav__in{display:flex;align-items:center;width:100%;gap:26px}
-.nav__logo img{height:27px;width:auto;transition:filter .4s var(--ease)}
-.nav__menu{display:flex;align-items:center;gap:32px;margin-left:auto}
-.nav__menu a{
-  position:relative;font-family:var(--mono);font-size:.71rem;letter-spacing:.13em;
-  text-transform:uppercase;padding-block:7px;transition:color .3s var(--ease);
-}
-.nav__menu a::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1.5px;background:var(--blue);transform:scaleX(0);transform-origin:right;transition:transform .35s var(--ease)}
-.nav__menu a:hover::after,.nav__menu a.on::after{transform:scaleX(1);transform-origin:left}
-.nav__cta{padding:11px 22px;font-size:.79rem}
-
-.nav.dark .nav__logo img{filter:brightness(0) invert(1)}
-.nav.dark .nav__menu a{color:rgba(255,255,255,.72)}
-.nav.dark .nav__menu a:hover,.nav.dark .nav__menu a.on{color:#fff}
-.nav.dark .burger span{background:#fff}
-.nav.lite{background:rgba(255,255,255,.93);backdrop-filter:blur(14px) saturate(160%);border-bottom-color:var(--rule)}
-.nav.lite .nav__menu a{color:var(--ink-2)}
-.nav.lite .nav__menu a:hover,.nav.lite .nav__menu a.on{color:var(--ink)}
-
-.burger{display:none;margin-left:auto;width:40px;height:40px;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
-.burger span{display:block;width:21px;height:2px;background:var(--ink);transition:transform .3s var(--ease),opacity .2s,background .4s var(--ease)}
-.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
-.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-.sheet{
-  position:fixed;inset:var(--nav-h) 0 auto 0;z-index:140;background:var(--ink);
-  padding:8px var(--pad) 32px;display:none;flex-direction:column;
-}
-.sheet.open{display:flex}
-.sheet a{display:flex;align-items:baseline;gap:16px;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:1.4rem;font-weight:600;letter-spacing:-.03em;color:#fff}
-.sheet a i{font-family:var(--mono);font-size:.67rem;font-style:normal;color:rgba(255,255,255,.4);letter-spacing:.12em}
-.sheet .btn{margin-top:26px;font-size:.95rem;letter-spacing:0}
-
-@media (max-width:860px){
-  .nav__menu,.nav__cta{display:none}
-  .burger{display:flex}
-}
-
-/* ============================================================
-   4 · HERO
-   Tiga lapis kedalaman: foto (paling lambat, parallax), teks
-   (sedikit lebih cepat, memudar saat digulir), dan manifes yang
-   menempel di dasar. Judul muncul per baris saat halaman dibuka.
-   ============================================================ */
-.hero{
-  position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;
-  background:var(--abyss);color:#fff;overflow:hidden;isolation:isolate;
-}
-.hero__img{
-  position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:68% 50%;
-  transform:scale(1.08);will-change:transform;
-}
-.hero__veil{
-  position:absolute;inset:0;z-index:-1;
-  background:
-    linear-gradient(180deg,rgba(8,18,43,.62) 0%,rgba(8,18,43,0) 24%),
-    linear-gradient(90deg,rgba(8,18,43,.95) 0%,rgba(8,18,43,.82) 34%,rgba(8,18,43,.25) 68%,rgba(8,18,43,.1) 100%);
-}
-.hero__in{flex:1;display:flex;flex-direction:column;justify-content:flex-end;padding-top:calc(var(--nav-h) + 40px);padding-bottom:clamp(40px,5vw,72px);will-change:transform,opacity}
-
-.crumb{display:flex;gap:10px;font-family:var(--mono);font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:clamp(20px,2.6vw,30px)}
-.crumb a:hover{color:#fff}
-.crumb b{font-weight:500;color:var(--blue-lt)}
-
-.hero h1{
-  color:#fff;max-width:15ch;
-  font-size:clamp(2.6rem,1.3rem + 5vw,5.6rem);line-height:.98;letter-spacing:-.045em;
-}
-.hero h1 em{font-style:normal;color:var(--blue-lt)}
-.hero__lead{margin-top:clamp(20px,2.4vw,30px);max-width:48ch;font-size:clamp(1rem,.95rem + .3vw,1.14rem);color:rgba(255,255,255,.76)}
-.hero__act{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(28px,3.2vw,40px)}
-
-/* Topeng per baris: teks naik dari balik garis dasarnya */
-.ln{display:block;overflow:hidden;padding-bottom:.1em;margin-bottom:-.1em}
-.ln > *{display:block;transform:translateY(108%);transition:transform 1.15s var(--ease)}
-.ln + .ln > *{transition-delay:.12s}
-.is-ready .ln > *{transform:none}
-.hero .fade{opacity:0;transform:translateY(16px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
-.hero .fade--1{transition-delay:.45s}
-.hero .fade--2{transition-delay:.6s}
-.hero .fade--3{transition-delay:.75s}
-.is-ready .hero .fade{opacity:1;transform:none}
-
-.manifest{border-top:1px solid rgba(255,255,255,.14);background:rgba(8,18,43,.62);backdrop-filter:blur(10px)}
-.manifest dl{display:grid;grid-template-columns:repeat(4,1fr)}
-.manifest dl > div{padding:clamp(18px,2vw,24px) clamp(14px,1.8vw,26px);border-left:1px solid rgba(255,255,255,.12)}
-.manifest dl > div:first-child{border-left:0;padding-left:0}
-.manifest dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45)}
-.manifest dd{margin-top:7px;font-size:clamp(.95rem,.9rem + .3vw,1.12rem);font-weight:600;letter-spacing:-.015em;color:#fff}
-.manifest dd b{font-family:var(--mono);font-weight:500;color:var(--blue-lt);letter-spacing:-.03em}
-
-@media (max-width:760px){
-  .hero__img{object-position:62% 50%}
-  .hero__veil{background:linear-gradient(180deg,rgba(8,18,43,.55) 0%,rgba(8,18,43,.72) 40%,rgba(8,18,43,.94) 100%)}
-  .manifest dl{grid-template-columns:1fr 1fr}
-  .manifest dl > div{padding:16px 14px}
-  .manifest dl > div:nth-child(odd){border-left:0;padding-left:0}
-  .manifest dl > div:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
-}
-
-/* ============================================================
-   5 · KOMODITAS · dua foto berlapis
-   Foto besar: tumpukan sulfur di Kuala Langsa (foto lapangan sendiri).
-   Foto kecil: close-up butiran, dibingkai seperti cetakan foto dan
-   menumpang di sudut foto besar. Keduanya bergerak dengan kecepatan
-   berbeda saat digulir (--py dari JS), jadi terasa berlapis.
-   ============================================================ */
-.prod{padding-block:var(--sec)}
-.prod__grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1fr);gap:clamp(40px,6vw,110px);align-items:center}
-
-.pm{position:relative;padding:0 clamp(40px,5vw,72px) clamp(56px,6vw,90px) 0}
-.pm__main{position:relative;margin:0;aspect-ratio:88/90;overflow:hidden;background:var(--rule);box-shadow:var(--lift-2)}
-.pm__main img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;transform:translate3d(0,var(--py,0px),0);will-change:transform}
-.pm__main figcaption{
-  position:absolute;left:0;bottom:0;padding:10px 16px;background:rgba(10,20,36,.78);backdrop-filter:blur(6px);
-  font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.85);
-}
-.pm__print{
-  position:absolute;right:0;bottom:0;width:58%;margin:0;padding:10px 10px 34px;background:#fff;
-  box-shadow:0 2px 4px rgba(10,20,36,.08),0 34px 60px -24px rgba(10,20,36,.45);
-  transform:translate3d(0,var(--py2,0px),0) rotate(3deg);will-change:transform;
-}
-.pm__print img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
-.pm__print figcaption{position:absolute;left:12px;right:12px;bottom:10px;font-family:var(--mono);font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
-.pm__print figcaption a{border-bottom:1px solid var(--rule-2)}
-
-.prod__body .label{margin-bottom:clamp(16px,2vw,22px)}
-.prod__lead{margin-top:clamp(16px,2vw,22px);max-width:44ch;font-size:clamp(1rem,.96rem + .25vw,1.1rem)}
-
-.spec{display:grid;grid-template-columns:1fr 1fr;margin-top:clamp(28px,3.4vw,44px);border-top:2px solid var(--ink)}
-.spec div{padding:17px 20px 17px 0;border-bottom:1px solid var(--rule)}
-.spec div:nth-child(even){padding-left:20px;border-left:1px solid var(--rule)}
-.spec dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
-.spec dd{margin-top:6px;font-size:.95rem;font-weight:500;color:var(--ink);line-height:1.45}
-
-@media (max-width:900px){
-  .prod__grid{grid-template-columns:1fr}
-  .pm{max-width:520px}
-}
-@media (max-width:520px){
-  .pm{padding:0 28px 48px 0}
-  .spec{grid-template-columns:1fr}
-  .spec div,.spec div:nth-child(even){padding-left:0;border-left:0}
-}
-
-/* ============================================================
-   6 · PEMAKAIAN · grid bergambar + dialog detail
-   Kedalaman pada kotak:
-   · saat masuk layar, kotak "berdiri" dari bawah (rotateX → 0);
-   · foto di dalam kotak bergerak parallax mengikuti gulir (--py);
-   · saat disentuh kursor kotak terangkat, foto membesar, dan sudut
-     kanan atas terlipat lebih lebar (lipatan kertas, bukan ikon).
-   Isi dialog diambil dari <div class="tile__more"> tiap kotak.
-   Foto: Wikimedia Commons; atribusi (wajib untuk CC BY/BY-SA) ada
-   di footer, tautan "Kredit foto".
-   ============================================================ */
-.uses{background:var(--paper-2);padding-block:var(--sec)}
-.uses__head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(36px,4.4vw,60px)}
-.uses__head .label{margin-bottom:clamp(14px,1.8vw,20px)}
-.uses__head h2{max-width:17ch}
-.uses__lead{max-width:44ch;font-size:.97rem}
-
-.bento{
-  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:clamp(210px,18vw,262px);
-  gap:clamp(10px,1.2vw,16px);perspective:1600px;
-}
-.tile{
-  --fold:26px;
-  position:relative;overflow:hidden;isolation:isolate;background:var(--ink);color:#fff;
-  box-shadow:0 1px 2px rgba(10,20,36,.08),0 14px 30px -14px rgba(10,20,36,.35);
-  transition:transform .6s var(--ease),box-shadow .6s var(--ease),opacity .8s var(--ease);
-}
-.tile--hub{grid-column:span 2;grid-row:span 2}
-.tile--wide{grid-column:span 2}
-/* Masuk layar: berdiri dari bawah */
-.tile.up:not(.in){opacity:0;transform:translateY(46px) rotateX(16deg);transform-origin:50% 100%}
-.tile img{
-  position:absolute;left:0;top:-9%;z-index:-2;width:100%;height:118%;object-fit:cover;
-  transform:translate3d(0,var(--py,0px),0) scale(var(--z,1));transition:transform 1.1s var(--ease);
-}
-.tile::after{
-  content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(180deg,rgba(10,20,36,.22) 0%,rgba(10,20,36,0) 28%,rgba(10,20,36,.45) 58%,rgba(10,20,36,.92) 100%);
-  transition:background .6s var(--ease);
-}
-.tile:hover{--fold:62px;transform:translateY(-6px);box-shadow:0 2px 4px rgba(10,20,36,.08),0 40px 60px -24px rgba(10,20,36,.5)}
-.tile:hover img{transform:translate3d(0,var(--py,0px),0) scale(calc(var(--z,1) + .06))}
-.tile--zoom{--z:1.9}
-
-.tile__hit{position:absolute;inset:0;z-index:4;cursor:pointer}
-.tile__hit:focus-visible{outline:2px solid #fff;outline-offset:-6px}
-.tile__hit:focus-visible ~ .tile__fold{--fold:62px}
-
-/* Sudut terlipat: segitiga kanan atas berwarna latar seksi (terpotong),
-   segitiga kiri bawah adalah balik kertas yang melipat */
-.tile__fold{
-  position:absolute;right:0;top:0;z-index:3;width:var(--fold);height:var(--fold);pointer-events:none;
-  filter:drop-shadow(-3px 4px 5px rgba(10,20,36,.35));
-  transition:width .55s var(--ease),height .55s var(--ease);
-}
-.tile:hover .tile__fold{width:62px;height:62px}
-.tile__fold::before,.tile__fold::after{content:"";position:absolute;inset:0}
-.tile__fold::before{background:var(--paper-2);clip-path:polygon(0 0,100% 0,100% 100%)}
-.tile__fold::after{background:linear-gradient(45deg,#C9D6E6 0%,#EEF3F9 55%,#FFFFFF 100%);clip-path:polygon(0 0,0 100%,100% 100%)}
-.tile__fold svg{
-  position:absolute;left:8px;bottom:8px;z-index:1;width:15px;height:15px;color:var(--blue-deep);
-  opacity:0;transform:translate(-4px,4px);transition:opacity .3s var(--ease) .1s,transform .45s var(--ease) .1s;
-}
-.tile:hover .tile__fold svg,.tile__hit:focus-visible ~ .tile__fold svg{opacity:1;transform:none}
-
-.tile__in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(16px,1.7vw,24px);transition:transform .6s var(--ease)}
-.tile:hover .tile__in{transform:translateY(-4px)}
-.tile__n{position:absolute;left:clamp(16px,1.7vw,24px);top:clamp(14px,1.5vw,20px);font-family:var(--mono);font-size:.64rem;letter-spacing:.15em;color:rgba(255,255,255,.8)}
-.tile h3{color:#fff;font-size:clamp(1.02rem,.95rem + .35vw,1.25rem)}
-.tile p{margin-top:6px;max-width:40ch;font-size:.84rem;line-height:1.5;color:rgba(255,255,255,.78)}
-.tile__more-link{
-  display:inline-flex;align-items:center;gap:8px;margin-top:12px;font-family:var(--mono);font-size:.6rem;
-  letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.0;transform:translateY(6px);
-  transition:opacity .4s var(--ease),transform .5s var(--ease);
-}
-.tile__more-link::after{content:"";width:18px;height:1px;background:currentColor;transition:width .45s var(--ease)}
-.tile:hover .tile__more-link{opacity:.9;transform:none}
-.tile:hover .tile__more-link::after{width:30px}
-@media (hover:none){ .tile__more-link{opacity:.85;transform:none} }
-
-.tile--hub h3{font-size:clamp(1.5rem,1.1rem + 1.4vw,2.3rem);letter-spacing:-.035em}
-.tile--hub p{margin-top:10px;max-width:44ch;font-size:clamp(.9rem,.86rem + .2vw,1rem)}
-.tile__tag{
-  display:inline-block;align-self:flex-start;margin-bottom:14px;padding:5px 10px;background:var(--blue);
-  font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:#fff;
-}
-
-
-@media (max-width:1000px){
-  .uses__head{grid-template-columns:1fr;align-items:start}
-  .bento{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:clamp(200px,34vw,260px)}
-}
-@media (max-width:560px){
-  .bento{grid-template-columns:1fr;grid-auto-rows:220px}
-  .tile--hub{grid-column:auto;grid-row:span 2}
-  .tile--wide{grid-column:auto}
-}
-
-/* --- Dialog detail ---
-   Ukuran tetap dan isi dipendekkan supaya muat satu layar tanpa gulir
-   (desktop dan laptop 768px). Kiri: foto + nomor besar + deret miniatur
-   untuk berpindah. Kanan: judul, uraian singkat, dua fakta, tindakan. */
-html.dlg-open{overflow:hidden}
-.dlg{
-  margin:auto;padding:0;border:0;width:min(1080px,calc(100vw - 48px));max-width:none;
-  height:min(560px,calc(100vh - 48px));max-height:none;overflow:hidden;background:#fff;color:var(--ink-2);
-  box-shadow:0 60px 140px -40px rgba(8,18,43,.7),0 12px 30px -12px rgba(8,18,43,.35);
-}
-.dlg::backdrop{background:rgba(8,18,43,.7);backdrop-filter:blur(8px)}
-.dlg[open]{animation:dlgIn .6s var(--ease)}
-.dlg[open]::backdrop{animation:fadeIn .45s ease}
-@keyframes dlgIn{from{opacity:0;transform:translateY(28px) scale(.965)}}
-@keyframes fadeIn{from{opacity:0}}
-
-.dlg__in{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);height:100%}
-
-.dlg__media{position:relative;overflow:hidden;background:var(--ink)}
-.dlg__media img.dlg__photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.dlg__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,20,36,.1) 0%,rgba(10,20,36,0) 35%,rgba(10,20,36,.78) 100%)}
-.dlg__no{
-  position:absolute;left:28px;bottom:86px;z-index:1;font-family:var(--mono);font-weight:500;
-  font-size:clamp(3.4rem,2.6rem + 2.4vw,5rem);line-height:.9;letter-spacing:-.06em;color:#fff;
-}
-.dlg__no small{margin-left:6px;font-size:.22em;letter-spacing:.14em;opacity:.7}
-.dlg__thumbs{position:absolute;left:28px;right:28px;bottom:22px;z-index:1;display:flex;gap:6px}
-.dlg__thumbs button{
-  position:relative;flex:1;height:44px;overflow:hidden;cursor:pointer;opacity:.5;
-  outline:1px solid rgba(255,255,255,.25);outline-offset:-1px;
-  transition:opacity .3s var(--ease),transform .4s var(--ease);
-}
-.dlg__thumbs button:hover{opacity:.85;transform:translateY(-3px)}
-.dlg__thumbs button.on{opacity:1;outline:2px solid #fff;outline-offset:-2px;transform:translateY(-3px)}
-.dlg__thumbs img{width:100%;height:100%;object-fit:cover}
-
-.dlg__body{position:relative;display:flex;flex-direction:column;padding:clamp(28px,3vw,44px) clamp(28px,3.2vw,48px) clamp(24px,2.6vw,36px)}
-.dlg__top{display:flex;justify-content:space-between;align-items:center;gap:16px}
-.dlg__x{
-  display:grid;place-items:center;width:40px;height:40px;margin:-8px -10px -8px 0;border-radius:50%;cursor:pointer;color:var(--ink);
-  transition:background .25s var(--ease),transform .4s var(--ease);
-}
-.dlg__x:hover{background:var(--paper-2);transform:rotate(90deg)}
-.dlg__x svg{width:18px;height:18px}
-.dlg__body h3{margin-top:clamp(16px,2vh,24px);font-size:clamp(1.8rem,1.3rem + 1.5vw,2.6rem);letter-spacing:-.04em;line-height:1.02}
-.dlg__lead{margin-top:clamp(14px,1.8vh,20px);font-size:1.04rem;line-height:1.7;max-width:42ch}
-
-.dlg__facts{display:grid;grid-template-columns:.8fr 1.2fr;margin-top:auto;border-top:1px solid var(--rule)}
-.dlg__facts div{padding:16px 18px 18px 0}
-.dlg__facts div + div{padding-left:18px;border-left:1px solid var(--rule)}
-.dlg__facts dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
-.dlg__facts dd{margin-top:7px;font-size:.92rem;font-weight:500;line-height:1.45;color:var(--ink)}
-.dlg__facts ul{display:grid;gap:5px}
-.dlg__facts li{display:flex;align-items:baseline;gap:9px;font-weight:500}
-.dlg__facts li::before{content:"";flex:none;width:9px;height:1.5px;background:var(--blue);transform:translateY(-.3em)}
-
-.dlg__foot{display:flex;align-items:center;gap:10px;padding-top:18px;border-top:1px solid var(--rule)}
-.dlg__foot .btn{padding:14px 22px}
-.dlg__quote{font-size:.86rem;font-weight:600;color:var(--ink);border-bottom:1.5px solid var(--ink);padding-bottom:2px;margin-left:10px;transition:color .25s var(--ease),border-color .25s var(--ease)}
-.dlg__quote:hover{color:var(--blue);border-color:var(--blue)}
-.dlg__nav{display:flex;margin-left:auto;border:1px solid var(--rule)}
-.dlg__nav button{display:grid;place-items:center;width:42px;height:42px;cursor:pointer;color:var(--ink);transition:background .25s var(--ease),color .25s var(--ease)}
-.dlg__nav button + button{border-left:1px solid var(--rule)}
-.dlg__nav button:hover{background:var(--ink);color:#fff}
-.dlg__nav svg{width:15px;height:15px}
-
-/* Pergantian isi: teks naik pelan, foto memudar dari sedikit lebih besar */
-.dlg__swap{animation:swapIn .55s var(--ease)}
-@keyframes swapIn{from{opacity:0;transform:translateY(10px)}}
-.dlg__photo.dlg__swap{animation:photoIn .9s var(--ease)}
-@keyframes photoIn{from{opacity:.2;transform:scale(1.06)}}
-
-@media (max-width:860px){
-  .dlg{width:calc(100vw - 20px);height:auto;max-height:calc(100vh - 20px)}
-  .dlg__in{grid-template-columns:1fr;height:auto;max-height:calc(100vh - 20px);overflow-y:auto}
-  .dlg__media{height:clamp(200px,34vh,300px)}
-  .dlg__no{bottom:20px;font-size:3rem}
-  .dlg__thumbs{display:none}
-  .dlg__facts{grid-template-columns:1fr;margin-top:22px}
-  .dlg__facts div + div{padding-left:0;border-left:0;border-top:1px solid var(--rule)}
-  .dlg__foot{flex-wrap:wrap}
-}
-
-/* ============================================================
-   7 · ALUR · jalur dokumen
-   Rel terisi biru mengikuti gulir (--p 0..1 pada .trackbox, dari
-   JS), dan tahap yang sudah dilewati menyala serta sedikit terangkat.
-   Lebar besar: rel mendatar. Di bawah 1180px: rel tegak di kiri.
-   ============================================================ */
-.trail{background:var(--navy);color:rgba(255,255,255,.66);padding-block:var(--sec);position:relative;overflow:hidden}
-.trail::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:repeating-linear-gradient(135deg,transparent 0 22px,rgba(255,255,255,.02) 22px 23px);
-}
-.trail .wrap{position:relative}
-.trail__head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(60px,7vw,100px)}
-.trail__head .label{color:rgba(255,255,255,.45);margin-bottom:clamp(16px,2vw,22px)}
-.trail__head h2{color:#fff;max-width:18ch}
-.trail__head > p{max-width:42ch;font-size:.97rem;padding-left:18px;border-left:2px solid var(--blue-lt)}
-
-.trackbox{--p:0;position:relative}
-.track{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(16px,1.8vw,28px)}
-.track::before,.track::after{content:"";position:absolute;left:0;right:0;top:7px;height:2px}
-.track::before{background:rgba(255,255,255,.14)}
-.track::after{background:var(--blue-lt);transform:scaleX(var(--p));transform-origin:left;box-shadow:0 0 12px rgba(95,180,245,.5)}
-
-.step{position:relative;display:flex;flex-direction:column;padding-top:44px;transition:transform .6s var(--ease)}
-.step.on{transform:translateY(-6px)}
-.step__dot{
-  position:absolute;left:0;top:0;z-index:1;width:16px;height:16px;border-radius:50%;
-  background:var(--navy);border:2px solid rgba(255,255,255,.3);
-  transition:background .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease);
-}
-.step.on .step__dot{background:var(--blue-lt);border-color:var(--blue-lt);box-shadow:0 0 0 6px rgba(95,180,245,.18)}
-.step__n{font-family:var(--mono);font-size:.68rem;font-weight:500;letter-spacing:.15em;color:rgba(255,255,255,.4);transition:color .4s var(--ease)}
-.step.on .step__n{color:var(--blue-lt)}
-.step h3{margin-top:10px;color:rgba(255,255,255,.6);transition:color .4s var(--ease)}
-.step.on h3{color:#fff}
-.step p{margin-top:9px;margin-bottom:22px;font-size:.88rem;line-height:1.6}
-.doc{
-  display:inline-flex;align-items:center;gap:9px;align-self:flex-start;margin-top:auto;
-  padding:9px 12px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.035);
-  font-family:var(--mono);font-size:.61rem;letter-spacing:.11em;text-transform:uppercase;color:rgba(255,255,255,.6);
-  transition:border-color .4s var(--ease),color .4s var(--ease),background .4s var(--ease),box-shadow .4s var(--ease);
-}
-.doc svg{width:13px;height:13px;flex:none}
-.step.on .doc{border-color:rgba(95,180,245,.55);background:rgba(95,180,245,.08);color:#fff;box-shadow:0 10px 24px -12px rgba(95,180,245,.5)}
-
-@media (max-width:1180px){
-  .track{grid-template-columns:1fr;gap:0;padding-left:40px}
-  .track::before,.track::after{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto}
-  .track::after{transform:scaleY(var(--p));transform-origin:top}
-  .step{
-    display:grid;grid-template-columns:48px minmax(0,.9fr) minmax(0,1.3fr) auto;gap:6px 22px;align-items:center;
-    padding:24px 0;border-bottom:1px solid rgba(255,255,255,.1);
-  }
-  .step.on{transform:translateX(6px)}
-  .step:last-child{border-bottom:0}
-  .step__dot{left:-40px;top:calc(50% - 8px)}
-  .step h3,.step p{margin:0}
-  .doc{margin-top:0;align-self:center}
-}
-@media (max-width:900px){
-  .trail__head{grid-template-columns:1fr;align-items:start}
-}
-@media (max-width:720px){
-  .step{grid-template-columns:1fr;gap:0;padding:22px 0}
-  .step__dot{top:24px}
-  .step h3{margin-top:8px}
-  .step p{margin-top:6px}
-  .doc{margin-top:14px;justify-self:start}
-}
-
-/* ============================================================
-   8 · TRANSAKSI · foto muatan, dua surat jalan, dan tiket
-   Empat lapis kedalaman, masing-masing bergerak sendiri saat digulir
-   (variabel dari JS, 0 = seksi di tengah layar):
-   1. balok biru di belakang foto (--sy), paling lambat;
-   2. foto muatan, bergeser di dalam bingkainya (--py);
-   3. dua surat jalan (termin 1 dan 2) yang mengipas keluar dari balik
-      tiket saat seksi mendekati tengah layar (--fan 0..1);
-   4. tiket, yang berputar dari miring ke tegak (--ry/--rx).
-   Tepi bawah tiket bergerigi (mask), jadi bayangannya memakai
-   drop-shadow pada pembungkus.
-   ============================================================ */
-.deal{
-  position:relative;overflow:hidden;padding-block:var(--sec);
-  background:radial-gradient(60% 70% at 78% 60%,#E3ECF7 0%,rgba(227,236,247,0) 70%),var(--paper-2);
-}
-.deal__head{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(48px,6vw,90px)}
-.deal__head .label{margin-bottom:clamp(16px,2vw,22px)}
-.deal__head h2{max-width:16ch}
-.deal__head > p{max-width:48ch;font-size:clamp(.98rem,.95rem + .25vw,1.08rem)}
-
-.deal__grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);align-items:center}
-
-/* --- Foto + balok --- */
-.deal__media{position:relative}
-.deal__slab{
-  position:absolute;left:clamp(-28px,-2vw,-16px);right:18%;top:14%;bottom:clamp(-34px,-2.6vw,-20px);
-  background:var(--blue-deep);transform:translate3d(0,var(--sy,0px),0);will-change:transform;
-}
-.deal__slab::after{
-  content:"";position:absolute;inset:0;
-  background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(255,255,255,.06) 14px 15px);
-}
-.deal__photo{
-  position:relative;margin:0;aspect-ratio:16/11;overflow:hidden;background:var(--rule);
-  box-shadow:0 2px 4px rgba(10,20,36,.1),0 40px 70px -30px rgba(10,20,36,.5);
-}
-.deal__photo img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;transform:translate3d(0,var(--py,0px),0);will-change:transform}
-.deal__photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12),inset 0 -120px 120px -60px rgba(10,20,36,.45);pointer-events:none}
-.deal__photo figcaption{
-  position:absolute;left:18px;bottom:16px;z-index:1;padding:8px 13px;background:rgba(10,20,36,.62);backdrop-filter:blur(8px);
-  font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.9);
-}
-
-/* --- Tiket + surat jalan --- */
-.tix-par{
-  --fan:0;--ry:0deg;--rx:0deg;
-  position:relative;z-index:1;margin-left:clamp(-150px,-9vw,-60px);
-  transform:perspective(1400px) rotateY(var(--ry)) rotateX(var(--rx));transform-style:preserve-3d;will-change:transform;
-}
-.slip{
-  position:absolute;left:8%;right:8%;top:6%;height:62%;padding:16px 18px;
-  background:#FCFBF7;border:1px solid rgba(10,20,36,.08);
-  box-shadow:0 1px 2px rgba(10,20,36,.08),0 18px 30px -14px rgba(10,20,36,.3);
-  transition:transform .2s linear;
-}
-.slip--1{transform:translate(calc(var(--fan) * -9%),calc(var(--fan) * -44%)) rotate(calc(var(--fan) * -6deg))}
-.slip--2{transform:translate(calc(var(--fan) * 7%),calc(var(--fan) * -26%)) rotate(calc(var(--fan) * 3.5deg))}
-.slip__h{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-.slip__h b{font-weight:500;color:var(--ink)}
-.slip__lines{display:block;height:46px;margin-top:14px;background:repeating-linear-gradient(180deg,rgba(35,42,54,.14) 0 1px,transparent 1px 9px)}
-.slip__stamp{
-  position:absolute;right:16px;top:44px;padding:3px 8px;border:1.5px solid var(--blue-deep);border-radius:3px;
-  font-family:var(--mono);font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-deep);
-  transform:rotate(-8deg);opacity:.75;
-}
-
-.tix-wrap{position:relative;filter:drop-shadow(0 34px 50px rgba(10,20,36,.26)) drop-shadow(0 4px 10px rgba(10,20,36,.1))}
-.tix{
-  --r:7px;position:relative;background:#fff;
-  padding:0 clamp(22px,2.4vw,32px) calc(clamp(22px,2.4vw,30px) + var(--r));
-  -webkit-mask:
-    radial-gradient(circle var(--r) at 50% 100%,#0000 97%,#000) 50% 100% / calc(var(--r) * 3) calc(var(--r) * 2) repeat-x,
-    linear-gradient(#000 0 0) top / 100% calc(100% - var(--r) * 2 + 1px) no-repeat;
-          mask:
-    radial-gradient(circle var(--r) at 50% 100%,#0000 97%,#000) 50% 100% / calc(var(--r) * 3) calc(var(--r) * 2) repeat-x,
-    linear-gradient(#000 0 0) top / 100% calc(100% - var(--r) * 2 + 1px) no-repeat;
-}
-.tix__top{
-  display:flex;justify-content:space-between;gap:12px;
-  margin-inline:calc(clamp(22px,2.4vw,32px) * -1);padding:14px clamp(22px,2.4vw,32px);
-  background:linear-gradient(180deg,#132035,var(--ink));color:#fff;
-  font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;
-}
-.tix__top span:last-child{color:var(--blue-lt)}
-.tix__who{display:flex;align-items:center;gap:14px;margin-top:22px}
-.tix__who img{width:48px;height:48px;flex:none;object-fit:contain;padding:4px;border:1px solid var(--rule);border-radius:50%}
-.tix__who b{display:block;font-size:1rem;font-weight:600;letter-spacing:-.015em;color:var(--ink);line-height:1.25}
-.tix__who span{display:block;margin-top:3px;font-size:.8rem;color:var(--ink-3)}
-
-.tix__big{margin-top:20px;padding-top:18px;border-top:1px solid var(--rule)}
-.tix__big b{display:block;font-family:var(--mono);font-weight:500;font-size:clamp(2.8rem,2.1rem + 2.2vw,3.9rem);line-height:1;letter-spacing:-.06em;color:var(--ink);font-variant-numeric:tabular-nums}
-.tix__big b small{margin-left:8px;font-size:.3em;letter-spacing:.1em;color:var(--ink-3)}
-.tix__cap{display:block;margin-top:8px;font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-
-/* Dua termin sebagai bilah */
-.tix__split{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:16px}
-.tix__split span{
-  position:relative;padding:9px 11px;background:var(--paper-2);overflow:hidden;
-  font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);
-}
-.tix__split span::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue)}
-
-.tix__rows{margin-top:14px}
-.tix__rows div{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-top:1px solid var(--rule);font-size:.86rem}
-.tix__rows dt{color:var(--ink-3)}
-.tix__rows dd{color:var(--ink);font-weight:500;text-align:right}
-
-/* Garis sobek */
-.tix__docs{position:relative;margin-top:18px;padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}
-.tix__docs::before{content:"";position:absolute;left:0;right:0;top:0;border-top:2px dashed var(--rule-2)}
-.tix__docs li{display:flex;align-items:flex-start;gap:8px;font-size:.8rem;line-height:1.4;color:var(--ink-2)}
-.tix__docs svg{width:13px;height:13px;flex:none;margin-top:2px;color:var(--blue)}
-.tix__docs path{stroke-dasharray:22;stroke-dashoffset:22;transition:stroke-dashoffset .45s var(--ease)}
-.tix-wrap.in .tix__docs path{stroke-dashoffset:0}
-.tix-wrap.in .tix__docs li:nth-child(1) path{transition-delay:.9s}
-.tix-wrap.in .tix__docs li:nth-child(2) path{transition-delay:1s}
-.tix-wrap.in .tix__docs li:nth-child(3) path{transition-delay:1.1s}
-.tix-wrap.in .tix__docs li:nth-child(4) path{transition-delay:1.2s}
-.tix-wrap.in .tix__docs li:nth-child(5) path{transition-delay:1.3s}
-.tix-wrap.in .tix__docs li:nth-child(6) path{transition-delay:1.4s}
-
-.stamp{
-  position:absolute;right:clamp(18px,2vw,28px);top:clamp(128px,10.6vw,142px);
-  padding:8px 14px 7px;border:2px solid currentColor;border-radius:4px;
-  box-shadow:inset 0 0 0 3px #fff,inset 0 0 0 4.5px currentColor;
-  font-family:var(--mono);font-size:.82rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;line-height:1.2;
-  text-align:center;color:var(--blue-deep);filter:url(#ink);
-  opacity:0;transform:rotate(-11deg) scale(1.7);
-  transition:opacity .35s ease .55s,transform .5s cubic-bezier(.25,1.6,.45,1) .55s;
-}
-.stamp small{display:block;font-size:.55rem;letter-spacing:.18em;opacity:.8}
-.tix-wrap.in .stamp{opacity:.9;transform:rotate(-11deg) scale(1)}
-
-@media (max-width:1000px){
-  .deal__head{grid-template-columns:1fr;align-items:start}
-  .deal__grid{grid-template-columns:1fr}
-  .deal__slab{right:-12px}
-  .tix-par{--fan:.6;margin:-70px clamp(12px,4vw,40px) 0;max-width:520px}
-}
-@media (max-width:520px){
-  .tix-par{margin-inline:0;margin-top:-40px}
-  .slip{display:none}
-  .tix__docs{grid-template-columns:1fr}
-}
-
-/* ============================================================
-   9 · LEGAL · meja berkas
-   Empat berkas legal tergeletak di atas map biru, dilihat miring
-   (perspektif isometrik). Kertas memakai warna kertas, butiran
-   halus, dan tipografi serif supaya terbaca sebagai dokumen, bukan
-   kartu antarmuka. Kedalaman:
-   · tiap kertas punya jarak Z sendiri dan bayangan di atas map;
-   · saat seksi masuk layar, tumpukan yang rapat menyebar (.in);
-   · meja berputar pelan mengikuti gulir (--tx/--tz dari JS);
-   · memilih butir garis waktu mengangkat kertas pasangannya (.is-on).
-   Isi kertas adalah ilustrasi, bukan pindaian dokumen asli. NIB
-   sengaja disamarkan dan kode QR hanya pola hias (tidak bisa dipindai).
-   ============================================================ */
-.legal{
-  padding-block:var(--sec);
-  background:radial-gradient(55% 60% at 30% 62%,#E8EFF7 0%,rgba(232,239,247,0) 70%),var(--paper);
-}
-.legal__head{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(20px,3vw,40px)}
-.legal__head .label{margin-bottom:clamp(16px,2vw,22px)}
-.legal__note{max-width:40ch;font-size:.97rem}
-.legal__body{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(20px,3vw,56px);align-items:center}
-
-/* --- Panggung & meja --- */
-.stage3d{position:relative;height:clamp(460px,44vw,620px);perspective:2000px;perspective-origin:50% 35%}
-.desk{
-  --pw:clamp(250px,22.5vw,330px);--tx:48deg;--tz:-26deg;
-  position:absolute;left:50%;top:50%;width:var(--pw);height:calc(var(--pw) * 1.414);
-  transform:translate(-50%,-54%) rotateX(var(--tx)) rotateZ(var(--tz));
-  transform-style:preserve-3d;will-change:transform;
-}
-
-/* Map biru di dasar tumpukan */
-.folder{
-  position:absolute;inset:-9% -14% -7% -14%;transform:translateZ(0);
-  background:linear-gradient(150deg,#1170C4 0%,#0A62AE 55%,#085394 100%);
-  border-radius:3px 6px 6px 6px;
-  box-shadow:0 2px 0 #07477F,0 50px 60px -20px rgba(10,20,36,.45),0 12px 20px -8px rgba(10,20,36,.3);
-}
-.folder::before{
-  content:"";position:absolute;left:6%;top:-7%;width:36%;height:8%;
-  background:linear-gradient(150deg,#1170C4,#0C66B5);border-radius:6px 6px 0 0;
-}
-.folder__tab{
-  position:absolute;left:9%;top:-5.2%;font-family:var(--mono);font-size:calc(var(--pw) / 34);
-  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.85);
-}
-/* Garis lipat map */
-.folder::after{content:"";position:absolute;left:4%;right:4%;bottom:6%;height:1px;background:rgba(255,255,255,.14)}
-
-/* Kertas */
-.paper{
-  --x:0%;--y:0%;--z:2px;--r:0deg;--lift:0px;--rx:0deg;
-  position:absolute;inset:0;overflow:hidden;
-  padding:9% 10% 8%;color:#232A36;text-align:center;
-  font-family:Georgia,'Times New Roman',serif;font-size:calc(var(--pw) / 25);line-height:1.35;
-  background:#FCFBF7 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35  0 0 0 0 .3  0 0 0 0 .2  0 0 0 .09 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
-  box-shadow:0 1px 1px rgba(10,20,36,.16),0 6px 10px -4px rgba(10,20,36,.22),0 18px 26px -12px rgba(10,20,36,.28);
-  transform:translate3d(var(--x),var(--y),calc(var(--z) + var(--lift))) rotateZ(var(--r)) rotateX(var(--rx));
-  transition:transform 1s var(--ease),box-shadow .8s var(--ease);
-}
-.paper:nth-child(2){--x:-34%;--y:-4%;--z:3px;--r:-13deg}
-.paper:nth-child(3){--x:-11%;--y:5%;--z:6px;--r:-4deg}
-.paper:nth-child(4){--x:13%;--y:-5%;--z:9px;--r:5deg}
-.paper:nth-child(5){--x:35%;--y:7%;--z:12px;--r:13deg}
-/* Sebelum masuk layar: rapat di tengah map */
-.is-ready .desk:not(.in) .paper{--x:0%;--y:0%;--r:0deg}
-.desk.in .paper:nth-child(3){transition-delay:.08s}
-.desk.in .paper:nth-child(4){transition-delay:.16s}
-.desk.in .paper:nth-child(5){transition-delay:.24s}
-
-.paper.is-on{
-  --lift:120px;--r:0deg;--rx:-24deg;transition-delay:0s;
-  box-shadow:0 2px 2px rgba(10,20,36,.1),0 40px 50px -18px rgba(10,20,36,.34),0 90px 90px -40px rgba(10,20,36,.3);
-}
-
-/* Isi kertas */
-.paper__kop{font-size:.92em;font-weight:700;letter-spacing:.06em;line-height:1.3;text-transform:uppercase}
-.paper__co{margin-top:.8em;font-size:.82em;font-weight:700;letter-spacing:.04em}
-.paper__no{margin-top:.6em;font-size:.78em}
-.paper__rule{display:block;width:34%;height:1px;margin:.9em auto;background:#232A36;opacity:.5}
-.paper__txt{
-  display:block;height:7.2em;margin-top:.4em;text-align:left;
-  background:repeating-linear-gradient(180deg,rgba(35,42,54,.2) 0 1px,transparent 1px .62em);
-  -webkit-mask:linear-gradient(90deg,#000 0 100%) top/100% 88% no-repeat,linear-gradient(90deg,#000 0 62%,transparent 62%) bottom/100% 12% no-repeat;
-          mask:linear-gradient(90deg,#000 0 100%) top/100% 88% no-repeat,linear-gradient(90deg,#000 0 62%,transparent 62%) bottom/100% 12% no-repeat;
-}
-.paper__kbli{margin-top:.7em;padding:.5em .4em;border:1px solid rgba(35,42,54,.35);font-size:.76em;line-height:1.35}
-.paper__kbli b{display:block;font-size:1.3em;letter-spacing:.04em}
-.paper__mask{margin-top:.5em;font-family:var(--mono);font-size:.72em;letter-spacing:.12em}
-.paper__foot{position:absolute;left:10%;bottom:7%;text-align:left;font-size:.64em;line-height:1.35}
-.paper__sig{display:block;width:5.6em;height:1.8em;margin-bottom:.1em;color:#1C3F8F}
-.paper__qr{position:absolute;right:10%;bottom:7%;width:3.8em;height:3.8em}
-
-/* Cap tinta: tepi kasar dari filter #ink (SVG tersembunyi di markup) */
-.ink{
-  position:absolute;color:#2448A0;opacity:.8;filter:url(#ink);
-  font-family:var(--sans);font-weight:700;text-transform:uppercase;letter-spacing:.14em;
-}
-.ink--copy{right:8%;top:5%;padding:.25em .55em;border:2px solid currentColor;font-size:.62em;transform:rotate(-9deg)}
-.ink--round{right:9%;bottom:6%;width:4.4em;height:4.4em;transform:rotate(-14deg)}
-
-/* --- Garis waktu --- */
-.tl{position:relative;padding-left:30px}
-.tl::before{content:"";position:absolute;left:6px;top:10px;bottom:10px;width:2px;background:var(--rule)}
-.tl li{position:relative;padding:14px 16px 16px;margin-left:-16px;cursor:pointer;transition:background .35s var(--ease)}
-.tl li::before{
-  content:"";position:absolute;left:-18px;top:20px;width:14px;height:14px;border-radius:50%;
-  background:#fff;border:2px solid var(--rule-2);transition:background .35s var(--ease),border-color .35s var(--ease),box-shadow .35s var(--ease);
-}
-.tl li:hover,.tl li:focus-visible,.tl li.is-on{background:#fff;box-shadow:var(--lift-1)}
-.tl li:hover::before,.tl li:focus-visible::before,.tl li.is-on::before{background:var(--blue);border-color:var(--blue);box-shadow:0 0 0 5px rgba(0,128,224,.15)}
-.tl li:focus-visible{outline:none}
-.tl time{font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep)}
-.tl h3{margin-top:4px}
-.tl p{margin-top:4px;font-size:.88rem;line-height:1.55}
-.tl i{font-style:normal;white-space:nowrap}
-
-/* --- Status berjalan --- */
-.status{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.2vw,16px);margin-top:clamp(40px,5vw,72px)}
-.status li{
-  display:flex;gap:14px;align-items:flex-start;padding:20px 22px;background:#fff;border:1px solid var(--rule);
-  box-shadow:var(--lift-1);transition:transform .45s var(--ease),box-shadow .45s var(--ease);
-}
-.status li:hover{transform:translateY(-4px);box-shadow:var(--lift-2)}
-.status svg{flex:none;width:34px;height:34px;padding:8px;background:rgba(0,128,224,.1);color:var(--blue-deep)}
-.status b{display:block;font-size:.98rem;font-weight:600;letter-spacing:-.015em;color:var(--ink)}
-.status span{display:block;margin-top:3px;font-size:.84rem;line-height:1.5}
-
-@media (max-width:1000px){
-  .legal__head,.legal__body{grid-template-columns:1fr;align-items:start}
-  .stage3d{height:clamp(380px,80vw,520px)}
-  .desk{--pw:clamp(210px,44vw,290px)}
-  .status{grid-template-columns:1fr}
-}
-@media (max-width:520px){
-  .stage3d{height:340px}
-  .desk{--pw:196px}
-}
-
-/* ============================================================
-   10 · AJAKAN · blok biru merek, tekstur sulfur duotone
-   Tekstur berupa lapisan terpisah yang bergerak lebih lambat dari
-   halaman (parallax), jadi blok terasa punya kedalaman.
-   ============================================================ */
-.cta{position:relative;isolation:isolate;overflow:hidden;background:var(--blue-deep);color:#fff;padding-block:clamp(72px,8vw,124px)}
-.cta__tex{
-  position:absolute;left:0;right:0;top:-20%;bottom:-20%;z-index:-1;
-  background:url(asset/perdagangan/sulfur-tekstur-biru.jpg) center/cover;opacity:.55;will-change:transform;
-}
-.cta__tex::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,98,174,.92) 0%,rgba(10,98,174,.55) 60%,rgba(10,98,174,.35) 100%)}
-.cta__grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,90px);align-items:end}
-.cta .label{color:rgba(255,255,255,.6);margin-bottom:clamp(16px,2vw,24px)}
-.cta h2{color:#fff;max-width:17ch;font-size:clamp(2rem,1.3rem + 2.9vw,3.7rem)}
-.cta__act{display:flex;flex-wrap:wrap;gap:14px;margin-top:clamp(28px,3.4vw,42px)}
-.cta__card{padding:clamp(20px,2.4vw,30px);background:rgba(8,18,43,.28);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.18);box-shadow:0 30px 60px -30px rgba(3,20,45,.6)}
-.cta__card div{display:grid;grid-template-columns:92px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:.92rem;line-height:1.55}
-.cta__card div:first-child{padding-top:0}
-.cta__card div:last-child{border-bottom:0;padding-bottom:0}
-.cta__card dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);padding-top:.25em}
-.cta__card dd{color:#fff;font-weight:500}
-.cta__card a{border-bottom:1px solid rgba(255,255,255,.4);transition:border-color .25s var(--ease)}
-.cta__card a:hover{border-color:#fff}
-
-@media (max-width:900px){
-  .cta__grid{grid-template-columns:1fr;align-items:start}
-}
-@media (max-width:520px){
-  .cta__card div{grid-template-columns:1fr;gap:3px}
-}
-
-/* ============================================================
-   11 · FOOTER & WHATSAPP · sama dengan index
-   ============================================================ */
-.foot{background:var(--ink);color:rgba(255,255,255,.6);padding-top:clamp(62px,7vw,100px)}
-.foot__grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:clamp(30px,4vw,62px);padding-bottom:clamp(50px,6vw,80px)}
-.foot__logo img{height:25px;width:auto;filter:brightness(0) invert(1);opacity:.94}
-.foot__about{margin-top:22px;font-size:.9rem;max-width:34ch;line-height:1.7}
-.foot h4{font-family:var(--mono);font-size:.67rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:22px}
-.foot__links{display:grid;gap:13px}
-.foot__links a{font-size:.9rem;transition:color .25s var(--ease)}
-.foot__links a:hover{color:#fff}
-.foot address{font-style:normal;font-size:.9rem;line-height:1.7}
-.foot__end{
-  display:flex;flex-wrap:wrap;gap:12px 30px;justify-content:space-between;
-  padding-block:28px;border-top:1px solid rgba(255,255,255,.11);
-  font-family:var(--mono);font-size:.67rem;letter-spacing:.09em;color:rgba(255,255,255,.42);
-}
-/* Kredit foto: tertutup secara bawaan, dibuka lewat <details> */
-.foot__cr{flex-basis:100%}
-.foot__cr summary{display:inline-block;cursor:pointer;list-style:none;border-bottom:1px solid rgba(255,255,255,.25);transition:color .25s var(--ease)}
-.foot__cr summary::-webkit-details-marker{display:none}
-.foot__cr summary:hover{color:#fff}
-.foot__cr p{margin-top:12px;max-width:90ch;line-height:1.9;letter-spacing:.03em;text-transform:none}
-.foot__cr a{border-bottom:1px solid rgba(255,255,255,.25)}
-.foot__cr a:hover{color:#fff}
-.social{display:flex;gap:8px;margin-top:22px}
-.social a{display:grid;place-items:center;width:40px;height:40px;color:rgba(255,255,255,.5);transition:color .25s var(--ease)}
-.social a:hover{color:#fff}
-.social svg{width:18px;height:18px}
-
-.wa{
-  position:fixed;right:0;bottom:36px;z-index:120;display:flex;align-items:center;gap:10px;
-  padding:13px 17px;background:var(--ink);color:#fff;
-  font-family:var(--mono);font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;
-  transform:translateX(calc(100% - 46px));transition:transform .4s var(--ease),background .3s var(--ease);
-}
-.wa:hover{transform:none;background:var(--blue)}
-.wa svg{width:19px;height:19px;flex:none}
-
-@media (max-width:1100px){
-  .foot__grid{grid-template-columns:1fr 1fr;gap:42px}
-}
-
-/* ============================================================
-   PENYESUAIAN LINTAS SEKSI
-   ============================================================ */
-@media (max-width:620px){
-  :root{--nav-h:64px}
-  .hero__act .btn,.cta__act .btn{flex:1 1 auto;justify-content:center;min-width:150px}
-  .foot__grid{grid-template-columns:1fr;gap:38px}
-  .foot__end{flex-direction:column;text-align:center}
-  .wa{transform:none;bottom:0;padding:11px 14px}
-  .label,.foot__end{font-size:.68rem;letter-spacing:.1em}
-  .nav__logo{display:flex;align-items:center;min-height:44px}
-  .foot__links a{display:inline-block;padding-block:4px}
-}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{transition-duration:.01ms !important;animation:none !important;scroll-behavior:auto !important}
-  .up,.hero .fade{opacity:1;transform:none}
-  .ln > *{transform:none}
-  .stamp{opacity:.9;transform:rotate(-11deg)}
-  .tix__docs path{stroke-dashoffset:0}
-}
-</style>
-</head>
-<body>
-
-<div class="prog"><div class="prog__f" id="prog"></div></div>
-
-<!-- ===================== NAVIGASI ===================== -->
-<header class="nav dark" id="nav">
-  <div class="wrap nav__in">
-    <a href="index.html" class="nav__logo" aria-label="JKreasi, ke beranda">
-      <img src="asset/Logo-01.png" alt="JKreasi" width="1180" height="267">
-    </a>
-    <nav class="nav__menu" aria-label="Navigasi utama">
-      <a href="index.html#portofolio">Studi Kasus</a>
-      <a href="index.html#layanan">Layanan</a>
-      <a href="perdagangan.html" class="on" aria-current="page">Perdagangan</a>
-      <a href="index.html#kontak">Kontak</a>
-    </nav>
-    <a href="#hubungi" class="btn btn--blue nav__cta">Minta Penawaran</a>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="sheet" aria-label="Buka menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<div class="sheet" id="sheet">
-  <a href="index.html"><i>00</i>Beranda</a>
-  <a href="index.html#portofolio"><i>01</i>Studi Kasus</a>
-  <a href="index.html#layanan"><i>03</i>Layanan</a>
-  <a href="perdagangan.html"><i>04</i>Perdagangan</a>
-  <a href="index.html#kontak"><i>07</i>Kontak</a>
-  <a href="#hubungi" class="btn btn--blue btn--block">Minta Penawaran</a>
-</div>
-
-<main>
-
-<!-- ===================== HERO ===================== -->
-<section class="hero">
-  <img class="hero__img" src="asset/perdagangan/sulfur-tongkang.jpg" alt="" width="1280" height="720">
-  <span class="hero__veil" aria-hidden="true"></span>
-
-  <div class="wrap hero__in">
-    <p class="crumb fade"><a href="index.html">JKreasi</a><span>/</span><b>Perdagangan Komoditas</b></p>
-    <h1>
-      <span class="ln"><span>Pemasok <em>sulfur</em></span></span>
-      <span class="ln"><span>untuk industri di Indonesia.</span></span>
-    </h1>
-    <p class="hero__lead fade fade--1">
-      Kami memasok sulfur untuk pabrik pupuk, asam, dan industri kimia di Indonesia.
-      Setiap pengiriman disertai kontrak, COA, surat jalan, BAST, dan faktur pajak.
-    </p>
-    <div class="hero__act fade fade--2">
-      <a href="#hubungi" class="btn btn--wht">
-        Minta Penawaran
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-      </a>
-      <a href="#transaksi" class="btn btn--wht-line">Lihat Rekam Transaksi</a>
-    </div>
-  </div>
-
-  <div class="manifest fade fade--3">
-    <div class="wrap">
-      <dl>
-        <div><dt>Komoditas</dt><dd>Sulfur (S)</dd></div>
-        <div><dt>Bentuk</dt><dd>Curah &amp; kemasan</dd></div>
-        <div><dt>Tersalurkan</dt><dd><b data-count="2600" data-suffix="+">2.600+</b> MT</dd></div>
-        <div><dt>Bidang usaha</dt><dd>KBLI 46651</dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 01 · KOMODITAS =====================
-     Foto besar: dokumentasi lapangan sendiri (Kuala Langsa, Mei 2026),
-     dipotong tanpa cap geotag. Foto kecil: Wikimedia Commons, kredit
-     tercantum di keterangannya (wajib, CC BY-SA 4.0).
-     ========================================================== -->
-<section class="prod" id="produk">
-  <div class="wrap">
-    <div class="prod__grid">
-      <div class="pm up" id="pm">
-        <figure class="pm__main">
-          <img src="asset/perdagangan/sulfur-lapangan.jpg" alt="Tumpukan sulfur curah di area pelabuhan Kuala Langsa, Aceh" loading="lazy" width="880" height="900">
-          <figcaption>Kuala Langsa, Aceh &middot; Mei 2026</figcaption>
-        </figure>
-        <figure class="pm__print">
-          <img src="asset/perdagangan/sulfur-butiran.jpg" alt="Butiran sulfur padat berwarna kuning" loading="lazy" width="961" height="721">
-          <figcaption>Butiran sulfur &middot; foto <a href="https://commons.wikimedia.org/wiki/File:Solid_Sulfur_Granules.jpg" target="_blank" rel="noopener">TimBomBom1</a>, CC BY-SA 4.0</figcaption>
-        </figure>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Perdagangan Sulfur Industri · JKreasi</title>
+    <meta
+      name="description"
+      content="PT Jaya Kreasi Teknologi (KBLI 46651) memasok sulfur untuk pabrik pupuk, asam, dan industri kimia di Indonesia. Setiap pengiriman disertai kontrak, COA, surat jalan, BAST, dan faktur pajak."
+    />
+    <meta
+      name="keywords"
+      content="supplier sulfur industri Indonesia, jual belerang curah, perdagangan bahan kimia KBLI 46651, sulfur asam sulfat pupuk, pemasok sulfur pabrik"
+    />
+    <meta name="author" content="PT Jaya Kreasi Teknologi" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#08122B" />
+    <link rel="canonical" href="https://jkreasi.co.id/perdagangan.html" />
+    <link rel="icon" href="asset/Logo-01.png" />
+    <link rel="apple-touch-icon" href="asset/Logo-01.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="JKreasi" />
+    <meta property="og:url" content="https://jkreasi.co.id/perdagangan.html" />
+    <meta
+      property="og:title"
+      content="Pemasok sulfur untuk industri di Indonesia · JKreasi"
+    />
+    <meta
+      property="og:description"
+      content="Pasokan sulfur untuk pabrik pupuk, asam, dan industri kimia, dengan kontrak, COA, surat jalan, BAST, dan faktur pajak di setiap pengiriman."
+    />
+    <meta
+      property="og:image"
+      content="https://jkreasi.co.id/asset/perdagangan/sulfur-tongkang.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Pemasok sulfur untuk industri di Indonesia · JKreasi"
+    />
+    <meta
+      name="twitter:description"
+      content="Pasokan sulfur untuk industri, dengan dokumen lengkap di setiap pengiriman."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jkreasi.co.id/asset/perdagangan/sulfur-tongkang.jpg"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Sulfur Industri (Belerang)",
+        "description": "Sulfur industri untuk asam sulfat, asam fosfat, pupuk, petrokimia, karet, gula, pestisida, serta smelter dan metalurgi. Pasokan domestik terverifikasi, curah maupun kemasan, disertai sertifikat analisis (COA).",
+        "image": "https://jkreasi.co.id/asset/perdagangan/sulfur-tekstur.jpg",
+        "category": "Bahan Kimia Industri",
+        "brand": { "@type": "Organization", "name": "JKreasi" },
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "priceCurrency": "IDR",
+          "url": "https://jkreasi.co.id/perdagangan.html",
+          "seller": {
+            "@type": "Organization",
+            "name": "PT Jaya Kreasi Teknologi",
+            "alternateName": "JKreasi",
+            "url": "https://jkreasi.co.id/",
+            "logo": "https://jkreasi.co.id/asset/Logo-01.png",
+            "email": "info@jkreasi.co.id",
+            "telephone": "+62-21-5290-5299",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "ESTUBIZI Business Center, Gedung Setiabudi 2, Lantai 2 Suite 207 B-C, Jl. H.R. Rasuna Said Kav. 62",
+              "addressLocality": "Jakarta Selatan",
+              "addressRegion": "DKI Jakarta",
+              "postalCode": "12920",
+              "addressCountry": "ID"
+            }
+          }
+        }
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="asset/css/perdagangan.css" />
+  </head>
+  <body>
+    <div class="prog"><div class="prog__f" id="prog"></div></div>
+
+    <header class="nav dark" id="nav">
+      <div class="wrap nav__in">
+        <a href="index.html" class="nav__logo" aria-label="JKreasi, ke beranda">
+          <img
+            src="asset/Logo-01.png"
+            alt="JKreasi"
+            width="1180"
+            height="267"
+          />
+        </a>
+        <nav class="nav__menu" aria-label="Navigasi utama">
+          <a href="index.html#portofolio">Studi Kasus</a>
+          <a href="index.html#layanan">Layanan</a>
+          <a href="perdagangan.html" class="on" aria-current="page"
+            >Perdagangan</a
+          >
+          <a href="index.html#kontak">Kontak</a>
+        </nav>
+        <a href="#hubungi" class="btn btn--blue nav__cta">Minta Penawaran</a>
+        <button
+          class="burger"
+          id="burger"
+          aria-expanded="false"
+          aria-controls="sheet"
+          aria-label="Buka menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
       </div>
+    </header>
 
-      <div class="prod__body">
-        <p class="label up">01 / Komoditas</p>
-        <h2 class="up">Sulfur dari produsen dalam negeri.</h2>
-        <p class="prod__lead up" data-d="1">
-          Kami mengambil sulfur dari produsen domestik yang sudah kami cek, termasuk mitra BUMD.
-          Setiap pengiriman disertai sertifikat analisis (COA) dari sumbernya.
-        </p>
-        <dl class="spec up" data-d="2">
-          <div><dt>Bentuk</dt><dd>Curah maupun kemasan</dd></div>
-          <div><dt>Volume</dt><dd>Ratusan sampai ribuan metrik ton</dd></div>
-          <div><dt>Mutu</dt><dd>COA dari sumber pasokan</dd></div>
-          <div><dt>Asal</dt><dd>Produsen domestik, termasuk mitra BUMD</dd></div>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 02 · PEMAKAIAN =====================
-     Delapan pemakaian industri. Tiap kotak bisa diklik; rincian yang
-     tampil di dialog diambil dari <div class="tile__more"> di dalamnya.
-     Foto: Wikimedia Commons, atribusinya di footer ("Kredit foto").
-     Ganti foto: taruh berkas baru di asset/perdagangan/pakai/ dengan
-     nama yang sama, lalu perbarui baris kredit.
-     ========================================================== -->
-<section class="uses" id="pemakaian">
-  <div class="wrap">
-    <div class="uses__head">
-      <div>
-        <p class="label up">02 / Dipakai Untuk</p>
-        <h2 class="up">Setelah sampai di pabrik, sulfur jadi apa?</h2>
-      </div>
-      <p class="uses__lead up" data-d="1">
-        Sebagian besar diolah dulu menjadi asam sulfat, baru masuk ke proses lain.
-        Berikut delapan pemakaian yang paling umum.
-      </p>
+    <div class="sheet" id="sheet">
+      <a href="index.html"><i>00</i>Beranda</a>
+      <a href="index.html#portofolio"><i>01</i>Studi Kasus</a>
+      <a href="index.html#layanan"><i>03</i>Layanan</a>
+      <a href="perdagangan.html"><i>04</i>Perdagangan</a>
+      <a href="index.html#kontak"><i>07</i>Kontak</a>
+      <a href="#hubungi" class="btn btn--blue btn--block">Minta Penawaran</a>
     </div>
 
-    <ul class="bento">
-      <li class="tile tile--hub up">
-        <img src="asset/perdagangan/pakai/asam-sulfat.jpg" alt="Pabrik kimia dengan menara proses yang menyala di malam hari" loading="lazy">
-        <button class="tile__hit" type="button" aria-label="Lihat detail Asam sulfat" aria-haspopup="dialog"></button>
-        <span class="tile__fold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        <div class="tile__in">
-          <span class="tile__n">01</span>
-          <span class="tile__tag">Pemakaian terbesar</span>
-          <h3>Asam sulfat</h3>
-          <p>Sebagian besar sulfur industri dipakai untuk membuat asam sulfat. Banyak pemakaian lain di daftar ini berawal dari sini.</p>
-          <span class="tile__more-link" aria-hidden="true">Lihat detail</span>
-        </div>
-        <div class="tile__more" hidden data-role="Bahan baku utama">
-          <p>Sebagian besar sulfur industri dipakai untuk membuat asam sulfat. Sulfur dibakar menjadi gas, dioksidasi dengan katalis, lalu diserap menjadi asam.</p>
-          <ul><li>Asam sulfat teknis</li><li>Oleum</li><li>Bahan baku pupuk dan kimia</li></ul>
-        </div>
-      </li>
-      <li class="tile up" data-d="1">
-        <img src="asset/perdagangan/pakai/asam-fosfat.jpg" alt="Tambang batuan fosfat terbuka" loading="lazy">
-        <button class="tile__hit" type="button" aria-label="Lihat detail Asam fosfat" aria-haspopup="dialog"></button>
-        <span class="tile__fold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        <div class="tile__in">
-          <span class="tile__n">02</span>
-          <h3>Asam fosfat</h3>
-          <p>Batuan fosfat dilarutkan dengan asam sulfat. Pembeli pertama kami bergerak di sini.</p>
-          <span class="tile__more-link" aria-hidden="true">Lihat detail</span>
-        </div>
-        <div class="tile__more" hidden data-role="Diolah dulu menjadi asam sulfat">
-          <p>Batuan fosfat dilarutkan dengan asam sulfat untuk mendapatkan asam fosfat, bahan dasar pupuk fosfat. Pembeli pertama kami, PT Petro Jordan Abadi di Gresik, bergerak di bidang ini.</p>
-          <ul><li>Asam fosfat</li><li>Pupuk fosfat</li><li>Bahan pakan ternak</li></ul>
-        </div>
-      </li>
-      <li class="tile tile--zoom up" data-d="2">
-        <img src="asset/perdagangan/pakai/pupuk.jpg" alt="Butiran pupuk fosfat" loading="lazy">
-        <button class="tile__hit" type="button" aria-label="Lihat detail Pupuk SP-36 dan ZA" aria-haspopup="dialog"></button>
-        <span class="tile__fold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        <div class="tile__in">
-          <span class="tile__n">03</span>
-          <h3>Pupuk SP-36 &amp; ZA</h3>
-          <p>Bahan untuk pupuk ZA (amonium sulfat) dan pupuk fosfat SP-36.</p>
-          <span class="tile__more-link" aria-hidden="true">Lihat detail</span>
-        </div>
-        <div class="tile__more" hidden data-role="Lewat asam sulfat">
-          <p>ZA atau amonium sulfat dibuat dari amonia dan asam sulfat, sehingga tanaman mendapat nitrogen sekaligus sulfur. SP-36 dibuat dari batuan fosfat yang diasamkan.</p>
-          <ul><li>Pupuk ZA</li><li>Pupuk SP-36</li><li>Pupuk majemuk</li></ul>
-        </div>
-      </li>
-      <li class="tile tile--wide up" data-d="1">
-        <img src="asset/perdagangan/pakai/petrokimia.jpg" alt="Kompleks kilang minyak di tepi teluk" loading="lazy">
-        <button class="tile__hit" type="button" aria-label="Lihat detail Petrokimia" aria-haspopup="dialog"></button>
-        <span class="tile__fold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        <div class="tile__in">
-          <span class="tile__n">04</span>
-          <h3>Petrokimia</h3>
-          <p>Bahan aktif deterjen dan katalis di kilang minyak.</p>
-          <span class="tile__more-link" aria-hidden="true">Lihat detail</span>
-        </div>
-        <div class="tile__more" hidden data-role="Bahan reaksi dan katalis">
-          <p>Turunan sulfur dipakai untuk membuat bahan aktif deterjen, sementara asam sulfat menjadi katalis di unit alkilasi kilang minyak.</p>
-          <ul><li>Bahan aktif deterjen</li><li>Komponen bensin</li><li>Bahan kimia antara</li></ul>
-        </div>
-      </li>
-      <li class="tile up">
-        <img src="asset/perdagangan/pakai/karet.jpg" alt="Tumpukan ban mobil baru" loading="lazy">
-        <button class="tile__hit" type="button" aria-label="Lihat detail Vulkanisasi karet" aria-haspopup="dialog"></button>
-        <span class="tile__fold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        <div class="tile__in">
-          <span class="tile__n">05</span>
-          <h3>Vulkanisasi karet</h3>
-          <p>Sulfur mengikat rantai karet agar elastis dan tahan panas, misalnya untuk ban.</p>
-          <span class="tile__more-link" aria-hidden="true">Lihat detail</span>
-        </div>
-        <div class="tile__more" hidden data-role="Dipakai langsung">
-          <p>Karet mentah dipanaskan bersama sulfur supaya rantai polimernya saling mengikat. Hasilnya karet yang elastis, kuat, dan tahan panas.</p>
-          <ul><li>Ban kendaraan</li><li>Sabuk dan selang</li><li>Barang karet teknik</li></ul>
-        </div>
-      </li>
-      <li class="tile up" data-d="1">
-        <img src="asset/perdagangan/pakai/gula.jpg" alt="Ladang tebu dengan pabrik gula di kejauhan" loading="lazy">
-        <button class="tile__hit" type="button" aria-label="Lihat detail Pemurnian gula" aria-haspopup="dialog"></button>
-        <span class="tile__fold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        <div class="tile__in">
-          <span class="tile__n">06</span>
-          <h3>Pemurnian gula</h3>
-          <p>Dibakar menjadi gas untuk menjernihkan nira tebu sebelum dikristalkan.</p>
-          <span class="tile__more-link" aria-hidden="true">Lihat detail</span>
-        </div>
-        <div class="tile__more" hidden data-role="Dibakar menjadi gas">
-          <p>Banyak pabrik gula tebu membakar sulfur menjadi gas, lalu mengalirkannya ke nira untuk menjernihkan dan memucatkannya sebelum dikristalkan. Prosesnya disebut sulfitasi.</p>
-          <ul><li>Gula kristal putih</li><li>Nira yang lebih jernih</li><li>Warna gula lebih terang</li></ul>
-        </div>
-      </li>
-      <li class="tile up" data-d="2">
-        <img src="asset/perdagangan/pakai/pestisida.jpg" alt="Traktor penyemprot di ladang pertanian" loading="lazy">
-        <button class="tile__hit" type="button" aria-label="Lihat detail Pestisida dan fungisida" aria-haspopup="dialog"></button>
-        <span class="tile__fold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        <div class="tile__in">
-          <span class="tile__n">07</span>
-          <h3>Pestisida &amp; fungisida</h3>
-          <p>Sulfur dipakai langsung sebagai fungisida, misalnya untuk penyakit embun tepung.</p>
-          <span class="tile__more-link" aria-hidden="true">Lihat detail</span>
-        </div>
-        <div class="tile__more" hidden data-role="Dipakai langsung">
-          <p>Sulfur halus termasuk fungisida tertua yang masih dipakai sampai sekarang, terutama untuk penyakit embun tepung pada tanaman buah dan sayur.</p>
-          <ul><li>Fungisida serbuk</li><li>Suspensi semprot</li><li>Bahan formulasi pestisida</li></ul>
-        </div>
-      </li>
-      <li class="tile up" data-d="3">
-        <img src="asset/perdagangan/pakai/smelter.jpg" alt="Logam cair dituang di pengecoran" loading="lazy">
-        <button class="tile__hit" type="button" aria-label="Lihat detail Smelter dan metalurgi" aria-haspopup="dialog"></button>
-        <span class="tile__fold" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
-        <div class="tile__in">
-          <span class="tile__n">08</span>
-          <h3>Smelter &amp; metalurgi</h3>
-          <p>Asam sulfat melarutkan nikel dan kobalt dari bijih laterit.</p>
-          <span class="tile__more-link" aria-hidden="true">Lihat detail</span>
-        </div>
-        <div class="tile__more" hidden data-role="Lewat asam sulfat">
-          <p>Smelter nikel HPAL memakai asam sulfat dalam jumlah besar untuk melarutkan nikel dan kobalt dari bijih laterit. Sebagian smelter membuat asam sulfatnya sendiri dari sulfur.</p>
-          <ul><li>Nikel dan kobalt</li><li>Bahan baku baterai</li><li>Logam olahan lain</li></ul>
-        </div>
-      </li>
-    </ul>
+    <main>
+      <section class="hero">
+        <img
+          class="hero__img"
+          src="asset/perdagangan/sulfur-tongkang.jpg"
+          alt=""
+          width="1280"
+          height="720"
+        />
+        <span class="hero__veil" aria-hidden="true"></span>
 
-  </div>
-
-  <dialog class="dlg" id="useDlg" aria-labelledby="dlgTitle">
-    <div class="dlg__in">
-      <div class="dlg__media">
-        <img class="dlg__photo" id="dlgImg" src="" alt="">
-        <span class="dlg__no" id="dlgNo">01<small>/ 08</small></span>
-        <div class="dlg__thumbs" id="dlgThumbs"></div>
-      </div>
-      <div class="dlg__body">
-        <div class="dlg__top">
-          <p class="label">Pemakaian sulfur</p>
-          <button class="dlg__x" type="button" id="dlgX" aria-label="Tutup detail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
-        </div>
-        <div id="dlgSwap">
-          <h3 id="dlgTitle"></h3>
-          <p class="dlg__lead" id="dlgLead"></p>
-        </div>
-        <dl class="dlg__facts" id="dlgFacts">
-          <div><dt>Peran sulfur</dt><dd id="dlgRole"></dd></div>
-          <div><dt>Hasil akhir</dt><dd><ul id="dlgList"></ul></dd></div>
-        </dl>
-        <div class="dlg__foot">
-          <a class="btn btn--blue" id="dlgWa" href="https://wa.me/628111033334" target="_blank" rel="noopener">Tanya pasokan</a>
-          <a class="dlg__quote" id="dlgQuote" href="#hubungi">Minta penawaran</a>
-          <div class="dlg__nav">
-            <button type="button" id="dlgPrev" aria-label="Pemakaian sebelumnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></button>
-            <button type="button" id="dlgNext" aria-label="Pemakaian berikutnya"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="wrap hero__in">
+          <p class="crumb fade">
+            <a href="index.html">JKreasi</a><span>/</span
+            ><b>Perdagangan Komoditas</b>
+          </p>
+          <h1>
+            <span class="ln"
+              ><span>Pemasok <em>sulfur</em></span></span
+            >
+            <span class="ln"><span>untuk industri di Indonesia.</span></span>
+          </h1>
+          <p class="hero__lead fade fade--1">
+            Kami memasok sulfur untuk pabrik pupuk, asam, dan industri kimia di
+            Indonesia. Setiap pengiriman disertai kontrak, COA, surat jalan,
+            BAST, dan faktur pajak.
+          </p>
+          <div class="hero__act fade fade--2">
+            <a href="#hubungi" class="btn btn--wht">
+              Minta Penawaran
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </a>
+            <a href="#transaksi" class="btn btn--wht-line"
+              >Lihat Rekam Transaksi</a
+            >
           </div>
         </div>
-      </div>
-    </div>
-  </dialog>
-</section>
 
-<!-- ===================== 03 · ALUR TRANSAKSI ===================== -->
-<section class="trail" id="alur">
-  <div class="wrap">
-    <div class="trail__head">
-      <div>
-        <p class="label up">03 / Alur Transaksi</p>
-        <h2 class="up">Enam tahap. Tiap tahap ada dokumennya.</h2>
-      </div>
-      <p class="up" data-d="1">Kami bekerja back-to-back: pembelian ke produsen dilakukan setelah pesanan pembeli dikonfirmasi, jadi tidak ada stok yang menggantung.</p>
-    </div>
-
-    <div class="trackbox" id="trackbox">
-      <ol class="track">
-        <li class="step">
-          <span class="step__dot" aria-hidden="true"></span>
-          <span class="step__n">01</span>
-          <h3>Permintaan</h3>
-          <p>Volume, spesifikasi, dan jadwal yang dibutuhkan pembeli.</p>
-          <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>Spesifikasi</span>
-        </li>
-        <li class="step">
-          <span class="step__dot" aria-hidden="true"></span>
-          <span class="step__n">02</span>
-          <h3>Kontrak</h3>
-          <p>Harga, termin, dan syarat serah terima disepakati.</p>
-          <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>Kontrak / PO</span>
-        </li>
-        <li class="step">
-          <span class="step__dot" aria-hidden="true"></span>
-          <span class="step__n">03</span>
-          <h3>Pasokan &amp; QC</h3>
-          <p>Barang dari produsen domestik, dicek lewat sertifikat analisis.</p>
-          <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>COA</span>
-        </li>
-        <li class="step">
-          <span class="step__dot" aria-hidden="true"></span>
-          <span class="step__n">04</span>
-          <h3>Pengiriman</h3>
-          <p>Pemuatan dan pengangkutan sampai ke lokasi pembeli.</p>
-          <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>Surat Jalan</span>
-        </li>
-        <li class="step">
-          <span class="step__dot" aria-hidden="true"></span>
-          <span class="step__n">05</span>
-          <h3>Penagihan</h3>
-          <p>Invoice per termin dan Faktur Pajak elektronik, supaya PPN Masukan bisa dikreditkan.</p>
-          <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>Invoice &middot; e-Faktur</span>
-        </li>
-        <li class="step">
-          <span class="step__dot" aria-hidden="true"></span>
-          <span class="step__n">06</span>
-          <h3>Serah Terima</h3>
-          <p>Berita acara serah terima ditandatangani, lalu pelunasan.</p>
-          <span class="doc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4"/></svg>BAST</span>
-        </li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 04 · REKAM TRANSAKSI ===================== -->
-<section class="deal" id="transaksi">
-  <div class="wrap">
-    <div class="deal__head">
-      <div>
-        <p class="label up">04 / Rekam Transaksi</p>
-        <h2 class="up">Transaksi pertama: 2.652 ton, dua kali kirim, selesai.</h2>
-      </div>
-      <p class="up" data-d="1">
-        Pembelinya PT Petro Jordan Abadi, produsen asam fosfat di Gresik yang berafiliasi dengan
-        grup pupuk BUMN. Dokumen transaksinya bisa kami tunjukkan untuk keperluan due diligence.
-      </p>
-    </div>
-
-    <div class="deal__grid">
-      <div class="deal__media up">
-        <span class="deal__slab" aria-hidden="true"></span>
-        <figure class="deal__photo">
-          <img src="asset/perdagangan/sulfur-muatan.jpg" alt="Tongkang bermuatan sulfur tertutup terpal, bersandar di dermaga dengan kapal tunda" loading="lazy" width="1280" height="720">
-          <figcaption>Muatan sulfur di tongkang &middot; 2026</figcaption>
-        </figure>
-      </div>
-
-      <div class="tix-par" id="tixPar">
-        <div class="slip slip--1" aria-hidden="true">
-          <p class="slip__h"><b>Surat Jalan</b><span>Termin 1</span></p>
-          <span class="slip__lines"></span>
-          <span class="slip__stamp">Diterima</span>
-        </div>
-        <div class="slip slip--2" aria-hidden="true">
-          <p class="slip__h"><b>Surat Jalan</b><span>Termin 2</span></p>
-          <span class="slip__lines"></span>
-          <span class="slip__stamp">Diterima</span>
-        </div>
-        <div class="tix-wrap up" data-d="1">
-          <article class="tix" aria-label="Ringkasan transaksi PT Petro Jordan Abadi">
-            <header class="tix__top"><span>Rekam Transaksi</span><span>2026</span></header>
-
-            <div class="tix__who">
-              <img src="asset/perdagangan/logo-pja.png" alt="" width="220" height="220" loading="lazy">
+        <div class="manifest fade fade--3">
+          <div class="wrap">
+            <dl>
               <div>
-                <b>PT Petro Jordan Abadi</b>
-                <span>Produsen asam fosfat &middot; Gresik, Jawa Timur</span>
+                <dt>Komoditas</dt>
+                <dd>Sulfur (S)</dd>
+              </div>
+              <div>
+                <dt>Bentuk</dt>
+                <dd>Curah &amp; kemasan</dd>
+              </div>
+              <div>
+                <dt>Tersalurkan</dt>
+                <dd><b data-count="2600" data-suffix="+">2.600+</b> MT</dd>
+              </div>
+              <div>
+                <dt>Bidang usaha</dt>
+                <dd>KBLI 46651</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bagian produk komoditas -->
+      <section class="prod" id="produk">
+        <div class="wrap">
+          <div class="prod__grid">
+            <div class="pm up" id="pm">
+              <figure class="pm__main">
+                <img
+                  src="asset/perdagangan/sulfur-lapangan.jpg"
+                  alt="Tumpukan sulfur curah di area pelabuhan Kuala Langsa, Aceh"
+                  loading="lazy"
+                  width="880"
+                  height="900"
+                />
+                <figcaption>Kuala Langsa, Aceh &middot; Mei 2026</figcaption>
+              </figure>
+              <figure class="pm__print">
+                <img
+                  src="asset/perdagangan/sulfur-butiran.jpg"
+                  alt="Butiran sulfur padat berwarna kuning"
+                  loading="lazy"
+                  width="961"
+                  height="721"
+                />
+                <figcaption>
+                  Butiran sulfur &middot; foto
+                  <a
+                    href="https://commons.wikimedia.org/wiki/File:Solid_Sulfur_Granules.jpg"
+                    target="_blank"
+                    rel="noopener"
+                    >TimBomBom1</a
+                  >, CC BY-SA 4.0
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="prod__body">
+              <p class="label up">01 / Komoditas</p>
+              <h2 class="up">Sulfur dari produsen dalam negeri.</h2>
+              <p class="prod__lead up" data-d="1">
+                Kami mengambil sulfur dari produsen domestik yang sudah kami
+                cek, termasuk mitra BUMD. Setiap pengiriman disertai sertifikat
+                analisis (COA) dari sumbernya.
+              </p>
+              <dl class="spec up" data-d="2">
+                <div>
+                  <dt>Bentuk</dt>
+                  <dd>Curah maupun kemasan</dd>
+                </div>
+                <div>
+                  <dt>Volume</dt>
+                  <dd>Ratusan sampai ribuan metrik ton</dd>
+                </div>
+                <div>
+                  <dt>Mutu</dt>
+                  <dd>COA dari sumber pasokan</dd>
+                </div>
+                <div>
+                  <dt>Asal</dt>
+                  <dd>Produsen domestik, termasuk mitra BUMD</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bagian pemakaian sulfur -->
+      <section class="uses" id="pemakaian">
+        <div class="wrap">
+          <div class="uses__head">
+            <div>
+              <p class="label up">02 / Dipakai Untuk</p>
+              <h2 class="up">Setelah sampai di pabrik, sulfur jadi apa?</h2>
+            </div>
+            <p class="uses__lead up" data-d="1">
+              Sebagian besar diolah dulu menjadi asam sulfat, baru masuk ke
+              proses lain. Berikut delapan pemakaian yang paling umum.
+            </p>
+          </div>
+
+          <ul class="bento">
+            <li class="tile tile--hub up">
+              <img
+                src="asset/perdagangan/pakai/asam-sulfat.jpg"
+                alt="Pabrik kimia dengan menara proses yang menyala di malam hari"
+                loading="lazy"
+              />
+              <button
+                class="tile__hit"
+                type="button"
+                aria-label="Lihat detail Asam sulfat"
+                aria-haspopup="dialog"
+              ></button>
+              <span class="tile__fold" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+              <div class="tile__in">
+                <span class="tile__n">01</span>
+                <span class="tile__tag">Pemakaian terbesar</span>
+                <h3>Asam sulfat</h3>
+                <p>
+                  Sebagian besar sulfur industri dipakai untuk membuat asam
+                  sulfat. Banyak pemakaian lain di daftar ini berawal dari sini.
+                </p>
+                <span class="tile__more-link" aria-hidden="true"
+                  >Lihat detail</span
+                >
+              </div>
+              <div class="tile__more" hidden data-role="Bahan baku utama">
+                <p>
+                  Sebagian besar sulfur industri dipakai untuk membuat asam
+                  sulfat. Sulfur dibakar menjadi gas, dioksidasi dengan katalis,
+                  lalu diserap menjadi asam.
+                </p>
+                <ul>
+                  <li>Asam sulfat teknis</li>
+                  <li>Oleum</li>
+                  <li>Bahan baku pupuk dan kimia</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tile up" data-d="1">
+              <img
+                src="asset/perdagangan/pakai/asam-fosfat.jpg"
+                alt="Tambang batuan fosfat terbuka"
+                loading="lazy"
+              />
+              <button
+                class="tile__hit"
+                type="button"
+                aria-label="Lihat detail Asam fosfat"
+                aria-haspopup="dialog"
+              ></button>
+              <span class="tile__fold" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+              <div class="tile__in">
+                <span class="tile__n">02</span>
+                <h3>Asam fosfat</h3>
+                <p>
+                  Batuan fosfat dilarutkan dengan asam sulfat. Pembeli pertama
+                  kami bergerak di sini.
+                </p>
+                <span class="tile__more-link" aria-hidden="true"
+                  >Lihat detail</span
+                >
+              </div>
+              <div
+                class="tile__more"
+                hidden
+                data-role="Diolah dulu menjadi asam sulfat"
+              >
+                <p>
+                  Batuan fosfat dilarutkan dengan asam sulfat untuk mendapatkan
+                  asam fosfat, bahan dasar pupuk fosfat. Pembeli pertama kami,
+                  PT Petro Jordan Abadi di Gresik, bergerak di bidang ini.
+                </p>
+                <ul>
+                  <li>Asam fosfat</li>
+                  <li>Pupuk fosfat</li>
+                  <li>Bahan pakan ternak</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tile tile--zoom up" data-d="2">
+              <img
+                src="asset/perdagangan/pakai/pupuk.jpg"
+                alt="Butiran pupuk fosfat"
+                loading="lazy"
+              />
+              <button
+                class="tile__hit"
+                type="button"
+                aria-label="Lihat detail Pupuk SP-36 dan ZA"
+                aria-haspopup="dialog"
+              ></button>
+              <span class="tile__fold" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+              <div class="tile__in">
+                <span class="tile__n">03</span>
+                <h3>Pupuk SP-36 &amp; ZA</h3>
+                <p>
+                  Bahan untuk pupuk ZA (amonium sulfat) dan pupuk fosfat SP-36.
+                </p>
+                <span class="tile__more-link" aria-hidden="true"
+                  >Lihat detail</span
+                >
+              </div>
+              <div class="tile__more" hidden data-role="Lewat asam sulfat">
+                <p>
+                  ZA atau amonium sulfat dibuat dari amonia dan asam sulfat,
+                  sehingga tanaman mendapat nitrogen sekaligus sulfur. SP-36
+                  dibuat dari batuan fosfat yang diasamkan.
+                </p>
+                <ul>
+                  <li>Pupuk ZA</li>
+                  <li>Pupuk SP-36</li>
+                  <li>Pupuk majemuk</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tile tile--wide up" data-d="1">
+              <img
+                src="asset/perdagangan/pakai/petrokimia.jpg"
+                alt="Kompleks kilang minyak di tepi teluk"
+                loading="lazy"
+              />
+              <button
+                class="tile__hit"
+                type="button"
+                aria-label="Lihat detail Petrokimia"
+                aria-haspopup="dialog"
+              ></button>
+              <span class="tile__fold" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+              <div class="tile__in">
+                <span class="tile__n">04</span>
+                <h3>Petrokimia</h3>
+                <p>Bahan aktif deterjen dan katalis di kilang minyak.</p>
+                <span class="tile__more-link" aria-hidden="true"
+                  >Lihat detail</span
+                >
+              </div>
+              <div
+                class="tile__more"
+                hidden
+                data-role="Bahan reaksi dan katalis"
+              >
+                <p>
+                  Turunan sulfur dipakai untuk membuat bahan aktif deterjen,
+                  sementara asam sulfat menjadi katalis di unit alkilasi kilang
+                  minyak.
+                </p>
+                <ul>
+                  <li>Bahan aktif deterjen</li>
+                  <li>Komponen bensin</li>
+                  <li>Bahan kimia antara</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tile up">
+              <img
+                src="asset/perdagangan/pakai/karet.jpg"
+                alt="Tumpukan ban mobil baru"
+                loading="lazy"
+              />
+              <button
+                class="tile__hit"
+                type="button"
+                aria-label="Lihat detail Vulkanisasi karet"
+                aria-haspopup="dialog"
+              ></button>
+              <span class="tile__fold" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+              <div class="tile__in">
+                <span class="tile__n">05</span>
+                <h3>Vulkanisasi karet</h3>
+                <p>
+                  Sulfur mengikat rantai karet agar elastis dan tahan panas,
+                  misalnya untuk ban.
+                </p>
+                <span class="tile__more-link" aria-hidden="true"
+                  >Lihat detail</span
+                >
+              </div>
+              <div class="tile__more" hidden data-role="Dipakai langsung">
+                <p>
+                  Karet mentah dipanaskan bersama sulfur supaya rantai
+                  polimernya saling mengikat. Hasilnya karet yang elastis, kuat,
+                  dan tahan panas.
+                </p>
+                <ul>
+                  <li>Ban kendaraan</li>
+                  <li>Sabuk dan selang</li>
+                  <li>Barang karet teknik</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tile up" data-d="1">
+              <img
+                src="asset/perdagangan/pakai/gula.jpg"
+                alt="Ladang tebu dengan pabrik gula di kejauhan"
+                loading="lazy"
+              />
+              <button
+                class="tile__hit"
+                type="button"
+                aria-label="Lihat detail Pemurnian gula"
+                aria-haspopup="dialog"
+              ></button>
+              <span class="tile__fold" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+              <div class="tile__in">
+                <span class="tile__n">06</span>
+                <h3>Pemurnian gula</h3>
+                <p>
+                  Dibakar menjadi gas untuk menjernihkan nira tebu sebelum
+                  dikristalkan.
+                </p>
+                <span class="tile__more-link" aria-hidden="true"
+                  >Lihat detail</span
+                >
+              </div>
+              <div class="tile__more" hidden data-role="Dibakar menjadi gas">
+                <p>
+                  Banyak pabrik gula tebu membakar sulfur menjadi gas, lalu
+                  mengalirkannya ke nira untuk menjernihkan dan memucatkannya
+                  sebelum dikristalkan. Prosesnya disebut sulfitasi.
+                </p>
+                <ul>
+                  <li>Gula kristal putih</li>
+                  <li>Nira yang lebih jernih</li>
+                  <li>Warna gula lebih terang</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tile up" data-d="2">
+              <img
+                src="asset/perdagangan/pakai/pestisida.jpg"
+                alt="Traktor penyemprot di ladang pertanian"
+                loading="lazy"
+              />
+              <button
+                class="tile__hit"
+                type="button"
+                aria-label="Lihat detail Pestisida dan fungisida"
+                aria-haspopup="dialog"
+              ></button>
+              <span class="tile__fold" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+              <div class="tile__in">
+                <span class="tile__n">07</span>
+                <h3>Pestisida &amp; fungisida</h3>
+                <p>
+                  Sulfur dipakai langsung sebagai fungisida, misalnya untuk
+                  penyakit embun tepung.
+                </p>
+                <span class="tile__more-link" aria-hidden="true"
+                  >Lihat detail</span
+                >
+              </div>
+              <div class="tile__more" hidden data-role="Dipakai langsung">
+                <p>
+                  Sulfur halus termasuk fungisida tertua yang masih dipakai
+                  sampai sekarang, terutama untuk penyakit embun tepung pada
+                  tanaman buah dan sayur.
+                </p>
+                <ul>
+                  <li>Fungisida serbuk</li>
+                  <li>Suspensi semprot</li>
+                  <li>Bahan formulasi pestisida</li>
+                </ul>
+              </div>
+            </li>
+            <li class="tile up" data-d="3">
+              <img
+                src="asset/perdagangan/pakai/smelter.jpg"
+                alt="Logam cair dituang di pengecoran"
+                loading="lazy"
+              />
+              <button
+                class="tile__hit"
+                type="button"
+                aria-label="Lihat detail Smelter dan metalurgi"
+                aria-haspopup="dialog"
+              ></button>
+              <span class="tile__fold" aria-hidden="true"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.4"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M7 17 17 7M9 7h8v8" /></svg
+              ></span>
+              <div class="tile__in">
+                <span class="tile__n">08</span>
+                <h3>Smelter &amp; metalurgi</h3>
+                <p>
+                  Asam sulfat melarutkan nikel dan kobalt dari bijih laterit.
+                </p>
+                <span class="tile__more-link" aria-hidden="true"
+                  >Lihat detail</span
+                >
+              </div>
+              <div class="tile__more" hidden data-role="Lewat asam sulfat">
+                <p>
+                  Smelter nikel HPAL memakai asam sulfat dalam jumlah besar
+                  untuk melarutkan nikel dan kobalt dari bijih laterit. Sebagian
+                  smelter membuat asam sulfatnya sendiri dari sulfur.
+                </p>
+                <ul>
+                  <li>Nikel dan kobalt</li>
+                  <li>Bahan baku baterai</li>
+                  <li>Logam olahan lain</li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <dialog class="dlg" id="useDlg" aria-labelledby="dlgTitle">
+          <div class="dlg__in">
+            <div class="dlg__media">
+              <img class="dlg__photo" id="dlgImg" src="" alt="" />
+              <span class="dlg__no" id="dlgNo">01<small>/ 08</small></span>
+              <div class="dlg__thumbs" id="dlgThumbs"></div>
+            </div>
+            <div class="dlg__body">
+              <div class="dlg__top">
+                <p class="label">Pemakaian sulfur</p>
+                <button
+                  class="dlg__x"
+                  type="button"
+                  id="dlgX"
+                  aria-label="Tutup detail"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M18 6 6 18M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div id="dlgSwap">
+                <h3 id="dlgTitle"></h3>
+                <p class="dlg__lead" id="dlgLead"></p>
+              </div>
+              <dl class="dlg__facts" id="dlgFacts">
+                <div>
+                  <dt>Peran sulfur</dt>
+                  <dd id="dlgRole"></dd>
+                </div>
+                <div>
+                  <dt>Hasil akhir</dt>
+                  <dd><ul id="dlgList"></ul></dd>
+                </div>
+              </dl>
+              <div class="dlg__foot">
+                <a
+                  class="btn btn--blue"
+                  id="dlgWa"
+                  href="https://wa.me/628111033334"
+                  target="_blank"
+                  rel="noopener"
+                  >Tanya pasokan</a
+                >
+                <a class="dlg__quote" id="dlgQuote" href="#hubungi"
+                  >Minta penawaran</a
+                >
+                <div class="dlg__nav">
+                  <button
+                    type="button"
+                    id="dlgPrev"
+                    aria-label="Pemakaian sebelumnya"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M19 12H5M11 18l-6-6 6-6" />
+                    </svg>
+                  </button>
+                  <button
+                    type="button"
+                    id="dlgNext"
+                    aria-label="Pemakaian berikutnya"
+                  >
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </dialog>
+      </section>
+
+      <section class="trail" id="alur">
+        <div class="wrap">
+          <div class="trail__head">
+            <div>
+              <p class="label up">03 / Alur Transaksi</p>
+              <h2 class="up">Enam tahap. Tiap tahap ada dokumennya.</h2>
+            </div>
+            <p class="up" data-d="1">
+              Kami bekerja back-to-back: pembelian ke produsen dilakukan setelah
+              pesanan pembeli dikonfirmasi, jadi tidak ada stok yang
+              menggantung.
+            </p>
+          </div>
+
+          <div class="trackbox" id="trackbox">
+            <ol class="track">
+              <li class="step">
+                <span class="step__dot" aria-hidden="true"></span>
+                <span class="step__n">01</span>
+                <h3>Permintaan</h3>
+                <p>Volume, spesifikasi, dan jadwal yang dibutuhkan pembeli.</p>
+                <span class="doc"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h8l4 4v14H6z" />
+                    <path d="M14 3v4h4" /></svg
+                  >Spesifikasi</span
+                >
+              </li>
+              <li class="step">
+                <span class="step__dot" aria-hidden="true"></span>
+                <span class="step__n">02</span>
+                <h3>Kontrak</h3>
+                <p>Harga, termin, dan syarat serah terima disepakati.</p>
+                <span class="doc"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h8l4 4v14H6z" />
+                    <path d="M14 3v4h4" /></svg
+                  >Kontrak / PO</span
+                >
+              </li>
+              <li class="step">
+                <span class="step__dot" aria-hidden="true"></span>
+                <span class="step__n">03</span>
+                <h3>Pasokan &amp; QC</h3>
+                <p>
+                  Barang dari produsen domestik, dicek lewat sertifikat
+                  analisis.
+                </p>
+                <span class="doc"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h8l4 4v14H6z" />
+                    <path d="M14 3v4h4" /></svg
+                  >COA</span
+                >
+              </li>
+              <li class="step">
+                <span class="step__dot" aria-hidden="true"></span>
+                <span class="step__n">04</span>
+                <h3>Pengiriman</h3>
+                <p>Pemuatan dan pengangkutan sampai ke lokasi pembeli.</p>
+                <span class="doc"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h8l4 4v14H6z" />
+                    <path d="M14 3v4h4" /></svg
+                  >Surat Jalan</span
+                >
+              </li>
+              <li class="step">
+                <span class="step__dot" aria-hidden="true"></span>
+                <span class="step__n">05</span>
+                <h3>Penagihan</h3>
+                <p>
+                  Invoice per termin dan Faktur Pajak elektronik, supaya PPN
+                  Masukan bisa dikreditkan.
+                </p>
+                <span class="doc"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h8l4 4v14H6z" />
+                    <path d="M14 3v4h4" /></svg
+                  >Invoice &middot; e-Faktur</span
+                >
+              </li>
+              <li class="step">
+                <span class="step__dot" aria-hidden="true"></span>
+                <span class="step__n">06</span>
+                <h3>Serah Terima</h3>
+                <p>Berita acara serah terima ditandatangani, lalu pelunasan.</p>
+                <span class="doc"
+                  ><svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M6 3h8l4 4v14H6z" />
+                    <path d="M14 3v4h4" /></svg
+                  >BAST</span
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="deal" id="transaksi">
+        <div class="wrap">
+          <div class="deal__head">
+            <div>
+              <p class="label up">04 / Rekam Transaksi</p>
+              <h2 class="up">
+                Transaksi pertama: 2.652 ton, dua kali kirim, selesai.
+              </h2>
+            </div>
+            <p class="up" data-d="1">
+              Pembelinya PT Petro Jordan Abadi, produsen asam fosfat di Gresik
+              yang berafiliasi dengan grup pupuk BUMN. Dokumen transaksinya bisa
+              kami tunjukkan untuk keperluan due diligence.
+            </p>
+          </div>
+
+          <div class="deal__grid">
+            <div class="deal__media up">
+              <span class="deal__slab" aria-hidden="true"></span>
+              <figure class="deal__photo">
+                <img
+                  src="asset/perdagangan/sulfur-muatan.jpg"
+                  alt="Tongkang bermuatan sulfur tertutup terpal, bersandar di dermaga dengan kapal tunda"
+                  loading="lazy"
+                  width="1280"
+                  height="720"
+                />
+                <figcaption>Muatan sulfur di tongkang &middot; 2026</figcaption>
+              </figure>
+            </div>
+
+            <div class="tix-par" id="tixPar">
+              <div class="slip slip--1" aria-hidden="true">
+                <p class="slip__h"><b>Surat Jalan</b><span>Termin 1</span></p>
+                <span class="slip__lines"></span>
+                <span class="slip__stamp">Diterima</span>
+              </div>
+              <div class="slip slip--2" aria-hidden="true">
+                <p class="slip__h"><b>Surat Jalan</b><span>Termin 2</span></p>
+                <span class="slip__lines"></span>
+                <span class="slip__stamp">Diterima</span>
+              </div>
+              <div class="tix-wrap up" data-d="1">
+                <article
+                  class="tix"
+                  aria-label="Ringkasan transaksi PT Petro Jordan Abadi"
+                >
+                  <header class="tix__top">
+                    <span>Rekam Transaksi</span><span>2026</span>
+                  </header>
+
+                  <div class="tix__who">
+                    <img
+                      src="asset/perdagangan/logo-pja.png"
+                      alt=""
+                      width="220"
+                      height="220"
+                      loading="lazy"
+                    />
+                    <div>
+                      <b>PT Petro Jordan Abadi</b>
+                      <span
+                        >Produsen asam fosfat &middot; Gresik, Jawa Timur</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="tix__big">
+                    <b><span data-count="2652">2.652</span><small>MT</small></b>
+                    <span class="tix__cap"
+                      >Sulfur industri, dikirim dalam dua termin</span
+                    >
+                  </div>
+
+                  <div class="tix__split" aria-hidden="true">
+                    <span>Termin 1 &middot; selesai</span
+                    ><span>Termin 2 &middot; selesai</span>
+                  </div>
+
+                  <dl class="tix__rows">
+                    <div>
+                      <dt>Struktur</dt>
+                      <dd>Back-to-back</dd>
+                    </div>
+                    <div>
+                      <dt>Pemasok</dt>
+                      <dd>Produsen domestik, mitra BUMD</dd>
+                    </div>
+                  </dl>
+
+                  <ul class="tix__docs" aria-label="Dokumen transaksi">
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m5 12.5 4.5 4.5L19 7.5" /></svg
+                      >Kontrak &amp; PO
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m5 12.5 4.5 4.5L19 7.5" /></svg
+                      >Invoice per termin
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m5 12.5 4.5 4.5L19 7.5" /></svg
+                      >Surat jalan
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m5 12.5 4.5 4.5L19 7.5" /></svg
+                      >BAST
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m5 12.5 4.5 4.5L19 7.5" /></svg
+                      >Faktur Pajak elektronik
+                    </li>
+                    <li>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      >
+                        <path d="m5 12.5 4.5 4.5L19 7.5" /></svg
+                      >PPN disetor ke kas negara
+                    </li>
+                  </ul>
+
+                  <span class="stamp" aria-hidden="true"
+                    >Selesai<small>2026</small></span
+                  >
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="legal" id="legalitas">
+        <div class="wrap">
+          <div class="legal__head">
+            <div>
+              <p class="label up">05 / Legal &amp; Kepatuhan</p>
+              <h2 class="up">Izin usaha dan status pajak.</h2>
+            </div>
+            <p class="legal__note up" data-d="1">
+              Salinan dokumen lengkap kami kirimkan saat proses due diligence.
+              Pilih salah satu tahap di garis waktu untuk melihat berkasnya.
+            </p>
+          </div>
+
+          <div class="legal__body">
+            <div class="stage3d" aria-hidden="true">
+              <svg width="0" height="0" style="position: absolute">
+                <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
+                  <feTurbulence
+                    type="fractalNoise"
+                    baseFrequency="1.1"
+                    numOctaves="2"
+                    seed="4"
+                    result="n"
+                  />
+                  <feColorMatrix
+                    in="n"
+                    type="matrix"
+                    values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 1.75"
+                    result="m"
+                  />
+                  <feComposite in="SourceGraphic" in2="m" operator="in" />
+                </filter>
+              </svg>
+              <div class="desk" id="desk">
+                <div class="folder">
+                  <span class="folder__tab">Legalitas</span>
+                </div>
+                <div class="paper">
+                  <span class="ink ink--copy">Salinan</span>
+                  <p class="paper__kop">
+                    Akta Pendirian<br />Perseroan Terbatas
+                  </p>
+                  <p class="paper__co">PT JAYA KREASI TEKNOLOGI</p>
+                  <p class="paper__no">Nomor: 02 &middot; 3 September 2019</p>
+                  <span class="paper__rule"></span>
+                  <span class="paper__txt"></span>
+                  <span class="paper__foot"
+                    ><svg
+                      class="paper__sig"
+                      viewBox="0 0 90 28"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M3 21c5-9 9-15 12-12s-4 13 1 11 6-16 11-13-2 12 3 11 5-9 9-8 1 8 6 7 7-6 11-5 3 4 8 3"
+                      />
+                      <path d="M40 25c10-2 26-3 44-2" /></svg
+                    >Myra Yuwono, S.H.<br />Notaris di Jakarta</span
+                  >
+                </div>
+                <div class="paper">
+                  <span class="ink ink--copy">Salinan</span>
+                  <p class="paper__kop">Akta Perubahan</p>
+                  <p class="paper__co">PT JAYA KREASI TEKNOLOGI</p>
+                  <p class="paper__no">Nomor: 03 &middot; 8 Mei 2026</p>
+                  <span class="paper__rule"></span>
+                  <span class="paper__txt"></span>
+                  <span class="paper__foot"
+                    ><svg
+                      class="paper__sig"
+                      viewBox="0 0 90 28"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M3 21c5-9 9-15 12-12s-4 13 1 11 6-16 11-13-2 12 3 11 5-9 9-8 1 8 6 7 7-6 11-5 3 4 8 3"
+                      />
+                      <path d="M40 25c10-2 26-3 44-2" /></svg
+                    >Fadlur Rahman, S.H., M.Kn.<br />Notaris</span
+                  >
+                </div>
+                <div class="paper">
+                  <p class="paper__kop">Surat Keputusan</p>
+                  <p class="paper__no">
+                    Nomor AHU-0031535.AH.01.02.<br />Tahun 2026
+                  </p>
+                  <p class="paper__co">PT JAYA KREASI TEKNOLOGI</p>
+                  <span class="paper__rule"></span>
+                  <span class="paper__txt"></span>
+                  <span class="paper__foot"
+                    >Ditetapkan di Jakarta<br />13 Mei 2026</span
+                  >
+                  <svg
+                    class="paper__qr"
+                    viewBox="-1 -1 23 23"
+                    aria-hidden="true"
+                  >
+                    <rect x="-1" y="-1" width="23" height="23" fill="#fff" />
+                    <path
+                      d="M0 0h1v1h-1zM0 1h1v1h-1zM0 2h1v1h-1zM0 3h1v1h-1zM0 4h1v1h-1zM0 5h1v1h-1zM0 6h1v1h-1zM0 8h1v1h-1zM0 9h1v1h-1zM0 11h1v1h-1zM0 14h1v1h-1zM0 15h1v1h-1zM0 16h1v1h-1zM0 17h1v1h-1zM0 18h1v1h-1zM0 19h1v1h-1zM0 20h1v1h-1zM1 0h1v1h-1zM1 6h1v1h-1zM1 8h1v1h-1zM1 9h1v1h-1zM1 11h1v1h-1zM1 12h1v1h-1zM1 14h1v1h-1zM1 20h1v1h-1zM2 0h1v1h-1zM2 2h1v1h-1zM2 3h1v1h-1zM2 4h1v1h-1zM2 6h1v1h-1zM2 8h1v1h-1zM2 9h1v1h-1zM2 10h1v1h-1zM2 12h1v1h-1zM2 14h1v1h-1zM2 16h1v1h-1zM2 17h1v1h-1zM2 18h1v1h-1zM2 20h1v1h-1zM3 0h1v1h-1zM3 2h1v1h-1zM3 3h1v1h-1zM3 4h1v1h-1zM3 6h1v1h-1zM3 8h1v1h-1zM3 12h1v1h-1zM3 14h1v1h-1zM3 16h1v1h-1zM3 17h1v1h-1zM3 18h1v1h-1zM3 20h1v1h-1zM4 0h1v1h-1zM4 2h1v1h-1zM4 3h1v1h-1zM4 4h1v1h-1zM4 6h1v1h-1zM4 9h1v1h-1zM4 11h1v1h-1zM4 12h1v1h-1zM4 14h1v1h-1zM4 16h1v1h-1zM4 17h1v1h-1zM4 18h1v1h-1zM4 20h1v1h-1zM5 0h1v1h-1zM5 6h1v1h-1zM5 8h1v1h-1zM5 9h1v1h-1zM5 11h1v1h-1zM5 14h1v1h-1zM5 20h1v1h-1zM6 0h1v1h-1zM6 1h1v1h-1zM6 2h1v1h-1zM6 3h1v1h-1zM6 4h1v1h-1zM6 5h1v1h-1zM6 6h1v1h-1zM6 9h1v1h-1zM6 11h1v1h-1zM6 12h1v1h-1zM6 14h1v1h-1zM6 15h1v1h-1zM6 16h1v1h-1zM6 17h1v1h-1zM6 18h1v1h-1zM6 19h1v1h-1zM6 20h1v1h-1zM7 8h1v1h-1zM7 10h1v1h-1zM7 11h1v1h-1zM8 0h1v1h-1zM8 1h1v1h-1zM8 4h1v1h-1zM8 9h1v1h-1zM8 11h1v1h-1zM8 12h1v1h-1zM8 14h1v1h-1zM8 16h1v1h-1zM9 0h1v1h-1zM9 4h1v1h-1zM9 7h1v1h-1zM9 9h1v1h-1zM9 14h1v1h-1zM9 15h1v1h-1zM9 17h1v1h-1zM9 18h1v1h-1zM9 19h1v1h-1zM9 20h1v1h-1zM10 0h1v1h-1zM10 2h1v1h-1zM10 3h1v1h-1zM10 4h1v1h-1zM10 6h1v1h-1zM10 7h1v1h-1zM10 12h1v1h-1zM10 13h1v1h-1zM10 14h1v1h-1zM10 17h1v1h-1zM10 18h1v1h-1zM10 19h1v1h-1zM10 20h1v1h-1zM11 2h1v1h-1zM11 3h1v1h-1zM11 4h1v1h-1zM11 5h1v1h-1zM11 12h1v1h-1zM11 17h1v1h-1zM11 18h1v1h-1zM11 19h1v1h-1zM12 0h1v1h-1zM12 1h1v1h-1zM12 2h1v1h-1zM12 3h1v1h-1zM12 4h1v1h-1zM12 5h1v1h-1zM12 6h1v1h-1zM12 7h1v1h-1zM12 8h1v1h-1zM12 9h1v1h-1zM12 10h1v1h-1zM12 13h1v1h-1zM12 14h1v1h-1zM12 15h1v1h-1zM12 16h1v1h-1zM12 17h1v1h-1zM12 20h1v1h-1zM13 9h1v1h-1zM13 10h1v1h-1zM13 11h1v1h-1zM13 12h1v1h-1zM13 14h1v1h-1zM13 15h1v1h-1zM13 18h1v1h-1zM13 20h1v1h-1zM14 0h1v1h-1zM14 1h1v1h-1zM14 2h1v1h-1zM14 3h1v1h-1zM14 4h1v1h-1zM14 5h1v1h-1zM14 6h1v1h-1zM14 12h1v1h-1zM14 13h1v1h-1zM14 14h1v1h-1zM14 18h1v1h-1zM14 19h1v1h-1zM15 0h1v1h-1zM15 6h1v1h-1zM15 13h1v1h-1zM15 15h1v1h-1zM15 16h1v1h-1zM15 17h1v1h-1zM15 18h1v1h-1zM15 19h1v1h-1zM16 0h1v1h-1zM16 2h1v1h-1zM16 3h1v1h-1zM16 4h1v1h-1zM16 6h1v1h-1zM16 9h1v1h-1zM16 13h1v1h-1zM16 14h1v1h-1zM16 15h1v1h-1zM16 16h1v1h-1zM16 17h1v1h-1zM17 0h1v1h-1zM17 2h1v1h-1zM17 3h1v1h-1zM17 4h1v1h-1zM17 6h1v1h-1zM17 8h1v1h-1zM17 11h1v1h-1zM17 16h1v1h-1zM17 17h1v1h-1zM17 19h1v1h-1zM18 0h1v1h-1zM18 2h1v1h-1zM18 3h1v1h-1zM18 4h1v1h-1zM18 6h1v1h-1zM18 9h1v1h-1zM18 10h1v1h-1zM18 13h1v1h-1zM18 14h1v1h-1zM18 15h1v1h-1zM18 18h1v1h-1zM19 0h1v1h-1zM19 6h1v1h-1zM19 9h1v1h-1zM19 11h1v1h-1zM19 12h1v1h-1zM19 17h1v1h-1zM19 20h1v1h-1zM20 0h1v1h-1zM20 1h1v1h-1zM20 2h1v1h-1zM20 3h1v1h-1zM20 4h1v1h-1zM20 5h1v1h-1zM20 6h1v1h-1zM20 8h1v1h-1zM20 9h1v1h-1zM20 10h1v1h-1zM20 12h1v1h-1zM20 13h1v1h-1zM20 14h1v1h-1zM20 16h1v1h-1zM20 17h1v1h-1zM20 20h1v1h-1z"
+                      fill="#1B2330"
+                    />
+                  </svg>
+                </div>
+                <div class="paper">
+                  <p class="paper__kop">Nomor Induk Berusaha</p>
+                  <p class="paper__mask">
+                    NIB &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;
+                    &bull;&bull;&bull;&bull;&bull;
+                  </p>
+                  <p class="paper__co">PT JAYA KREASI TEKNOLOGI</p>
+                  <div class="paper__kbli">
+                    <b>KBLI 46651</b>Perdagangan Besar Bahan dan Barang Kimia
+                  </div>
+                  <span class="paper__foot"
+                    >Diterbitkan melalui<br />sistem OSS-RBA</span
+                  >
+                  <svg
+                    class="ink ink--round"
+                    viewBox="0 0 100 100"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <path
+                        id="ring1"
+                        d="M50 50m-36 0a36 36 0 1 1 72 0a36 36 0 1 1-72 0"
+                      />
+                    </defs>
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="47"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="3"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="28"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                    <text
+                      font-size="10.5"
+                      font-weight="700"
+                      letter-spacing="2.2"
+                      fill="currentColor"
+                    >
+                      <textPath href="#ring1">
+                        PT JAYA KREASI TEKNOLOGI · JAKARTA ·
+                      </textPath>
+                    </text>
+                    <text
+                      x="50"
+                      y="55"
+                      text-anchor="middle"
+                      font-size="15"
+                      font-weight="700"
+                      fill="currentColor"
+                    >
+                      JKT
+                    </text>
+                  </svg>
+                </div>
               </div>
             </div>
 
-            <div class="tix__big">
-              <b><span data-count="2652">2.652</span><small>MT</small></b>
-              <span class="tix__cap">Sulfur industri, dikirim dalam dua termin</span>
+            <ol class="tl" id="tl">
+              <li tabindex="0" class="up">
+                <time datetime="2019-09-03">3 Sep 2019</time>
+                <h3>Perusahaan berdiri</h3>
+                <p>
+                  Akta pendirian No. 02 di Jakarta, sebagai perusahaan teknologi
+                  informasi.
+                </p>
+              </li>
+              <li tabindex="0" class="up" data-d="1">
+                <time datetime="2026-05-08">8 Mei 2026</time>
+                <h3>Akta perubahan terakhir</h3>
+                <p>
+                  Akta No. 03, yang menjadi dasar perluasan usaha ke
+                  perdagangan.
+                </p>
+              </li>
+              <li tabindex="0" class="up" data-d="2">
+                <time datetime="2026-05-13">13 Mei 2026</time>
+                <h3>Disahkan Kemenkumham</h3>
+                <p>SK <i>AHU-0031535.AH.01.02.TAHUN 2026</i>.</p>
+              </li>
+              <li tabindex="0" class="up" data-d="3">
+                <time>Berlaku</time>
+                <h3>KBLI 46651 di NIB</h3>
+                <p>
+                  Perdagangan besar bahan dan barang kimia, termasuk sulfur.
+                </p>
+              </li>
+            </ol>
+          </div>
+
+          <ul class="status">
+            <li class="up">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 7h16M4 12h16M4 17h10" />
+              </svg>
+              <div>
+                <b>PKP aktif</b
+                ><span
+                  >Faktur Pajak elektronik, PPN disetor lewat Coretax DJP.</span
+                >
+              </div>
+            </li>
+            <li class="up" data-d="1">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M6 3h8l4 4v14H6z" />
+                <path d="m9 14 2 2 4-4" />
+              </svg>
+              <div>
+                <b>SPT Tahunan Badan</b
+                ><span>Tahun Pajak 2025 sudah dilaporkan.</span>
+              </div>
+            </li>
+            <li class="up" data-d="2">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M3 10 12 4l9 6" />
+                <path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18" />
+              </svg>
+              <div>
+                <b>Rekening korporat</b
+                ><span
+                  >Mandiri dan BCA atas nama PT Jaya Kreasi Teknologi.</span
+                >
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="cta" id="hubungi">
+        <span class="cta__tex" id="ctaTex" aria-hidden="true"></span>
+        <div class="wrap cta__grid">
+          <div>
+            <p class="label up">Hubungi Kami</p>
+            <h2 class="up">
+              Butuh sulfur untuk pabrik Anda? Kirim volume dan jadwalnya.
+            </h2>
+            <div class="cta__act up" data-d="1">
+              <a
+                href="https://wa.me/628111033334"
+                target="_blank"
+                rel="noopener"
+                class="btn btn--wht"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.2 1.3-2 1.4-.5.1-1.2.1-3.4-.8-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2 .9c.3.2.5.2.6.3.1.2.1.7-.1 1.5Z"
+                  />
+                </svg>
+                Chat via WhatsApp
+              </a>
+              <a
+                href="mailto:info@jkreasi.co.id?subject=Permintaan%20Penawaran%20Sulfur%20Industri"
+                class="btn btn--wht-line"
+              >
+                Kirim Email
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+              </a>
             </div>
-
-            <div class="tix__split" aria-hidden="true"><span>Termin 1 &middot; selesai</span><span>Termin 2 &middot; selesai</span></div>
-
-            <dl class="tix__rows">
-              <div><dt>Struktur</dt><dd>Back-to-back</dd></div>
-              <div><dt>Pemasok</dt><dd>Produsen domestik, mitra BUMD</dd></div>
-            </dl>
-
-            <ul class="tix__docs" aria-label="Dokumen transaksi">
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Kontrak &amp; PO</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Invoice per termin</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Surat jalan</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>BAST</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Faktur Pajak elektronik</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>PPN disetor ke kas negara</li>
-            </ul>
-
-            <span class="stamp" aria-hidden="true">Selesai<small>2026</small></span>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== 05 · LEGAL & KEPATUHAN =====================
-     Nomor identitas (NIB, NPWP) sengaja tidak ditampilkan di halaman
-     publik; cukup diberikan langsung saat due diligence mitra.
-     Berkas di meja adalah ilustrasi (bukan pindaian dokumen asli):
-     NIB disamarkan dan kode QR hanya pola hias.
-     ================================================================== -->
-<section class="legal" id="legalitas">
-  <div class="wrap">
-    <div class="legal__head">
-      <div>
-        <p class="label up">05 / Legal &amp; Kepatuhan</p>
-        <h2 class="up">Izin usaha dan status pajak.</h2>
-      </div>
-      <p class="legal__note up" data-d="1">Salinan dokumen lengkap kami kirimkan saat proses due diligence. Pilih salah satu tahap di garis waktu untuk melihat berkasnya.</p>
-    </div>
-
-    <div class="legal__body">
-      <div class="stage3d" aria-hidden="true">
-        <svg width="0" height="0" style="position:absolute">
-          <filter id="ink" x="-10%" y="-10%" width="120%" height="120%">
-            <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="4" result="n"/>
-            <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.4 1.75" result="m"/>
-            <feComposite in="SourceGraphic" in2="m" operator="in"/>
-          </filter>
-        </svg>
-        <div class="desk" id="desk">
-          <div class="folder"><span class="folder__tab">Legalitas</span></div>
-          <div class="paper">
-            <span class="ink ink--copy">Salinan</span>
-            <p class="paper__kop">Akta Pendirian<br>Perseroan Terbatas</p>
-            <p class="paper__co">PT JAYA KREASI TEKNOLOGI</p>
-            <p class="paper__no">Nomor: 02 &middot; 3 September 2019</p>
-            <span class="paper__rule"></span>
-            <span class="paper__txt"></span>
-            <span class="paper__foot"><svg class="paper__sig" viewBox="0 0 90 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c5-9 9-15 12-12s-4 13 1 11 6-16 11-13-2 12 3 11 5-9 9-8 1 8 6 7 7-6 11-5 3 4 8 3"/><path d="M40 25c10-2 26-3 44-2"/></svg>Myra Yuwono, S.H.<br>Notaris di Jakarta</span>
           </div>
-          <div class="paper">
-            <span class="ink ink--copy">Salinan</span>
-            <p class="paper__kop">Akta Perubahan</p>
-            <p class="paper__co">PT JAYA KREASI TEKNOLOGI</p>
-            <p class="paper__no">Nomor: 03 &middot; 8 Mei 2026</p>
-            <span class="paper__rule"></span>
-            <span class="paper__txt"></span>
-            <span class="paper__foot"><svg class="paper__sig" viewBox="0 0 90 28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c5-9 9-15 12-12s-4 13 1 11 6-16 11-13-2 12 3 11 5-9 9-8 1 8 6 7 7-6 11-5 3 4 8 3"/><path d="M40 25c10-2 26-3 44-2"/></svg>Fadlur Rahman, S.H., M.Kn.<br>Notaris</span>
+
+          <dl class="cta__card up" data-d="2">
+            <div>
+              <dt>Kontak</dt>
+              <dd>Ibnu Munandar, Direktur Utama</dd>
+            </div>
+            <div>
+              <dt>Telepon</dt>
+              <dd>
+                <a href="tel:+622152905299">021 5290 5299</a> &middot;
+                <a href="tel:+628111033334">0811 1033 334</a>
+              </dd>
+            </div>
+            <div>
+              <dt>Surel</dt>
+              <dd>
+                <a href="mailto:info@jkreasi.co.id">info@jkreasi.co.id</a>
+              </dd>
+            </div>
+            <div>
+              <dt>Kantor</dt>
+              <dd>
+                ESTUBIZI Business Center, Gedung Setiabudi 2 Lt. 2 Suite 207
+                B-C, Jl. H.R. Rasuna Said Kav. 62, Jakarta Selatan 12920
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="wrap">
+        <div class="foot__grid">
+          <div>
+            <div class="foot__logo">
+              <img
+                src="asset/Logo-01.png"
+                alt="JKreasi"
+                width="1180"
+                height="267"
+              />
+            </div>
+            <p class="foot__about">
+              JKreasi (PT Jaya Kreasi Teknologi) menjalankan dua lini usaha:
+              solusi teknologi informasi sejak 2019 dan perdagangan komoditas
+              industri sejak 2026.
+            </p>
+            <div class="social">
+              <a href="#" aria-label="LinkedIn JKreasi"
+                ><svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.5 4.76 5.75V21h-4v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8h-4V9Z"
+                  /></svg
+              ></a>
+              <a href="#" aria-label="Instagram JKreasi"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="3.8" />
+                  <circle
+                    cx="17.4"
+                    cy="6.6"
+                    r="1.1"
+                    fill="currentColor"
+                    stroke="none"
+                  /></svg
+              ></a>
+              <a href="mailto:info@jkreasi.co.id" aria-label="Surel JKreasi"
+                ><svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.8"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2.5" y="4.5" width="19" height="15" rx="2" />
+                  <path d="m3 7 9 6 9-6" /></svg
+              ></a>
+            </div>
           </div>
-          <div class="paper">
-            <p class="paper__kop">Surat Keputusan</p>
-            <p class="paper__no">Nomor AHU-0031535.AH.01.02.<br>Tahun 2026</p>
-            <p class="paper__co">PT JAYA KREASI TEKNOLOGI</p>
-            <span class="paper__rule"></span>
-            <span class="paper__txt"></span>
-            <span class="paper__foot">Ditetapkan di Jakarta<br>13 Mei 2026</span>
-            <svg class="paper__qr" viewBox="-1 -1 23 23" aria-hidden="true"><rect x="-1" y="-1" width="23" height="23" fill="#fff"/><path d="M0 0h1v1h-1zM0 1h1v1h-1zM0 2h1v1h-1zM0 3h1v1h-1zM0 4h1v1h-1zM0 5h1v1h-1zM0 6h1v1h-1zM0 8h1v1h-1zM0 9h1v1h-1zM0 11h1v1h-1zM0 14h1v1h-1zM0 15h1v1h-1zM0 16h1v1h-1zM0 17h1v1h-1zM0 18h1v1h-1zM0 19h1v1h-1zM0 20h1v1h-1zM1 0h1v1h-1zM1 6h1v1h-1zM1 8h1v1h-1zM1 9h1v1h-1zM1 11h1v1h-1zM1 12h1v1h-1zM1 14h1v1h-1zM1 20h1v1h-1zM2 0h1v1h-1zM2 2h1v1h-1zM2 3h1v1h-1zM2 4h1v1h-1zM2 6h1v1h-1zM2 8h1v1h-1zM2 9h1v1h-1zM2 10h1v1h-1zM2 12h1v1h-1zM2 14h1v1h-1zM2 16h1v1h-1zM2 17h1v1h-1zM2 18h1v1h-1zM2 20h1v1h-1zM3 0h1v1h-1zM3 2h1v1h-1zM3 3h1v1h-1zM3 4h1v1h-1zM3 6h1v1h-1zM3 8h1v1h-1zM3 12h1v1h-1zM3 14h1v1h-1zM3 16h1v1h-1zM3 17h1v1h-1zM3 18h1v1h-1zM3 20h1v1h-1zM4 0h1v1h-1zM4 2h1v1h-1zM4 3h1v1h-1zM4 4h1v1h-1zM4 6h1v1h-1zM4 9h1v1h-1zM4 11h1v1h-1zM4 12h1v1h-1zM4 14h1v1h-1zM4 16h1v1h-1zM4 17h1v1h-1zM4 18h1v1h-1zM4 20h1v1h-1zM5 0h1v1h-1zM5 6h1v1h-1zM5 8h1v1h-1zM5 9h1v1h-1zM5 11h1v1h-1zM5 14h1v1h-1zM5 20h1v1h-1zM6 0h1v1h-1zM6 1h1v1h-1zM6 2h1v1h-1zM6 3h1v1h-1zM6 4h1v1h-1zM6 5h1v1h-1zM6 6h1v1h-1zM6 9h1v1h-1zM6 11h1v1h-1zM6 12h1v1h-1zM6 14h1v1h-1zM6 15h1v1h-1zM6 16h1v1h-1zM6 17h1v1h-1zM6 18h1v1h-1zM6 19h1v1h-1zM6 20h1v1h-1zM7 8h1v1h-1zM7 10h1v1h-1zM7 11h1v1h-1zM8 0h1v1h-1zM8 1h1v1h-1zM8 4h1v1h-1zM8 9h1v1h-1zM8 11h1v1h-1zM8 12h1v1h-1zM8 14h1v1h-1zM8 16h1v1h-1zM9 0h1v1h-1zM9 4h1v1h-1zM9 7h1v1h-1zM9 9h1v1h-1zM9 14h1v1h-1zM9 15h1v1h-1zM9 17h1v1h-1zM9 18h1v1h-1zM9 19h1v1h-1zM9 20h1v1h-1zM10 0h1v1h-1zM10 2h1v1h-1zM10 3h1v1h-1zM10 4h1v1h-1zM10 6h1v1h-1zM10 7h1v1h-1zM10 12h1v1h-1zM10 13h1v1h-1zM10 14h1v1h-1zM10 17h1v1h-1zM10 18h1v1h-1zM10 19h1v1h-1zM10 20h1v1h-1zM11 2h1v1h-1zM11 3h1v1h-1zM11 4h1v1h-1zM11 5h1v1h-1zM11 12h1v1h-1zM11 17h1v1h-1zM11 18h1v1h-1zM11 19h1v1h-1zM12 0h1v1h-1zM12 1h1v1h-1zM12 2h1v1h-1zM12 3h1v1h-1zM12 4h1v1h-1zM12 5h1v1h-1zM12 6h1v1h-1zM12 7h1v1h-1zM12 8h1v1h-1zM12 9h1v1h-1zM12 10h1v1h-1zM12 13h1v1h-1zM12 14h1v1h-1zM12 15h1v1h-1zM12 16h1v1h-1zM12 17h1v1h-1zM12 20h1v1h-1zM13 9h1v1h-1zM13 10h1v1h-1zM13 11h1v1h-1zM13 12h1v1h-1zM13 14h1v1h-1zM13 15h1v1h-1zM13 18h1v1h-1zM13 20h1v1h-1zM14 0h1v1h-1zM14 1h1v1h-1zM14 2h1v1h-1zM14 3h1v1h-1zM14 4h1v1h-1zM14 5h1v1h-1zM14 6h1v1h-1zM14 12h1v1h-1zM14 13h1v1h-1zM14 14h1v1h-1zM14 18h1v1h-1zM14 19h1v1h-1zM15 0h1v1h-1zM15 6h1v1h-1zM15 13h1v1h-1zM15 15h1v1h-1zM15 16h1v1h-1zM15 17h1v1h-1zM15 18h1v1h-1zM15 19h1v1h-1zM16 0h1v1h-1zM16 2h1v1h-1zM16 3h1v1h-1zM16 4h1v1h-1zM16 6h1v1h-1zM16 9h1v1h-1zM16 13h1v1h-1zM16 14h1v1h-1zM16 15h1v1h-1zM16 16h1v1h-1zM16 17h1v1h-1zM17 0h1v1h-1zM17 2h1v1h-1zM17 3h1v1h-1zM17 4h1v1h-1zM17 6h1v1h-1zM17 8h1v1h-1zM17 11h1v1h-1zM17 16h1v1h-1zM17 17h1v1h-1zM17 19h1v1h-1zM18 0h1v1h-1zM18 2h1v1h-1zM18 3h1v1h-1zM18 4h1v1h-1zM18 6h1v1h-1zM18 9h1v1h-1zM18 10h1v1h-1zM18 13h1v1h-1zM18 14h1v1h-1zM18 15h1v1h-1zM18 18h1v1h-1zM19 0h1v1h-1zM19 6h1v1h-1zM19 9h1v1h-1zM19 11h1v1h-1zM19 12h1v1h-1zM19 17h1v1h-1zM19 20h1v1h-1zM20 0h1v1h-1zM20 1h1v1h-1zM20 2h1v1h-1zM20 3h1v1h-1zM20 4h1v1h-1zM20 5h1v1h-1zM20 6h1v1h-1zM20 8h1v1h-1zM20 9h1v1h-1zM20 10h1v1h-1zM20 12h1v1h-1zM20 13h1v1h-1zM20 14h1v1h-1zM20 16h1v1h-1zM20 17h1v1h-1zM20 20h1v1h-1z" fill="#1B2330"/></svg>
+          <div>
+            <h4>Perdagangan</h4>
+            <div class="foot__links">
+              <a href="#produk">Sulfur Industri</a>
+              <a href="#pemakaian">Pemakaian Industri</a>
+              <a href="#alur">Alur Transaksi</a>
+              <a href="#transaksi">Rekam Transaksi</a>
+              <a href="#legalitas">Legal &amp; Kepatuhan</a>
+            </div>
           </div>
-          <div class="paper">
-            <p class="paper__kop">Nomor Induk Berusaha</p>
-            <p class="paper__mask">NIB &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;&bull;</p>
-            <p class="paper__co">PT JAYA KREASI TEKNOLOGI</p>
-            <div class="paper__kbli"><b>KBLI 46651</b>Perdagangan Besar Bahan dan Barang Kimia</div>
-            <span class="paper__foot">Diterbitkan melalui<br>sistem OSS-RBA</span>
-            <svg class="ink ink--round" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="ring1" d="M50 50m-36 0a36 36 0 1 1 72 0a36 36 0 1 1-72 0"/></defs><circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="1.6"/><text font-size="10.5" font-weight="700" letter-spacing="2.2" fill="currentColor"><textPath href="#ring1">PT JAYA KREASI TEKNOLOGI · JAKARTA ·</textPath></text><text x="50" y="55" text-anchor="middle" font-size="15" font-weight="700" fill="currentColor">JKT</text></svg>
+          <div>
+            <h4>Teknologi</h4>
+            <div class="foot__links">
+              <a href="index.html#portofolio">Studi Kasus</a>
+              <a href="index.html#layanan">Layanan</a>
+              <a href="index.html#tim">Tim</a>
+              <a href="index.html#kontak">Kontak</a>
+            </div>
+          </div>
+          <div>
+            <h4>Lokasi</h4>
+            <address>
+              ESTUBIZI Business Center<br />Gedung Setiabudi 2, Lantai 2<br />Suite
+              207 B-C<br />Jakarta Selatan 12920, Indonesia
+            </address>
           </div>
         </div>
-      </div>
-
-      <ol class="tl" id="tl">
-        <li tabindex="0" class="up">
-          <time datetime="2019-09-03">3 Sep 2019</time>
-          <h3>Perusahaan berdiri</h3>
-          <p>Akta pendirian No. 02 di Jakarta, sebagai perusahaan teknologi informasi.</p>
-        </li>
-        <li tabindex="0" class="up" data-d="1">
-          <time datetime="2026-05-08">8 Mei 2026</time>
-          <h3>Akta perubahan terakhir</h3>
-          <p>Akta No. 03, yang menjadi dasar perluasan usaha ke perdagangan.</p>
-        </li>
-        <li tabindex="0" class="up" data-d="2">
-          <time datetime="2026-05-13">13 Mei 2026</time>
-          <h3>Disahkan Kemenkumham</h3>
-          <p>SK <i>AHU-0031535.AH.01.02.TAHUN 2026</i>.</p>
-        </li>
-        <li tabindex="0" class="up" data-d="3">
-          <time>Berlaku</time>
-          <h3>KBLI 46651 di NIB</h3>
-          <p>Perdagangan besar bahan dan barang kimia, termasuk sulfur.</p>
-        </li>
-      </ol>
-    </div>
-
-    <ul class="status">
-      <li class="up">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
-        <div><b>PKP aktif</b><span>Faktur Pajak elektronik, PPN disetor lewat Coretax DJP.</span></div>
-      </li>
-      <li class="up" data-d="1">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h8l4 4v14H6z"/><path d="m9 14 2 2 4-4"/></svg>
-        <div><b>SPT Tahunan Badan</b><span>Tahun Pajak 2025 sudah dilaporkan.</span></div>
-      </li>
-      <li class="up" data-d="2">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 20h18"/></svg>
-        <div><b>Rekening korporat</b><span>Mandiri dan BCA atas nama PT Jaya Kreasi Teknologi.</span></div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ===================== AJAKAN ===================== -->
-<section class="cta" id="hubungi">
-  <span class="cta__tex" id="ctaTex" aria-hidden="true"></span>
-  <div class="wrap cta__grid">
-    <div>
-      <p class="label up">Hubungi Kami</p>
-      <h2 class="up">Butuh sulfur untuk pabrik Anda? Kirim volume dan jadwalnya.</h2>
-      <div class="cta__act up" data-d="1">
-        <a href="https://wa.me/628111033334" target="_blank" rel="noopener" class="btn btn--wht">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.2 1.3-2 1.4-.5.1-1.2.1-3.4-.8-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2 .9c.3.2.5.2.6.3.1.2.1.7-.1 1.5Z"/></svg>
-          Chat via WhatsApp
-        </a>
-        <a href="mailto:info@jkreasi.co.id?subject=Permintaan%20Penawaran%20Sulfur%20Industri" class="btn btn--wht-line">
-          Kirim Email
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <dl class="cta__card up" data-d="2">
-      <div><dt>Kontak</dt><dd>Ibnu Munandar, Direktur Utama</dd></div>
-      <div><dt>Telepon</dt><dd><a href="tel:+622152905299">021 5290 5299</a> &middot; <a href="tel:+628111033334">0811 1033 334</a></dd></div>
-      <div><dt>Surel</dt><dd><a href="mailto:info@jkreasi.co.id">info@jkreasi.co.id</a></dd></div>
-      <div><dt>Kantor</dt><dd>ESTUBIZI Business Center, Gedung Setiabudi 2 Lt. 2 Suite 207 B-C, Jl. H.R. Rasuna Said Kav. 62, Jakarta Selatan 12920</dd></div>
-    </dl>
-  </div>
-</section>
-
-</main>
-
-<!-- ===================== FOOTER ===================== -->
-<footer class="foot">
-  <div class="wrap">
-    <div class="foot__grid">
-      <div>
-        <div class="foot__logo"><img src="asset/Logo-01.png" alt="JKreasi" width="1180" height="267"></div>
-        <p class="foot__about">JKreasi (PT Jaya Kreasi Teknologi) menjalankan dua lini usaha: solusi teknologi informasi sejak 2019 dan perdagangan komoditas industri sejak 2026.</p>
-        <div class="social">
-          <a href="#" aria-label="LinkedIn JKreasi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.5 4.76 5.75V21h-4v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8h-4V9Z"/></svg></a>
-          <a href="#" aria-label="Instagram JKreasi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="mailto:info@jkreasi.co.id" aria-label="Surel JKreasi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        <div class="foot__end">
+          <span
+            >&copy; <span id="year">2026</span> PT Jaya Kreasi Teknologi</span
+          >
+          <span>Seluruh hak cipta dilindungi</span>
+          <details class="foot__cr">
+            <summary>Kredit foto</summary>
+            <p>
+              Foto pemakaian industri via Wikimedia Commons, dipotong dan
+              dikompres:
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Iharanikkei_Chemical_Industry_-_panoramio.jpg"
+                target="_blank"
+                rel="noopener"
+                >FoxyStranger</a
+              >
+              (CC BY-SA 3.0) &middot;
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Phosphate_Mine_Panorama.jpg"
+                target="_blank"
+                rel="noopener"
+                >Jason Parker-Burlingham</a
+              >
+              (CC BY 2.0) &middot;
+              <a
+                href="https://commons.wikimedia.org/wiki/File:DAP_(Diammonium_Phosphate)_Granules_(1).jpg"
+                target="_blank"
+                rel="noopener"
+                >Suyash Dwivedi</a
+              >
+              (CC BY-SA 4.0) &middot;
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Detail_of_Richmond_Chevron_Refinery_with_backdrop_of_San_Pablo_Bay.jpg"
+                target="_blank"
+                rel="noopener"
+                >Bastique</a
+              >
+              (CC BY-SA 4.0) &middot;
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Assorted_stacked_automotive_tires.jpg"
+                target="_blank"
+                rel="noopener"
+                >HopsonRoad</a
+              >
+              (CC BY-SA 4.0) &middot;
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Belle_Glade_mill.jpg"
+                target="_blank"
+                rel="noopener"
+                >Jamesmartin111</a
+              >
+              (CC0) &middot;
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Crop_sprayer_-_geograph.org.uk_-_8091188.jpg"
+                target="_blank"
+                rel="noopener"
+                >Richard Sutcliffe</a
+              >
+              (CC BY-SA 2.0) &middot;
+              <a
+                href="https://commons.wikimedia.org/wiki/File:In-stream_inoculation_addition_while_molten_cast_iron_is_poured_to_a_green_sand_mold_in_a_foundry_in_Bangladesh.jpg"
+                target="_blank"
+                rel="noopener"
+                >Sm faysal</a
+              >
+              (CC BY-SA 4.0).
+            </p>
+          </details>
         </div>
       </div>
-      <div>
-        <h4>Perdagangan</h4>
-        <div class="foot__links">
-          <a href="#produk">Sulfur Industri</a>
-          <a href="#pemakaian">Pemakaian Industri</a>
-          <a href="#alur">Alur Transaksi</a>
-          <a href="#transaksi">Rekam Transaksi</a>
-          <a href="#legalitas">Legal &amp; Kepatuhan</a>
-        </div>
-      </div>
-      <div>
-        <h4>Teknologi</h4>
-        <div class="foot__links">
-          <a href="index.html#portofolio">Studi Kasus</a>
-          <a href="index.html#layanan">Layanan</a>
-          <a href="index.html#tim">Tim</a>
-          <a href="index.html#kontak">Kontak</a>
-        </div>
-      </div>
-      <div>
-        <h4>Lokasi</h4>
-        <address>ESTUBIZI Business Center<br>Gedung Setiabudi 2, Lantai 2<br>Suite 207 B-C<br>Jakarta Selatan 12920, Indonesia</address>
-      </div>
-    </div>
-    <div class="foot__end">
-      <span>&copy; <span id="year">2026</span> PT Jaya Kreasi Teknologi</span>
-      <span>Seluruh hak cipta dilindungi</span>
-      <details class="foot__cr">
-        <summary>Kredit foto</summary>
-        <p>Foto pemakaian industri via Wikimedia Commons, dipotong dan dikompres: <a href="https://commons.wikimedia.org/wiki/File:Iharanikkei_Chemical_Industry_-_panoramio.jpg" target="_blank" rel="noopener">FoxyStranger</a> (CC BY-SA 3.0) &middot; <a href="https://commons.wikimedia.org/wiki/File:Phosphate_Mine_Panorama.jpg" target="_blank" rel="noopener">Jason Parker-Burlingham</a> (CC BY 2.0) &middot; <a href="https://commons.wikimedia.org/wiki/File:DAP_(Diammonium_Phosphate)_Granules_(1).jpg" target="_blank" rel="noopener">Suyash Dwivedi</a> (CC BY-SA 4.0) &middot; <a href="https://commons.wikimedia.org/wiki/File:Detail_of_Richmond_Chevron_Refinery_with_backdrop_of_San_Pablo_Bay.jpg" target="_blank" rel="noopener">Bastique</a> (CC BY-SA 4.0) &middot; <a href="https://commons.wikimedia.org/wiki/File:Assorted_stacked_automotive_tires.jpg" target="_blank" rel="noopener">HopsonRoad</a> (CC BY-SA 4.0) &middot; <a href="https://commons.wikimedia.org/wiki/File:Belle_Glade_mill.jpg" target="_blank" rel="noopener">Jamesmartin111</a> (CC0) &middot; <a href="https://commons.wikimedia.org/wiki/File:Crop_sprayer_-_geograph.org.uk_-_8091188.jpg" target="_blank" rel="noopener">Richard Sutcliffe</a> (CC BY-SA 2.0) &middot; <a href="https://commons.wikimedia.org/wiki/File:In-stream_inoculation_addition_while_molten_cast_iron_is_poured_to_a_green_sand_mold_in_a_foundry_in_Bangladesh.jpg" target="_blank" rel="noopener">Sm faysal</a> (CC BY-SA 4.0).</p>
-      </details>
-    </div>
-  </div>
-</footer>
+    </footer>
 
-<a class="wa" href="https://wa.me/628111033334" target="_blank" rel="noopener" aria-label="Chat via WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.2 1.3-2 1.4-.5.1-1.2.1-3.4-.8-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2 .9c.3.2.5.2.6.3.1.2.1.7-.1 1.5Z"/></svg>
-  <span>WhatsApp</span>
-</a>
+    <a
+      class="wa"
+      href="https://wa.me/628111033334"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat via WhatsApp"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.2 1.3-2 1.4-.5.1-1.2.1-3.4-.8-2.9-1.2-4.7-4.1-4.9-4.3-.1-.2-1.1-1.5-1.1-2.8s.7-2 .9-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 2 .9 2.1c.1.2.1.3 0 .5s-.2.4-.3.5l-.4.5c-.2.2-.3.3-.1.7.2.3.9 1.5 1.9 2.4 1.3 1.2 2.4 1.5 2.7 1.7.3.1.5.1.7-.1s.8-.9 1-1.2c.2-.3.4-.3.7-.2l2 .9c.3.2.5.2.6.3.1.2.1.7-.1 1.5Z"
+        />
+      </svg>
+      <span>WhatsApp</span>
+    </a>
 
-<noscript><style>.up,.hero .fade{opacity:1;transform:none}.ln>*{transform:none}.stamp{opacity:.9;transform:rotate(-11deg)}.tix__docs path{stroke-dashoffset:0}.trackbox{--p:1}</style></noscript>
+    <noscript
+      ><link rel="stylesheet" href="asset/css/perdagangan-noscript.css"
+    /></noscript>
 
-<script>
-(function () {
-  'use strict';
-
-  var $  = function (s, c) { return (c || document).querySelector(s); };
-  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
-  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
-
-  var root    = document.documentElement;
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var touch   = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
-  var motion  = !reduced;                       // animasi masuk, hitung naik
-  var depth   = !reduced && !touch;             // parallax dan meja 3D
-
-  /* ==========================================================
-     1. HERO · judul per baris dan elemen lain muncul saat dibuka
-     ========================================================== */
-  if (motion) requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('is-ready'); }); });
-  else root.classList.add('is-ready');
-
-  /* ==========================================================
-     2. MENU PONSEL
-     ========================================================== */
-  var burger = $('#burger'), sheet = $('#sheet');
-  var shut = function () {
-    sheet.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  };
-  burger.addEventListener('click', function () {
-    var open = sheet.classList.toggle('open');
-    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-  $$('#sheet a').forEach(function (a) { a.addEventListener('click', shut); });
-  window.addEventListener('keydown', function (e) { if (e.key === 'Escape') shut(); });
-
-  /* ==========================================================
-     3. REVEAL & HITUNG NAIK
-     ========================================================== */
-  var io = ('IntersectionObserver' in window && motion) ? function (els, fn, opt) {
-    var o = new IntersectionObserver(function (l) {
-      l.forEach(function (en) { if (en.isIntersecting) { fn(en.target); o.unobserve(en.target); } });
-    }, opt);
-    els.forEach(function (el) { o.observe(el); });
-  } : function (els, fn) { els.forEach(fn); };
-
-  io($$('.up'), function (el) { el.classList.add('in'); }, { threshold: .12, rootMargin: '0px 0px -8% 0px' });
-  // Meja berkas tidak memakai .up karena transform-nya dipakai rotasi 3D
-  io($$('#desk'), function (el) { el.classList.add('in'); }, { threshold: .35 });
-
-  var fmt = function (n) { return n.toLocaleString('id-ID'); };
-  var counters = $$('[data-count]');
-  if (motion) counters.forEach(function (el) { el.textContent = '0' + (el.getAttribute('data-suffix') || ''); });
-  io(counters, function (el) {
-    var to = +el.getAttribute('data-count'), suf = el.getAttribute('data-suffix') || '', t0 = null;
-    if (!motion) { el.textContent = fmt(to) + suf; return; }
-    var tick = function (t) {
-      if (t0 === null) t0 = t;
-      var k = Math.min((t - t0) / 1600, 1);
-      el.textContent = fmt(Math.round(to * (1 - Math.pow(1 - k, 3)))) + suf;
-      if (k < 1) requestAnimationFrame(tick);
-    };
-    setTimeout(function () { requestAnimationFrame(tick); }, 250);
-  }, { threshold: .6 });
-
-  /* ==========================================================
-     4. PEMAKAIAN · dialog detail per kotak
-     ========================================================== */
-  var dlg = $('#useDlg'), tiles = $$('.tile'), cur = 0;
-  var dImg = $('#dlgImg'), dNo = $('#dlgNo'), dTitle = $('#dlgTitle'), dLead = $('#dlgLead');
-  var dRole = $('#dlgRole'), dList = $('#dlgList'), dWa = $('#dlgWa'), dThumbs = $('#dlgThumbs');
-  var two = function (n) { return (n < 10 ? '0' : '') + n; };
-  var replay = function (el) { el.classList.remove('dlg__swap'); void el.offsetWidth; el.classList.add('dlg__swap'); };
-
-  // Deret miniatur dibuat dari foto tiap kotak
-  tiles.forEach(function (t, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', $('h3', t).textContent);
-    b.innerHTML = '<img src="' + $('img', t).getAttribute('src') + '" alt="">';
-    b.addEventListener('click', function () { showUse(i); });
-    dThumbs.appendChild(b);
-  });
-  var thumbs = $$('button', dThumbs);
-
-  var showUse = function (i) {
-    cur = (i + tiles.length) % tiles.length;
-    var t = tiles[cur], more = $('.tile__more', t), name = $('h3', t).textContent;
-    dImg.src = $('img', t).getAttribute('src'); dImg.alt = $('img', t).alt;
-    dNo.innerHTML = two(cur + 1) + '<small>/ ' + two(tiles.length) + '</small>';
-    dTitle.textContent = name;
-    dLead.textContent = $('p', more).textContent;
-    dRole.textContent = more.getAttribute('data-role');
-    dList.innerHTML = $('ul', more).innerHTML;
-    dWa.href = 'https://wa.me/628111033334?text=' + encodeURIComponent('Halo JKreasi, saya ingin menanyakan pasokan sulfur untuk ' + name.toLowerCase() + '.');
-    thumbs.forEach(function (b, n) { b.classList.toggle('on', n === cur); });
-    if (motion) { replay(dImg); replay($('#dlgSwap')); replay($('#dlgFacts')); }
-  };
-  var openUse = function (i) {
-    showUse(i);
-    if (typeof dlg.showModal === 'function') { dlg.showModal(); root.classList.add('dlg-open'); }
-  };
-  var closeUse = function () { if (dlg.open) dlg.close(); };
-
-  tiles.forEach(function (t, i) { $('.tile__hit', t).addEventListener('click', function () { openUse(i); }); });
-  $('#dlgX').addEventListener('click', closeUse);
-  $('#dlgPrev').addEventListener('click', function () { showUse(cur - 1); });
-  $('#dlgNext').addEventListener('click', function () { showUse(cur + 1); });
-  $('#dlgQuote').addEventListener('click', closeUse);
-  dlg.addEventListener('close', function () { root.classList.remove('dlg-open'); });
-  dlg.addEventListener('click', function (e) { if (e.target === dlg) closeUse(); });   // klik latar
-  dlg.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') showUse(cur - 1);
-    if (e.key === 'ArrowRight') showUse(cur + 1);
-  });
-
-  /* ==========================================================
-     5. LEGAL · butir garis waktu mengangkat kertas pasangannya
-     ========================================================== */
-  var files = $$('.paper'), tlItems = $$('#tl li');
-  var pick = function (i) {
-    files.forEach(function (f, n) { f.classList.toggle('is-on', n === i); });
-    tlItems.forEach(function (t, n) { t.classList.toggle('is-on', n === i); });
-  };
-  tlItems.forEach(function (t, i) {
-    t.addEventListener('mouseenter', function () { pick(i); });
-    t.addEventListener('focus', function () { pick(i); });
-    t.addEventListener('mouseleave', function () { pick(-1); });
-    t.addEventListener('blur', function () { pick(-1); });
-    t.addEventListener('click', function () { pick(t.classList.contains('is-on') && touch ? -1 : i); });
-  });
-
-  /* ==========================================================
-     6. LOOP GULIR · satu tempat untuk semua gerak berbasis gulir
-     ========================================================== */
-  var nav = $('#nav'), prog = $('#prog'), hero = $('.hero');
-  var heroImg = $('.hero__img'), heroIn = $('.hero__in');
-  var trackbox = $('#trackbox'), steps = $$('.step');
-  var deal = $('#transaksi'), dealImg = $('.deal__photo img'), dealSlab = $('.deal__slab'), tixPar = $('#tixPar');
-  var cta = $('#hubungi'), ctaTex = $('#ctaTex');
-  var desk = $('#desk');
-  var pm = $('#pm'), pmMain = $('.pm__main img'), pmPrint = $('.pm__print');
-
-  // Posisi pusat elemen terhadap pusat layar: -1 (di bawah) .. 1 (di atas)
-  var offset = function (node, vh) {
-    var r = node.getBoundingClientRect();
-    return clamp((vh / 2 - (r.top + r.height / 2)) / vh, -1.2, 1.2);
-  };
-
-  var onScroll = function () {
-    var y = window.scrollY, vh = window.innerHeight;
-    var max = document.documentElement.scrollHeight - vh;
-    prog.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
-
-    var over = hero.getBoundingClientRect().bottom > (nav.offsetHeight || 74);
-    nav.classList.toggle('dark', over);
-    nav.classList.toggle('lite', !over);
-
-    // Hero: foto paling lambat, teks sedikit lebih cepat dan memudar
-    if (depth && y < vh * 1.2) {
-      heroImg.style.transform = 'translate3d(0,' + (y * .3).toFixed(1) + 'px,0) scale(1.08)';
-      heroIn.style.transform = 'translate3d(0,' + (y * .14).toFixed(1) + 'px,0)';
-      heroIn.style.opacity = clamp(1 - y / (vh * .8), 0, 1).toFixed(3);
-    }
-
-    // Alur: rel mulai terisi saat bagian atasnya melewati 85% tinggi layar.
-    // Rentangnya minimal 55% layar supaya rel mendatar yang pendek tidak
-    // langsung penuh; rel tegak (ponsel) memakai tingginya sendiri.
-    var r = trackbox.getBoundingClientRect();
-    var p = reduced ? 1 : clamp((vh * .85 - r.top) / Math.max(r.height, vh * .55), 0, 1);
-    trackbox.style.setProperty('--p', p.toFixed(3));
-    steps.forEach(function (s, i) { s.classList.toggle('on', p > i / steps.length + .01); });
-
-    // Transaksi & ajakan: lapisan bergerak dengan kecepatan berbeda
-    // k: -1 saat seksi masih di bawah layar, 0 di tengah, 1 saat sudah lewat
-    if (depth && window.innerWidth > 1000) {
-      var k = offset(deal, vh), ak = Math.abs(k);
-      dealSlab.style.setProperty('--sy', (k * 60).toFixed(1) + 'px');
-      dealImg.style.setProperty('--py', (k * 30).toFixed(1) + 'px');
-      tixPar.style.setProperty('--fan', clamp(1 - ak * 1.6, 0, 1).toFixed(3));
-      tixPar.style.setProperty('--ry', (clamp(-k, -1, 1) * -14).toFixed(2) + 'deg');
-      tixPar.style.setProperty('--rx', (k * 6).toFixed(2) + 'deg');
-      tixPar.style.translate = '0 ' + (k * -40).toFixed(1) + 'px';
-    }
-    // Komoditas: foto besar lambat, foto cetak lebih cepat ke arah berlawanan
-    if (depth) {
-      var kp = offset(pm, vh);
-      pmMain.style.setProperty('--py', (kp * 34).toFixed(1) + 'px');
-      pmPrint.style.setProperty('--py2', (kp * -46).toFixed(1) + 'px');
-      // Kotak pemakaian: foto bergeser di dalam bingkainya
-      tiles.forEach(function (t) {
-        var r = t.getBoundingClientRect();
-        if (r.bottom > 0 && r.top < vh) t.style.setProperty('--py', (clamp((vh / 2 - (r.top + r.height / 2)) / vh, -1, 1) * 22).toFixed(1) + 'px');
-      });
-    }
-
-    // Meja berkas berputar pelan: lebih datar saat masih di bawah layar
-    if (depth) {
-      var kd = offset(desk, vh);
-      desk.style.setProperty('--tx', (48 - kd * 9).toFixed(2) + 'deg');
-      desk.style.setProperty('--tz', (-26 + kd * 7).toFixed(2) + 'deg');
-    }
-    if (depth) ctaTex.style.transform = 'translate3d(0,' + (offset(cta, vh) * 70).toFixed(1) + 'px,0)';
-  };
-
-  var queued = false;
-  var request = function () {
-    if (!queued) { queued = true; requestAnimationFrame(function () { onScroll(); queued = false; }); }
-  };
-  window.addEventListener('scroll', request, { passive: true });
-  window.addEventListener('resize', request);
-  onScroll();
-
-  /* --- Tahun berjalan --- */
-  $('#year').textContent = new Date().getFullYear();
-})();
-</script>
-
-</body>
+    <script src="asset/js/perdagangan.js"></script>
+  </body>
 </html>
