@@ -43,9 +43,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-/* ============================================================
-   TOKEN · putih dingin, navy pekat, azure logo. Tegas & korporat.
-   ============================================================ */
+/* ========== TOKEN ========== */
 :root{
   --paper:#FFFFFF;
   --paper-2:#F2F5F9;
@@ -105,9 +103,7 @@ p{text-wrap:pretty}
 .sec{padding-block:var(--sec);position:relative}
 .sec--alt{background:var(--paper-2)}
 
-/* ============================================================
-   TOMBOL · persegi penuh, tebal, tanpa gradient
-   ============================================================ */
+/* ========== TOMBOL ========== */
 .btn{
   display:inline-flex;align-items:center;gap:11px;padding:16px 28px;border-radius:0;
   font-size:.88rem;font-weight:600;letter-spacing:.01em;cursor:pointer;
@@ -119,8 +115,7 @@ p{text-wrap:pretty}
 .btn--ink:hover{background:var(--blue)}
 .btn--blue{background:var(--blue);color:#fff}
 .btn--blue:hover{background:var(--ink)}
-.btn--line{border:1.5px solid var(--rule-2);color:var(--ink)}
-.btn--line:hover{border-color:var(--ink);background:var(--ink);color:#fff}
+
 .btn--wht{background:#fff;color:var(--ink)}
 .btn--wht:hover{background:var(--blue);color:#fff}
 .btn--wht-line{border:1.5px solid rgba(255,255,255,.32);color:#fff}
@@ -133,9 +128,7 @@ p{text-wrap:pretty}
 .ulink svg{width:14px;height:14px;transition:transform .3s var(--ease)}
 .ulink:hover svg{transform:translateX(5px)}
 
-/* ============================================================
-   NAVBAR · terang di atas panggung gelap, membalik setelahnya
-   ============================================================ */
+/* ========== NAVBAR ========== */
 .prog{position:fixed;top:0;left:0;height:2px;width:100%;z-index:200;pointer-events:none}
 .prog__f{height:100%;width:0;background:var(--blue)}
 
@@ -180,11 +173,7 @@ p{text-wrap:pretty}
 .sheet a i{font-family:var(--mono);font-size:.67rem;font-style:normal;color:rgba(255,255,255,.4);letter-spacing:.12em}
 .sheet .btn{margin-top:26px}
 
-/* ============================================================
-   PANGGUNG · hero full-screen, terkunci, dengan animasi air
-   Tinggi 340vh; isinya sticky 100vh sehingga scroll "mengunci"
-   satu layar sementara tiga babak teks bergantian.
-   ============================================================ */
+/* ========== HERO · PANGGUNG AIR ========== */
 .stage{position:relative;height:340vh;background:var(--abyss)}
 .stage__pin{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:var(--abyss)}
 .water{position:absolute;inset:0;width:100%;height:100%}
@@ -218,23 +207,10 @@ p{text-wrap:pretty}
 .act__roster b{font-family:var(--mono);font-size:.7rem;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55)}
 
 /* Papan status di bawah panggung */
-.hud{
-  position:absolute;left:0;right:0;bottom:0;z-index:3;
-  padding:0 var(--pad) clamp(22px,3vw,34px);
-  display:flex;align-items:flex-end;justify-content:space-between;gap:20px;
-}
-.hud__steps{display:flex;gap:12px;align-items:center}
-.hud__dot{width:26px;height:2px;background:rgba(255,255,255,.28);transition:background .4s var(--ease)}
-.hud__dot.on{background:var(--blue)}
-.hud__n{font-family:var(--mono);font-size:.69rem;letter-spacing:.14em;color:rgba(255,255,255,.55)}
-.hud__hint{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);transition:opacity .4s var(--ease)}
-.hud__hint svg{width:13px;height:13px;animation:nudge 2.1s ease-in-out infinite}
-@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
-.hud__hint.gone{opacity:0}
 
-/* ============================================================
-   PITA KLIEN
-   ============================================================ */
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+
+/* ========== PITA KLIEN ========== */
 .strip{background:var(--paper);border-bottom:1px solid var(--rule);padding-block:clamp(22px,2.8vw,34px)}
 .strip__label{
   text-align:center;margin-bottom:clamp(15px,1.9vw,23px);
@@ -246,9 +222,7 @@ p{text-wrap:pretty}
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
   mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
 }
-/* padding-right sengaja disamakan dengan gap: lebar trek jadi tepat
-   16 logo + 16 jarak, sehingga translateX(-50%) persis satu set
-   dan perulangannya tidak meloncat. */
+/* padding-right sengaja disamakan dengan gap */
 .strip__track{
   --g:clamp(32px,4.2vw,70px);
   display:flex;align-items:center;gap:var(--g);padding-right:var(--g);
@@ -259,18 +233,13 @@ p{text-wrap:pretty}
 .strip__track img{
   flex:none;width:auto;object-fit:contain;
   height:calc(var(--lh,1) * clamp(28px,3vw,40px));
-  /* Logo klien sangat heterogen: lambang daerah multiwarna, wordmark
-     korporat, dan satu logo berlatar kuning solid. Diredam agar terbaca
-     sebagai satu deret, lalu berwarna penuh saat disentuh kursor.
-     Ingin selalu berwarna? Ganti baris filter di bawah dengan: filter:none */
+  /* Logo klien sangat heterogen */
   filter:grayscale(1);opacity:.6;
   transition:filter .4s var(--ease),opacity .4s var(--ease),transform .4s var(--ease);
 }
 .strip__track img:hover{filter:none;opacity:1;transform:scale(1.07)}
 
-/* ============================================================
-   ANGKA
-   ============================================================ */
+/* ========== ANGKA ========== */
 .figs{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
 .fig{padding:clamp(28px,3.4vw,46px) clamp(20px,2.4vw,36px) clamp(28px,3.4vw,46px) 0;border-right:1px solid var(--rule)}
 .fig + .fig{padding-left:clamp(20px,2.4vw,36px)}
@@ -279,41 +248,14 @@ p{text-wrap:pretty}
 .fig__n small{font-size:.4em;color:var(--blue);letter-spacing:0}
 .fig__t{margin-top:15px;font-size:.87rem;line-height:1.5;color:var(--ink-2);max-width:24ch}
 
-/* ============================================================
-   KEPALA SEKSI
-   ============================================================ */
+/* ========== KEPALA SEKSI ========== */
 .shead{display:grid;grid-template-columns:210px 1fr;gap:clamp(24px,4vw,68px);margin-bottom:clamp(46px,5vw,80px)}
-.shead__idx{padding-top:.65em}
+
 .shead__body{max-width:58ch}
 .shead h2 + p{margin-top:22px;font-size:clamp(1rem,.95rem + .32vw,1.14rem)}
 
-/* ============================================================
-   01 · MASALAH
-   ============================================================ */
+/* ========== FOTO PLACEHOLDER ========== */
 
-/* ============================================================
-   02 · LAYANAN · daftar bernomor
-   ============================================================ */
-.svcs{border-top:2px solid var(--ink)}
-.svc{
-  display:grid;grid-template-columns:210px 1.1fr 1.35fr;gap:clamp(20px,3.4vw,60px);
-  padding:clamp(32px,3.6vw,54px) 0;border-bottom:1px solid var(--rule);position:relative;
-}
-.svc::before{content:"";position:absolute;left:calc(var(--pad) * -1);right:calc(var(--pad) * -1);top:0;bottom:0;background:var(--paper-2);opacity:0;transition:opacity .35s var(--ease);z-index:-1}
-.svc:hover::before{opacity:1}
-.svc__no{font-family:var(--mono);font-size:.71rem;letter-spacing:.15em;color:var(--ink-3);transition:color .3s var(--ease)}
-.svc:hover .svc__no{color:var(--blue)}
-.svc h3{margin-top:14px}
-.svc__d{font-size:.97rem}
-.svc__pts{border-top:1px solid var(--rule)}
-.svc__pts li{padding:10px 0;border-bottom:1px solid var(--rule);font-size:.86rem;line-height:1.5;color:var(--ink-2);display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start}
-.svc__pts li::before{content:"";width:11px;height:1.5px;background:var(--blue);margin-top:.62em}
-.svc__pts li:last-child{border-bottom:0}
-
-/* ============================================================
-   03 · PORTOFOLIO · kisi bergambar, siap diisi foto
-   ============================================================ */
-.shot{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--paper-3)}
 /* Placeholder di belakang; foto asli menutupinya bila berhasil dimuat */
 .shot__ph{
   position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;
@@ -324,10 +266,7 @@ p{text-wrap:pretty}
 .shot__ph span{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
 .shot__ph b{font-family:var(--mono);font-size:clamp(1.8rem,1.3rem + 1.6vw,2.6rem);font-weight:500;letter-spacing:-.04em;color:var(--rule-2);line-height:1}
 
-
-/* ============================================================
-   PEMULIHAN · blok dasar yang ikut terhapus
-   ============================================================ */
+/* ========== KOMPONEN DASAR ========== */
 .up{opacity:0;transform:translateY(18px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .up.in{opacity:1;transform:none}
 .up[data-d="1"]{transition-delay:.08s}
@@ -379,7 +318,7 @@ p{text-wrap:pretty}
 
 /* --- Footer --- */
 .foot{background:var(--ink);color:rgba(255,255,255,.6);padding-top:clamp(62px,7vw,100px)}
-.foot__grid{display:grid;grid-template-columns:1.7fr 1fr 1fr 1.2fr;gap:clamp(30px,4vw,62px);padding-bottom:clamp(50px,6vw,80px)}
+.foot__grid{display:grid;grid-template-columns:1.6fr .9fr .9fr .9fr 1.1fr;gap:clamp(30px,3.2vw,52px);padding-bottom:clamp(50px,6vw,80px)}
 .foot__logo img{height:25px;width:auto;filter:brightness(0) invert(1);opacity:.94}
 .foot__about{margin-top:22px;font-size:.9rem;max-width:34ch;line-height:1.7}
 .foot h4{font-family:var(--mono);font-size:.67rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:22px}
@@ -407,6 +346,9 @@ p{text-wrap:pretty}
 .wa:hover{transform:none;background:var(--blue)}
 .wa svg{width:19px;height:19px;flex:none}
 
+@media (max-width:1250px){
+  .foot__grid{grid-template-columns:1fr 1fr 1fr;gap:38px}
+}
 @media (max-width:1100px){
   .call__grid{grid-template-columns:140px 1fr;gap:20px 34px}
   .foot__grid{grid-template-columns:1fr 1fr;gap:42px}
@@ -429,14 +371,7 @@ p{text-wrap:pretty}
   .up{opacity:1;transform:none}
 }
 
-/* ============================================================
-   GERBANG · halaman statis, tidak bisa digulir sampai disentuh
-   Latar air dipertahankan. Isinya satu kolom terpusat: logo besar,
-   dua baris keterangan, lalu lingkaran berdetak sebagai jalan masuk.
-   Iramanya meniru detak jantung (lub-dub): dua denyut rapat di awal
-   siklus, lalu jeda panjang. Itu sebabnya keyframe-nya menumpuk di
-   0-26% dan diam sampai 100%.
-   ============================================================ */
+/* ========== GERBANG ========== */
 html.gated,body.gated{overflow:hidden;height:100%}
 .gate{position:fixed;inset:0;z-index:400;cursor:pointer;background:var(--abyss);opacity:1;transition:opacity .85s var(--ease)}
 .gate.out{opacity:0;pointer-events:none}
@@ -450,15 +385,16 @@ html.gated,body.gated{overflow:hidden;height:100%}
 }
 .gate__in{
   position:relative;z-index:2;height:100%;width:100%;
-  /* flex, bukan grid + place-content:center. Pada grid, track kolomnya
-     ikut membesar mengikuti konten dan meluap di layar sempit. */
+  /* flex, bukan grid + place-content:center */
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:var(--pad);
 }
 .gate__in > *{max-width:100%}
 
-/* --- Logo besar --- */
+/* --- Logo besar, dengan detak di belakangnya --- */
+.gate__stage{position:relative;display:grid;place-items:center}
 .gate__mark{
+  position:relative;z-index:1;
   height:clamp(44px,7.4vw,92px);width:auto;
   filter:brightness(0) invert(1);opacity:.96;
 }
@@ -474,51 +410,41 @@ html.gated,body.gated{overflow:hidden;height:100%}
   line-height:1.9;
 }
 
-/* --- Lingkaran berdetak sebagai jalan masuk --- */
+/* --- Detak di balik logo --- Tidak ada panah atau ajakan tertulis */
 .beat{
-  position:relative;display:grid;place-items:center;
-  width:76px;height:76px;margin-top:clamp(44px,7vh,76px);
-  background:none;border:0;cursor:pointer;
+  --d:clamp(200px,30vw,380px);
+  position:absolute;left:50%;top:50%;z-index:0;
+  width:var(--d);height:var(--d);margin:calc(var(--d) / -2) 0 0 calc(var(--d) / -2);
+  padding:0;background:none;border:0;border-radius:50%;cursor:pointer;
 }
-.beat__core{
-  position:relative;z-index:2;display:grid;place-items:center;
-  width:76px;height:76px;border-radius:50%;
-  border:1.5px solid rgba(255,255,255,.5);color:#fff;
-  animation:beatCore 2.2s var(--ease) infinite;
-  transition:background .45s var(--ease),border-color .45s var(--ease),color .45s var(--ease);
+.beat__glow{
+  position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(120,195,255,.2),rgba(120,195,255,.07) 55%,rgba(120,195,255,0));
+  animation:beatCore 2.6s var(--ease) infinite;
 }
-.beat__core svg{width:17px;height:17px;transition:transform .45s var(--ease)}
-.beat:hover .beat__core{background:#fff;border-color:#fff;color:var(--ink)}
-.beat:hover .beat__core svg{transform:translateY(3px)}
-.beat:focus-visible .beat__core{border-color:#fff;background:rgba(255,255,255,.16)}
-
 .beat__ring{
-  position:absolute;inset:0;border-radius:50%;
-  border:1.5px solid rgba(120,195,255,.85);
-  opacity:0;pointer-events:none;
-  animation:beatRing 2.2s cubic-bezier(.18,.7,.3,1) infinite;
+  position:absolute;inset:18%;border-radius:50%;pointer-events:none;
+  border:1px solid rgba(160,210,255,.4);
+  opacity:0;
+  animation:beatRing 2.6s cubic-bezier(.18,.7,.3,1) infinite;
 }
-.beat__ring:nth-of-type(2){animation-delay:.26s}   /* denyut kedua: dub */
+.beat__ring:nth-of-type(3){animation-delay:.3s}   /* denyut kedua: dub */
+.beat:focus-visible{outline:none}
+.beat:focus-visible .beat__glow{background:radial-gradient(closest-side,rgba(160,215,255,.32),rgba(120,195,255,.1) 55%,rgba(120,195,255,0))}
 
 /* lub-dub lalu jeda */
 @keyframes beatCore{
-  0%{transform:scale(1)}
-  5%{transform:scale(1.075)}
-  11%{transform:scale(1)}
-  17%{transform:scale(1.05)}
-  25%{transform:scale(1)}
-  100%{transform:scale(1)}
+  0%{transform:scale(1);opacity:.75}
+  5%{transform:scale(1.08);opacity:1}
+  12%{transform:scale(1);opacity:.8}
+  18%{transform:scale(1.05);opacity:.95}
+  28%{transform:scale(1);opacity:.75}
+  100%{transform:scale(1);opacity:.75}
 }
 @keyframes beatRing{
-  0%{transform:scale(1);opacity:.8}
-  45%{opacity:0}
-  60%,100%{transform:scale(2.7);opacity:0}
-}
-
-.gate__hint{
-  margin-top:clamp(20px,2.6vh,30px);
-  font-family:var(--mono);font-size:.62rem;letter-spacing:.2em;
-  text-transform:uppercase;color:rgba(255,255,255,.42);
+  0%{transform:scale(.9);opacity:.6}
+  50%{opacity:0}
+  65%,100%{transform:scale(1.9);opacity:0}
 }
 
 /* Di layar sempit "Jakarta" dilepas agar keterangan tetap satu baris */
@@ -526,12 +452,11 @@ html.gated,body.gated{overflow:hidden;height:100%}
   .gate-xs{display:none}
 }
 @media (max-width:620px){
-  .beat,.beat__core{width:66px;height:66px}
   .gate__meta{font-size:.66rem;letter-spacing:.16em}
   .gate__meta--sub{font-size:.61rem;letter-spacing:.13em}
 }
 @media (prefers-reduced-motion:reduce){
-  .beat__core{animation:none}
+  .beat__glow{animation:none}
   .beat__ring{display:none}
 }
 
@@ -540,103 +465,89 @@ html.gated,body.gated{overflow:hidden;height:100%}
 .stage__pin{position:relative;height:100%}
 .stage__body{padding-bottom:clamp(40px,6vh,70px)}
 
-/* ============================================================
-   STUDI KASUS · sorotan, kartu dapat diklik, panel rincian
-   ============================================================ */
-.works--feat{grid-template-columns:1fr 1fr}
-.works--rest{grid-template-columns:repeat(3,1fr)}
-.works__label{display:block;margin:clamp(50px,5.5vw,76px) 0 clamp(24px,2.6vw,36px);padding-top:clamp(28px,3vw,42px);border-top:1px solid var(--rule)}
+/* ========== STUDI KASUS · PANEL RINCIAN ========== */
 
-.work{cursor:pointer}
-.work:focus-visible{outline:2px solid var(--blue);outline-offset:6px}
-.shot--wide{aspect-ratio:16/10}
-.badge{
-  position:absolute;top:0;left:0;z-index:2;padding:9px 15px;background:var(--blue);color:#fff;
-  font-family:var(--mono);font-size:.63rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;
-}
-.work--feat h3{font-size:clamp(1.35rem,1.15rem + .8vw,1.85rem)}
-.work__sum{margin-top:13px;font-size:.94rem;color:var(--ink-2);max-width:48ch}
-.work__cta{
-  display:inline-flex;align-items:center;gap:9px;margin-top:18px;
-  font-family:var(--mono);font-size:.67rem;font-weight:500;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--blue-deep);
-}
-.work__cta svg{width:13px;height:13px;transition:transform .3s var(--ease)}
-.work:hover .work__cta svg{transform:translateX(5px)}
-
-/* Panel rincian · laci dari sisi kanan */
+/* ---------- Panel rincian studi kasus · laci dari kanan ---------- */
 body.locked{overflow:hidden}
 .case[hidden]{display:none}
 .case{position:fixed;inset:0;z-index:300}
-.case__bg{position:absolute;inset:0;background:rgba(6,14,30,.7);opacity:0;transition:opacity .45s var(--ease);cursor:pointer}
+.case__bg{position:absolute;inset:0;background:rgba(6,14,30,.72);backdrop-filter:blur(4px);opacity:0;transition:opacity .45s var(--ease);cursor:pointer}
 .case.in .case__bg{opacity:1}
 .case__panel{
-  position:absolute;top:0;right:0;bottom:0;width:min(720px,100%);
-  background:var(--paper);overflow-y:auto;overscroll-behavior:contain;
-  display:flex;flex-direction:column;
-  transform:translateX(100%);transition:transform .55s var(--ease);
+  position:absolute;top:0;right:0;bottom:0;width:min(760px,100%);
+  display:flex;flex-direction:column;background:var(--paper);overflow-y:auto;overscroll-behavior:contain;
+  box-shadow:-30px 0 80px -20px rgba(6,14,30,.5);
+  transform:translateX(100%);transition:transform .6s var(--ease);
 }
 .case.in .case__panel{transform:none}
 .case__top{
   position:sticky;top:0;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:16px clamp(22px,3.4vw,48px);background:rgba(255,255,255,.93);
-  backdrop-filter:blur(10px);border-bottom:1px solid var(--rule);
+  padding:14px clamp(22px,3.4vw,48px);background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);
 }
 .case__x{
-  width:40px;height:40px;flex:none;display:grid;place-items:center;cursor:pointer;
-  border:1.5px solid var(--rule-2);color:var(--ink);
-  transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);
+  width:40px;height:40px;flex:none;display:grid;place-items:center;cursor:pointer;border-radius:50%;color:var(--ink);
+  transition:background .25s var(--ease),transform .4s var(--ease);
 }
-.case__x:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.case__x svg{width:16px;height:16px}
-.case__hero{position:relative;flex:none;aspect-ratio:16/10;overflow:hidden;background:var(--paper-3)}
-.case__hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.case__ph{
-  position:absolute;inset:0;display:grid;place-items:center;
-  background:repeating-linear-gradient(135deg,transparent 0 13px,rgba(10,20,36,.045) 13px 14px),var(--paper-3);
-  font-family:var(--mono);font-size:2.6rem;font-weight:500;letter-spacing:-.04em;color:var(--rule-2);
-}
-.case__in{flex:1;padding:clamp(28px,4vw,54px) clamp(22px,3.4vw,48px)}
-.case__in h2{font-size:clamp(1.6rem,1.2rem + 1.6vw,2.5rem);margin-top:14px;letter-spacing:-.035em}
-.case__client{margin-top:12px;font-size:1.02rem;color:var(--ink-2)}
-.case__meta{display:grid;grid-template-columns:124px 1fr;margin:clamp(28px,3.2vw,42px) 0 0;border-top:2px solid var(--ink)}
-.case__meta dt{padding:14px 0;border-bottom:1px solid var(--rule);font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
-.case__meta dd{padding:14px 0;border-bottom:1px solid var(--rule);font-size:.94rem;font-weight:500;color:var(--ink)}
-.case__in h4{font-family:var(--mono);font-size:.67rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--blue-deep);margin:clamp(26px,3vw,36px) 0 11px}
-.case__in p{font-size:.97rem;max-width:60ch}
-.case__todo{color:var(--ink-3)}
-.case__nav{position:sticky;bottom:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);background:var(--paper)}
-.case__nav button{
-  padding:20px clamp(22px,3.4vw,48px);cursor:pointer;text-align:left;
-  font-family:var(--mono);font-size:.67rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);
-  transition:background .25s var(--ease),color .25s var(--ease);
-}
-.case__nav button:last-child{text-align:right;border-left:1px solid var(--rule)}
-.case__nav button:hover:not(:disabled){background:var(--ink);color:#fff}
-.case__nav button:disabled{color:var(--rule-2);cursor:default}
+.case__x:hover{background:var(--paper-2);transform:rotate(90deg)}
+.case__x svg{width:17px;height:17px}
 
-@media (max-width:1100px){ .works--rest{grid-template-columns:repeat(2,1fr)} }
-@media (max-width:860px){
-  .works--feat{grid-template-columns:1fr}
-  .works--rest{grid-template-columns:repeat(2,1fr)}
+/* Foto asli kecil (433px), jadi ditampilkan di ukurannya sendiri di atas salinan buram yang mengisi bidang, bukan direntang memenuhi panel */
+.case__hero{position:relative;flex:none;display:grid;place-items:center;height:clamp(260px,40vh,380px);overflow:hidden;background:var(--ink)}
+.case__blur{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(28px) saturate(1.2) brightness(.55);transform:scale(1.1)}
+.case__hero img{
+  position:relative;width:min(78%,520px);height:auto;aspect-ratio:433/275;object-fit:cover;border-radius:4px;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08);
 }
+.case.in .case__hero img{animation:caseImg .9s var(--ease) both .15s}
+@keyframes caseImg{from{opacity:0;transform:translateY(24px) scale(.96)}}
+
+.case__in{flex:1;padding:clamp(28px,4vw,52px) clamp(22px,3.4vw,48px) clamp(32px,4vw,52px)}
+.case__in h2{margin-top:12px;font-size:clamp(1.7rem,1.25rem + 1.7vw,2.6rem);letter-spacing:-.04em}
+.case__sum{margin-top:16px;max-width:54ch;font-size:clamp(1rem,.96rem + .2vw,1.1rem);line-height:1.65}
+
+.case__facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));margin-top:clamp(26px,3vw,36px);border-top:2px solid var(--ink)}
+.case__facts div{padding:14px 18px 16px 0;border-bottom:1px solid var(--rule)}
+.case__facts dt{font-family:var(--mono);font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-3)}
+.case__facts dd{margin-top:5px;font-size:.95rem;font-weight:500;color:var(--ink);line-height:1.45}
+
+.case__story{margin-top:clamp(28px,3.4vw,40px);counter-reset:st}
+.case__story:empty{display:none}
+.case__story li:first-child{border-top:0;padding-top:0}
+.case__story li{counter-increment:st;display:grid;grid-template-columns:44px 1fr;gap:4px 16px;padding:18px 0;border-top:1px solid var(--rule)}
+.case__story li::before{content:counter(st,decimal-leading-zero);grid-row:span 2;font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;color:var(--blue);padding-top:3px}
+.case__story h4{font-size:1.02rem;font-weight:600;letter-spacing:-.015em;color:var(--ink)}
+.case__story p{font-size:.94rem;line-height:1.65;max-width:58ch}
+
+.case__cta{
+  position:relative;margin-top:clamp(30px,3.6vw,44px);padding:clamp(22px,2.6vw,30px);overflow:hidden;
+  background:var(--paper-2);border-left:3px solid var(--blue);
+}
+.case__cta p{max-width:52ch;font-size:.95rem;line-height:1.65}
+.case__cta b{display:block;margin-bottom:4px;font-size:1.05rem;color:var(--ink)}
+.case__cta .btn{margin-top:18px}
+
+.case__nav{position:sticky;bottom:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule);background:rgba(255,255,255,.94);backdrop-filter:blur(12px)}
+.case__nav button{display:flex;align-items:center;gap:12px;min-width:0;padding:14px clamp(18px,3vw,40px);cursor:pointer;text-align:left;transition:background .25s var(--ease)}
+.case__nav button + button{flex-direction:row-reverse;text-align:right;border-left:1px solid var(--rule)}
+.case__nav button:hover:not(:disabled){background:var(--paper-2)}
+.case__nav button:disabled{visibility:hidden}
+.case__nav img{flex:none;width:58px;height:38px;object-fit:cover;border-radius:2px}
+.case__nav span{min-width:0}
+.case__nav i{display:block;font-style:normal;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.case__nav b{display:block;margin-top:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-size:.88rem;font-weight:600;color:var(--ink)}
+@media (max-width:520px){ .case__nav img{display:none} }
+
 @media (max-width:620px){
-  .works--rest{grid-template-columns:1fr}
+  
   .case__panel{width:100%}
-  .case__meta{grid-template-columns:100px 1fr}
+  
 }
 @media (prefers-reduced-motion:reduce){
   .case__panel{transition:none}
   .case__bg{transition:none}
 }
 
-/* ============================================================
-   HONEYCOMB LAYANAN
-   Geometri sarang lebah sungguhan: heksagon flat-top, lebar W,
-   tinggi H = W·√3/2. Enam tetangga berjarak (±0,75W, ±H/2) dan
-   (0, ±H) · persis kisi sarang lebah, bukan lingkaran biasa.
-   Kanvas 250×260 satuan → sel selebar 40% wadah.
-   ============================================================ */
+/* ========== LAYANAN · SARANG LEBAH ========== */
 .comb-wrap{
   display:grid;grid-template-columns:1.02fr .98fr;grid-template-rows:auto 1fr;
   column-gap:clamp(30px,4.5vw,76px);row-gap:clamp(22px,3vw,38px);align-items:start;
@@ -650,7 +561,6 @@ body.locked{overflow:hidden}
 
 .comb{position:relative;width:100%;max-width:600px;margin-inline:auto;aspect-ratio:250/260}
 .comb__wires{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-
 
 .wire{
   stroke:#A9B5C7;stroke-width:1.6;fill:none;
@@ -777,11 +687,8 @@ body.locked{overflow:hidden}
 .hex--hub img{width:62%;height:auto;filter:brightness(0) invert(1);opacity:.95}
 .svc__store{display:none}
 
-/* ============================================================
-   STUDI KASUS · layar terkunci, gulir vertikal jadi gerak horizontal
-   Tinggi seksi = 1 layar (pin) + 40vh per proyek.
-   ============================================================ */
-.cases{position:relative;height:calc(100vh + var(--n,8) * 40vh)}
+/* ========== STUDI KASUS · DERET & SOROTAN ========== */
+.cases{position:relative;height:calc(100vh + var(--n,1) * 40vh)}
 .cases__pin{
   position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;
   display:flex;flex-direction:column;padding-top:var(--nav-h);
@@ -831,8 +738,7 @@ body.locked{overflow:hidden}
 .tile.on{opacity:1}
 .tile:hover{opacity:1;transform:translateY(-4px)}
 .tile__shot{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--paper-3)}
-/* Kartu tak terpilih dibuat buram, bukan hitam-putih. Skala 1.08 agar
-   tepi buram tidak menyisakan pinggiran transparan di kotak yang di-clip. */
+/* Kartu tak terpilih dibuat buram, bukan hitam-putih */
 .tile__shot img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
   filter:blur(3.5px);transform:scale(1.08);
@@ -853,8 +759,6 @@ body.locked{overflow:hidden}
 /* --- Garis kemajuan --- */
 .cases__bar{flex:none;height:2px;background:var(--rule);margin-inline:var(--pad);margin-bottom:clamp(14px,2.4vh,26px)}
 .cases__barfill{display:block;height:100%;background:var(--blue);transform-origin:left;transform:scaleX(0);will-change:transform}
-
-.case__store{display:none}
 
 /* --- Di layar kecil pin dilepas: tumpukan biasa + geser sentuh --- */
 @media (max-width:900px){
@@ -877,18 +781,13 @@ body.locked{overflow:hidden}
   .slide{transition:none}
 }
 
-/* ============================================================
-   KEPALA SEKSI TERPUSAT · dipakai dua seksi penutup (FAQ & Kontak)
-   supaya halaman menutup dengan irama simetris.
-   ============================================================ */
+/* ========== KEPALA SEKSI TERPUSAT ========== */
 .chead{text-align:center;max-width:660px;margin:0 auto clamp(42px,5vw,74px)}
 .chead .label{display:block;margin-bottom:clamp(16px,2vw,22px)}
 .chead h2{text-wrap:balance}
 .chead p{margin-top:clamp(16px,2vw,22px);font-size:clamp(1rem,.95rem + .3vw,1.12rem);text-wrap:balance}
 
-/* ============================================================
-   07 · TANYA JAWAB
-   ============================================================ */
+/* ========== TANYA JAWAB ========== */
 .qa{
   --qx:clamp(12px,1.7vw,26px);          /* padding kiri-kanan baris   */
   --qn:40px;                            /* lebar kolom nomor          */
@@ -935,9 +834,7 @@ body.locked{overflow:hidden}
 }
 .qa__more .ulink{margin-left:8px}
 
-/* ============================================================
-   08 · KONTAK
-   ============================================================ */
+/* ========== KONTAK ========== */
 .contact{display:grid;grid-template-columns:.84fr 1.16fr;gap:clamp(26px,3.2vw,54px);align-items:stretch}
 
 .cinfo{display:flex;flex-direction:column}
@@ -963,7 +860,6 @@ body.locked{overflow:hidden}
 .cform__foot{display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px;margin-top:clamp(26px,3vw,36px)}
 .cform__foot .fnote{margin-top:0;flex:1;min-width:200px;text-align:left}
 
-
 .ctrust{margin-top:clamp(26px,3vw,40px)}
 .ctrust .label{display:block;margin-bottom:14px}
 .ctrust li{display:flex;gap:11px;align-items:flex-start;padding:6px 0;font-size:.88rem;color:var(--ink-2)}
@@ -983,10 +879,8 @@ body.locked{overflow:hidden}
   .cform__foot .fnote{text-align:center}
 }
 
-/* ============================================================
-   06 · TIM · satu baris potret kecil berwarna, tersusun melengkung
-   ============================================================ */
-.crew{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(14px,1.9vw,30px);align-items:start}
+/* ========== TIM ========== */
+.crew{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:clamp(14px,1.9vw,30px);align-items:start}
 .mate{margin-top:var(--o,0)}
 
 .mate__no{
@@ -1027,7 +921,7 @@ body.locked{overflow:hidden}
 }
 
 @media (max-width:1100px){
-  .crew{grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,34px)}
+  .crew{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);gap:clamp(20px,2.6vw,34px)}
   .mate{margin-top:0}
   .mate:nth-child(even){margin-top:36px}
 }
@@ -1037,9 +931,7 @@ body.locked{overflow:hidden}
   .mate__no{margin-bottom:9px}
 }
 
-/* ============================================================
-   02 · MASALAH · blok gelap, tiga kolom yang bisa dipindai
-   ============================================================ */
+/* ========== MASALAH ========== */
 .prob{background:var(--ink);color:rgba(255,255,255,.7);padding-block:var(--sec);position:relative;overflow:hidden}
 .prob::before{
   content:"";position:absolute;inset:0;pointer-events:none;
@@ -1081,16 +973,7 @@ body.locked{overflow:hidden}
   .prob__end{grid-template-columns:1fr;gap:24px;align-items:start}
 }
 
-/* ============================================================
-   HONEYCOMB · KEDALAMAN
-   Tiga sumbu kedalaman sekaligus:
-   1. Sumbu Z sungguhan  · kabel di belakang, sel di tengah, hub di depan
-   2. Ketinggian         · drop-shadow (bukan box-shadow, karena clip-path
-                            memotong box-shadow tapi drop-shadow mengikuti
-                            siluet heksagonnya)
-   3. Material           · gradien halus pada muka sel supaya terbaca
-                            sebagai permukaan miring, bukan bidang rata
-   ============================================================ */
+/* ========== LAYANAN · KEDALAMAN 3D ========== */
 .comb{perspective:1400px}
 .comb__stage{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
 
@@ -1139,11 +1022,7 @@ body.locked{overflow:hidden}
   .hex{filter:none}
 }
 
-/* ============================================================
-   LAPISAN RESPONSIF · komponen dasar
-   Blok ini sempat hilang; tanpa ini menu desktop tetap tampil di
-   ponsel dan tombol burger tidak pernah muncul.
-   ============================================================ */
+/* ========== RESPONSIF ========== */
 @media (max-width:1100px){
   .shead{grid-template-columns:150px 1fr;gap:20px 34px}
 }
@@ -1154,7 +1033,7 @@ body.locked{overflow:hidden}
 @media (max-width:620px){
   :root{--nav-h:64px}
   .shead{grid-template-columns:1fr;gap:14px}
-  .shead__idx{padding-top:0}
+  
   .shead__body{max-width:none}
   .sheet a{font-size:1.3rem;padding:16px 0}
   .act__act{gap:12px}
@@ -1168,9 +1047,7 @@ body.locked{overflow:hidden}
   .act__roster b{font-size:.68rem}
 }
 
-/* ============================================================
-   PENYESUAIAN PERANGKAT · hasil audit responsif
-   ============================================================ */
+/* ========== PENYESUAIAN PERANGKAT ========== */
 .m-only{display:none}
 @media (max-width:900px){
   .d-only{display:none}
@@ -1180,7 +1057,7 @@ body.locked{overflow:hidden}
 @media (max-width:620px){
   /* Teks mono sempat turun sampai ~8px di ponsel. Diberi lantai minimum. */
   .label,.qa__n,.combx__no,.mate__no,.mate__role,.tile__no,.f label,.fnote,
-  .foot__end,.gate__hint,.cases__hint,.combx__hint,.work__sector,.cwa__txt span,
+  .foot__end,.cases__hint,.combx__hint,.cwa__txt span,
   .strip__label,.feat__count i,.ctrust .label{font-size:.68rem;letter-spacing:.1em}
   .hex__t{font-size:.6rem;letter-spacing:.05em}
   .hex__c{padding:5% 7%}
@@ -1193,11 +1070,7 @@ body.locked{overflow:hidden}
   .rec a{display:inline-block;padding-block:7px}
 }
 
-/* ============================================================
-   AJAKAN · penutup halaman
-   Air yang sama seperti gerbang dan hero, tapi permukaannya lebih
-   rendah dan tenang, jadi terbaca sebagai gema penutup.
-   ============================================================ */
+/* ========== AJAKAN ========== */
 .call{position:relative;overflow:hidden;background:var(--abyss);padding-block:clamp(76px,8.5vw,132px) clamp(104px,12vw,180px)}
 .call__water{position:absolute;inset:0;width:100%;height:100%}
 .call__veil{
@@ -1243,11 +1116,7 @@ body.locked{overflow:hidden}
   .call__act .btn{flex:1 1 auto;justify-content:center}
 }
 
-/* ============================================================
-   HERO · dua versi teks
-   Di ponsel kalimat panjang memenuhi layar, jadi dipendekkan.
-   Ambang 760px: tablet tetap memakai versi penuh.
-   ============================================================ */
+/* ========== HERO · TEKS PONSEL ========== */
 .hero-d{display:block}
 .hero-m{display:none}
 @media (max-width:760px){
@@ -1256,12 +1125,7 @@ body.locked{overflow:hidden}
   .hero-hide-m{display:none}
 }
 
-/* ============================================================
-   PERANGKAT SENTUH · pin dilepas berapa pun lebar layarnya
-   Membajak scroll adalah interaksi roda tetikus. Di layar sentuh
-   itu terasa seperti halaman macet, terutama pada ponsel lanskap
-   (932px) dan tablet (1024px ke atas) yang lolos ambang 900px.
-   ============================================================ */
+/* ========== PERANGKAT SENTUH · PIN DILEPAS ========== */
 @media (hover:none) and (pointer:coarse){
   .cases{height:auto}
   .cases__pin{position:relative;height:auto;overflow:visible;padding-top:0;padding-bottom:clamp(36px,6vh,64px)}
@@ -1275,84 +1139,87 @@ body.locked{overflow:hidden}
   .comb__stage{transform:none !important}   /* kemiringan 3D ikut mati */
 }
 
-/* ============================================================
-   04 · CARA KAMI BEKERJA
-   Prosesnya tidak lagi jadi daftar, melainkan jadi sumbu waktu yang
-   menopang seksi ini. Garis mendatar menembus ketiga kolom, dengan
-   satu titik di tiap babak, sehingga urutan terbaca tanpa perlu
-   menuliskan enam tahap satu per satu.
-   ============================================================ */
-.trio{
-  position:relative;display:grid;grid-template-columns:repeat(3,1fr);
-  column-gap:clamp(28px,3.8vw,68px);
-}
-.trio::before{
-  content:"";position:absolute;left:0;right:0;top:6px;height:2px;
-  background:var(--rule-2);
-}
-.trio__i{position:relative;padding-top:clamp(36px,4.2vw,50px)}
-.trio__mark{
-  position:absolute;left:0;top:0;z-index:1;
-  width:14px;height:14px;border-radius:50%;
-  background:var(--paper-2);border:2px solid var(--blue);
-  transition:background .4s var(--ease),transform .4s var(--ease);
-}
-.trio__i:hover .trio__mark{background:var(--blue);transform:scale(1.25)}
+/* ========== PERDAGANGAN ========== */
+.trade{position:relative;background:var(--ink);overflow:hidden}
+.trade__a{position:relative;display:block;isolation:isolate}
 
-.trio__i .label{display:block;margin-bottom:clamp(12px,1.6vw,16px)}
-.trio__i h3{
-  max-width:19ch;font-size:clamp(1.2rem,1rem + .85vw,1.62rem);
-  letter-spacing:-.03em;line-height:1.2;text-wrap:balance;
+.trade__photo{
+  position:absolute;top:-70px;right:0;bottom:-70px;width:62%;z-index:-1;overflow:hidden;will-change:transform;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 42%);
+          mask-image:linear-gradient(90deg,transparent 0%,#000 42%);
 }
-.trio__i > p:last-child{
-  margin-top:clamp(12px,1.5vw,16px);max-width:38ch;
-  font-size:.92rem;line-height:1.65;color:var(--ink-2);
-}
+.trade__photo img{width:100%;height:100%;object-fit:cover;object-position:35% 50%;transition:transform 1.4s var(--ease)}
+.trade__a:hover .trade__photo img{transform:scale(1.05)}
 
-@media (max-width:820px){
-  .trio{grid-template-columns:1fr;row-gap:clamp(26px,4vw,38px);padding-left:32px}
-  .trio::before{left:6px;right:auto;top:10px;bottom:10px;width:2px;height:auto}
-  .trio__i{padding-top:0}
-  .trio__mark{left:-32px;top:4px}
-  .trio__i h3{max-width:22ch}
-  .trio__i > p:last-child{max-width:54ch}
+.trade__in{padding-block:clamp(96px,11vw,168px) clamp(56px,6.5vw,96px)}
+.trade__txt{max-width:600px}
+.trade .label{color:rgba(255,255,255,.45)}
+.trade h2{
+  margin-top:clamp(18px,2.4vw,30px);max-width:17ch;color:#fff;
+  font-size:clamp(2rem,1.3rem + 2.6vw,3.4rem);line-height:1.04;letter-spacing:-.04em;
+}
+.trade h2 em{font-style:normal;color:#5FB4F5}
+.trade__lead{margin-top:clamp(18px,2.2vw,26px);max-width:44ch;color:rgba(255,255,255,.68);font-size:clamp(.98rem,.95rem + .25vw,1.08rem)}
+
+/* Tampilannya sama dengan .btn.btn--wht, dipicu hover pada seluruh blok */
+.trade__go{
+  display:inline-flex;align-items:center;gap:11px;margin-top:clamp(26px,3vw,38px);
+  padding:16px 28px;background:#fff;color:var(--ink);font-size:.88rem;font-weight:600;letter-spacing:.01em;
+  transition:background .25s var(--ease),color .25s var(--ease);
+}
+.trade__go svg{width:15px;height:15px;transition:transform .28s var(--ease)}
+.trade__a:hover .trade__go{background:var(--blue);color:#fff}
+.trade__a:hover .trade__go svg{transform:translateX(5px)}
+
+/* Strip manifes · data muatan, pola angkanya sama dengan seksi Angka */
+.trade__foot{border-top:1px solid rgba(255,255,255,.13);background:rgba(10,20,36,.74);backdrop-filter:blur(10px)}
+.trade__strip{display:grid;grid-template-columns:repeat(4,1fr)}
+.trade__strip > span{padding:clamp(18px,2vw,26px) clamp(14px,1.8vw,26px);border-left:1px solid rgba(255,255,255,.12)}
+.trade__strip > span:first-child{border-left:0;padding-left:0}
+.trade__strip i{display:block;font-family:var(--mono);font-style:normal;font-size:.6rem;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.trade__strip b{display:block;margin-top:8px;font-size:clamp(.95rem,.9rem + .3vw,1.12rem);font-weight:600;letter-spacing:-.015em;color:#fff}
+.trade__strip b.n{font-family:var(--mono);font-weight:500;letter-spacing:-.03em;color:#5FB4F5}
+
+@media (max-width:900px){
+  .trade__photo{
+    position:relative;top:auto;bottom:auto;display:block;width:100%;aspect-ratio:16/10;transform:none !important;
+    -webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 100%);
+            mask-image:linear-gradient(180deg,#000 55%,transparent 100%);
+  }
+  .trade__in{padding-block:0 clamp(44px,8vw,64px);margin-top:-40px}
+  .trade__strip{grid-template-columns:1fr 1fr}
+  .trade__strip > span:nth-child(odd){border-left:0;padding-left:0}
+  .trade__strip > span:nth-child(-n+2){border-bottom:1px solid rgba(255,255,255,.12)}
+}
+@media (max-width:620px){
+  .trade__go{width:100%;justify-content:center}
 }
 </style>
 </head>
 <body class="gated">
 
-<!-- ===================== GERBANG =====================
-     Halaman statis. Gulir dikunci sampai pengguna mengklik.
-     Saat diklik: riak menyebar dari titik klik, air membanjir naik,
-     lalu gerbang memudar dan situs terbuka.
-     Untuk menampilkannya hanya sekali per sesi, ubah GATE_ONCE di JS.
-     ================================================== -->
+<!-- ===== GERBANG ===== -->
 <div class="gate" id="gate">
   <canvas class="gate__water" id="gateWater" aria-hidden="true"></canvas>
   <div class="gate__veil" aria-hidden="true"></div>
 
   <div class="gate__in">
-    <!-- KONFIRMASI: keterangan dua lini usaha menyesuaikan positioning baru;
-         mohon ditinjau begitu materi lini perdagangan tersedia. -->
-    <img class="gate__mark" src="asset/Logo-01.png" alt="JKreasi" width="1180" height="267">
+    <div class="gate__stage">
+      <button class="beat" id="gateEnter" type="button" aria-label="Masuk ke situs">
+        <span class="beat__glow" aria-hidden="true"></span>
+        <span class="beat__ring" aria-hidden="true"></span>
+        <span class="beat__ring" aria-hidden="true"></span>
+      </button>
+      <img class="gate__mark" src="asset/Logo-01.png" alt="JKreasi" width="1180" height="267">
+    </div>
     <p class="gate__meta">PT Jaya Kreasi Teknologi</p>
     <p class="gate__meta gate__meta--sub">Teknologi &amp; Perdagangan &nbsp;·&nbsp; Est. 2019<span class="gate-xs"> &nbsp;·&nbsp; Jakarta</span></p>
-
-    <button class="beat" id="gateEnter" type="button" aria-label="Masuk ke situs">
-      <span class="beat__ring" aria-hidden="true"></span>
-      <span class="beat__ring" aria-hidden="true"></span>
-      <span class="beat__core" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
-      </span>
-    </button>
-
-    <span class="gate__hint">ketuk untuk masuk</span>
   </div>
 </div>
 
 <div class="prog"><div class="prog__f" id="prog"></div></div>
 
-<!-- ===================== NAVIGASI ===================== -->
+<!-- ===== NAVIGASI ===== -->
 <header class="nav dark" id="nav">
   <div class="wrap nav__in">
     <a href="#atas" class="nav__logo" aria-label="JKreasi, ke atas">
@@ -1361,6 +1228,7 @@ body.locked{overflow:hidden}
     <nav class="nav__menu" aria-label="Navigasi utama">
       <a href="#portofolio">Studi Kasus</a>
       <a href="#layanan">Layanan</a>
+      <a href="#perdagangan">Perdagangan</a>
       <a href="#tim">Tim</a>
       <a href="#kontak">Kontak</a>
     </nav>
@@ -1374,17 +1242,15 @@ body.locked{overflow:hidden}
 <div class="sheet" id="sheet">
   <a href="#portofolio"><i>01</i>Studi Kasus</a>
   <a href="#layanan"><i>03</i>Layanan</a>
-  <a href="#tim"><i>04</i>Tim</a>
-  <a href="#kontak"><i>06</i>Kontak</a>
+  <a href="#perdagangan"><i>04</i>Perdagangan</a>
+  <a href="#tim"><i>05</i>Tim</a>
+  <a href="#kontak"><i>07</i>Kontak</a>
   <a href="#kontak" class="btn btn--blue btn--block">Konsultasi Gratis</a>
 </div>
 
 <main id="atas">
 
-<!-- ===================== HERO =====================
-     Satu layar penuh dengan air sebagai latar. Permukaan air
-     naik sedikit mengikuti scroll, menyambung dari gerbang.
-     ============================================================ -->
+<!-- ===== HERO ===== -->
 <section class="stage" id="stage">
   <div class="stage__pin">
     <canvas class="water" id="water" aria-hidden="true"></canvas>
@@ -1392,11 +1258,6 @@ body.locked{overflow:hidden}
 
     <div class="stage__body">
       <div class="act act--3 live"><div class="wrap">
-        <!-- KONFIRMASI: JKreasi kini diposisikan sebagai dua lini usaha
-             (teknologi dan perdagangan). Kalimat di bawah sengaja dibuat
-             umum karena materi lini perdagangan belum tersedia; mohon
-             ditinjau begitu materinya siap.
-             Versi ponsel (.hero-m) dipendekkan agar tidak memenuhi layar. -->
         <span class="label act__label">
           <span class="hero-d">PT Jaya Kreasi Teknologi &nbsp;·&nbsp; Sejak 2019</span>
           <span class="hero-m">Sejak 2019</span>
@@ -1428,12 +1289,7 @@ body.locked{overflow:hidden}
   </div>
 </section>
 
-<!-- ===================== PITA KLIEN =====================
-     Logo berjalan terus. Rasio aspek tiap logo sangat berbeda, jadi
-     tingginya tidak disamakan mentah-mentah: tiap logo punya pengali
-     --lh agar bobot optiknya setara. Daftar digandakan persis dua kali
-     dan digeser -50% supaya perulangannya mulus.
-     ================================================== -->
+<!-- ===== PITA KLIEN · --lh menyamakan bobot optik tiap logo; daftar ditulis dua kali agar loop mulus ===== -->
 <div class="strip">
   <p class="strip__label">Dipercaya oleh instansi pemerintah dan korporasi</p>
   <div class="strip__win">
@@ -1458,7 +1314,7 @@ body.locked{overflow:hidden}
   </div>
 </div>
 
-<!-- ===================== ANGKA ===================== -->
+<!-- ===== ANGKA ===== -->
 <section class="sec" style="padding-block:clamp(58px,6vw,94px)">
   <div class="wrap">
     <div class="figs">
@@ -1472,7 +1328,7 @@ body.locked{overflow:hidden}
         <p class="fig__t">Sistem digital yang telah dioperasikan</p>
       </div>
       <div class="fig up" data-d="2">
-        <div class="fig__n"><span data-count="6">0</span></div>
+        <div class="fig__n"><span data-count="5" id="crewCount">0</span></div>
         <p class="fig__t">Tenaga ahli senior lintas disiplin</p>
       </div>
       <!-- KONFIRMASI: klaim 100% pendampingan pasca-implementasi -->
@@ -1485,59 +1341,34 @@ body.locked{overflow:hidden}
 </section>
 
 <!-- ===================== 01 · STUDI KASUS =====================
-     Layar terkunci saat memasuki seksi ini; gulir vertikal diterjemahkan
-     menjadi gerak horizontal pada deretan kartu. Kartu aktif menentukan
-     proyek besar di atasnya. Kartu juga bisa langsung diklik.
-     FOTO: taruh di asset/portofolio/ sesuai nama pada atribut src.
-     Sorotan besar 16:10 (min 1600x1000), kartu kecil 4:3 (min 640x480).
+     Satu <article class="proj"> = satu proyek. Foto sorotan, kartu di
+     deret, penghitung, tinggi seksi, dan panel rincian semuanya dibangun
+     JS dari daftar di #projects; tambah atau hapus proyek cukup di sana.
+
+     Kolom per proyek (hanya h3 yang wajib):
+       data-slug  alamat tautan langsung, mis. #studi-sirkulasi
+       data-img   foto, rasio 16:10 (asset/portofolio/)
+       h3                      nama proyek
+       [data-f="client"]       klien
+       [data-f="sector"]       sektor
+       [data-f="summary"]      ringkasan satu-dua kalimat
+       <dl data-f="facts">     fakta tambahan, mis. <dt>Tahun</dt><dd>2024</dd>
+       <div data-f="story">    cerita: pasangan <h4>judul</h4><p>isi</p>,
+                               mis. Tantangan / Pendekatan / Hasil
+     Bagian yang tidak diisi tidak ditampilkan.
      ========================================================== -->
-<section class="cases" id="portofolio" style="--n:8">
+<section class="cases" id="portofolio">
   <div class="cases__pin">
     <div class="wrap cases__in">
-
       <div class="cases__head">
         <p class="label">01 / Studi Kasus</p>
         <p class="cases__hint"><span class="d-only">Gulir untuk menelusuri &nbsp;·&nbsp; klik kartu untuk melompat</span><span class="m-only">Geser kartu untuk melihat proyek lain</span></p>
       </div>
 
       <div class="feat">
-        <div class="feat__shot">
-          <figure class="slide on" data-i="0">
-            <span class="shot__ph"><span>Foto menyusul</span><b>01</b></span>
-            <img src="asset/portofolio/portfolio_sirkulasi.png" alt="SIRKULASI System" loading="lazy" onerror="this.remove()">
-          </figure>
-          <figure class="slide" data-i="1">
-            <span class="shot__ph"><span>Foto menyusul</span><b>02</b></span>
-            <img src="asset/portofolio/portfolio_twc-2.png" alt="TWC Ticketing System" loading="lazy" onerror="this.remove()">
-          </figure>
-          <figure class="slide" data-i="2">
-            <span class="shot__ph"><span>Foto menyusul</span><b>03</b></span>
-            <img src="asset/portofolio/portfolio_idm.png" alt="IDM Application" loading="lazy" onerror="this.remove()">
-          </figure>
-          <figure class="slide" data-i="3">
-            <span class="shot__ph"><span>Foto menyusul</span><b>04</b></span>
-            <img src="asset/portofolio/portfolio_mamasa.png" alt="Mamasa HR System" loading="lazy" onerror="this.remove()">
-          </figure>
-          <figure class="slide" data-i="4">
-            <span class="shot__ph"><span>Foto menyusul</span><b>05</b></span>
-            <img src="asset/portofolio/portfolio_baseus.png" alt="Baseus E-commerce" loading="lazy" onerror="this.remove()">
-          </figure>
-          <figure class="slide" data-i="5">
-            <span class="shot__ph"><span>Foto menyusul</span><b>06</b></span>
-            <img src="asset/portofolio/portfolio_deras.png" alt="Deras News Portal" loading="lazy" onerror="this.remove()">
-          </figure>
-          <figure class="slide" data-i="6">
-            <span class="shot__ph"><span>Foto menyusul</span><b>07</b></span>
-            <img src="asset/portofolio/portfolio_lpp.png" alt="LPP Assessment" loading="lazy" onerror="this.remove()">
-          </figure>
-          <figure class="slide" data-i="7">
-            <span class="shot__ph"><span>Foto menyusul</span><b>08</b></span>
-            <img src="asset/portofolio/portfolio_ejfp.png" alt="EJFP System" loading="lazy" onerror="this.remove()">
-          </figure>
-        </div>
-
+        <div class="feat__shot" id="featShot"></div>
         <div class="feat__txt" id="featTxt">
-          <span class="feat__count"><b id="featNo">01</b><i>/ 08</i></span>
+          <span class="feat__count"><b id="featNo">01</b><i id="featOf"></i></span>
           <span class="label label--blue" id="featSector"></span>
           <h3 id="featTitle"></h3>
           <p class="feat__client" id="featClient"></p>
@@ -1550,248 +1381,61 @@ body.locked{overflow:hidden}
       </div>
     </div>
 
-    <div class="rail" id="rail">
-      <div class="rail__track" id="railTrack">
-        <button class="tile on" type="button" data-i="0" data-case
-                data-no="01" data-slug="studi-sirkulasi" data-title="SIRKULASI System"
-                data-client="Sekretariat Kabinet RI" data-sector="Pemerintah Pusat"
-                data-img="asset/portofolio/portfolio_sirkulasi.png"
-                data-desc="Sistem persuratan dan sirkulasi dokumen di lingkungan instansi kepresidenan.">
-          <span class="tile__shot">
-            <span class="shot__ph"><span>Foto</span><b>01</b></span>
-            <img src="asset/portofolio/portfolio_sirkulasi.png" alt="" loading="lazy" onerror="this.remove()">
-          </span>
-          <span class="tile__meta"><span class="tile__no">01</span><span class="tile__t">SIRKULASI System</span></span>
-        </button>
-        <button class="tile" type="button" data-i="1" data-case
-                data-no="02" data-slug="studi-twc-ticketing" data-title="TWC Ticketing System"
-                data-client="PT Taman Wisata Candi (InJourney)" data-sector="Pariwisata / BUMN"
-                data-img="asset/portofolio/portfolio_twc-2.png"
-                data-desc="Sistem ticketing destinasi wisata bervolume tinggi, dirancang agar tetap stabil pada musim liburan.">
-          <span class="tile__shot">
-            <span class="shot__ph"><span>Foto</span><b>02</b></span>
-            <img src="asset/portofolio/portfolio_twc-2.png" alt="" loading="lazy" onerror="this.remove()">
-          </span>
-          <span class="tile__meta"><span class="tile__no">02</span><span class="tile__t">TWC Ticketing System</span></span>
-        </button>
-        <button class="tile" type="button" data-i="2" data-case
-                data-no="03" data-slug="studi-idm-application" data-title="IDM Application"
-                data-client="InJourney Destination Management" data-sector="Pariwisata / BUMN"
-                data-img="asset/portofolio/portfolio_idm.png"
-                data-desc="Aplikasi pendukung operasional pengelolaan destinasi.">
-          <span class="tile__shot">
-            <span class="shot__ph"><span>Foto</span><b>03</b></span>
-            <img src="asset/portofolio/portfolio_idm.png" alt="" loading="lazy" onerror="this.remove()">
-          </span>
-          <span class="tile__meta"><span class="tile__no">03</span><span class="tile__t">IDM Application</span></span>
-        </button>
-        <button class="tile" type="button" data-i="3" data-case
-                data-no="04" data-slug="studi-mamasa-hr" data-title="Mamasa HR System"
-                data-client="Pemerintah Kabupaten Mamasa" data-sector="Pemerintah Daerah"
-                data-img="asset/portofolio/portfolio_mamasa.png"
-                data-desc="Sistem manajemen kepegawaian daerah.">
-          <span class="tile__shot">
-            <span class="shot__ph"><span>Foto</span><b>04</b></span>
-            <img src="asset/portofolio/portfolio_mamasa.png" alt="" loading="lazy" onerror="this.remove()">
-          </span>
-          <span class="tile__meta"><span class="tile__no">04</span><span class="tile__t">Mamasa HR System</span></span>
-        </button>
-        <button class="tile" type="button" data-i="4" data-case
-                data-no="05" data-slug="studi-baseus" data-title="Baseus E-commerce"
-                data-client="Baseus Indonesia" data-sector="Ritel / Konsumen"
-                data-img="asset/portofolio/portfolio_baseus.png"
-                data-desc="Platform e-commerce brand global untuk pasar Indonesia.">
-          <span class="tile__shot">
-            <span class="shot__ph"><span>Foto</span><b>05</b></span>
-            <img src="asset/portofolio/portfolio_baseus.png" alt="" loading="lazy" onerror="this.remove()">
-          </span>
-          <span class="tile__meta"><span class="tile__no">05</span><span class="tile__t">Baseus E-commerce</span></span>
-        </button>
-        <button class="tile" type="button" data-i="5" data-case
-                data-no="06" data-slug="studi-deras" data-title="Deras News Portal"
-                data-client="Deras.id" data-sector="Media / Headless CMS"
-                data-img="asset/portofolio/portfolio_deras.png"
-                data-desc="Portal berita dengan arsitektur headless CMS.">
-          <span class="tile__shot">
-            <span class="shot__ph"><span>Foto</span><b>06</b></span>
-            <img src="asset/portofolio/portfolio_deras.png" alt="" loading="lazy" onerror="this.remove()">
-          </span>
-          <span class="tile__meta"><span class="tile__no">06</span><span class="tile__t">Deras News Portal</span></span>
-        </button>
-        <button class="tile" type="button" data-i="6" data-case
-                data-no="07" data-slug="studi-lpp-assessment" data-title="LPP Assessment"
-                data-client="LPP" data-sector="Asesmen daring"
-                data-img="asset/portofolio/portfolio_lpp.png"
-                data-desc="Platform asesmen dan penilaian daring.">
-          <span class="tile__shot">
-            <span class="shot__ph"><span>Foto</span><b>07</b></span>
-            <img src="asset/portofolio/portfolio_lpp.png" alt="" loading="lazy" onerror="this.remove()">
-          </span>
-          <span class="tile__meta"><span class="tile__no">07</span><span class="tile__t">LPP Assessment</span></span>
-        </button>
-        <button class="tile" type="button" data-i="7" data-case
-                data-no="08" data-slug="studi-ejfp" data-title="EJFP System"
-                data-client="Menyusul" data-sector="Menyusul"
-                data-img="asset/portofolio/portfolio_ejfp.png"
-                data-desc="Rincian sistem menyusul konfirmasi dari tim JKreasi.">
-          <span class="tile__shot">
-            <span class="shot__ph"><span>Foto</span><b>08</b></span>
-            <img src="asset/portofolio/portfolio_ejfp.png" alt="" loading="lazy" onerror="this.remove()">
-          </span>
-          <span class="tile__meta"><span class="tile__no">08</span><span class="tile__t">EJFP System</span></span>
-        </button>
-      </div>
-    </div>
-
+    <div class="rail" id="rail"><div class="rail__track" id="railTrack"></div></div>
     <div class="cases__bar"><span class="cases__barfill" id="casesBar"></span></div>
   </div>
 
-  <!-- Rincian tiap proyek · dibaca panel studi kasus -->
-  <div class="case__store" id="caseStore" hidden>
-    <div class="case__body">
-      <dl class="case__meta">
-        <dt>Klien</dt><dd>Sekretariat Kabinet RI</dd>
-        <dt>Sektor</dt><dd>Pemerintah Pusat</dd>
-        <dt>Tahun</dt><dd>Menyusul</dd>
-        <dt>Layanan</dt><dd>Menyusul</dd>
-      </dl>
-      <h4>Ringkasan</h4>
-      <p>Sistem persuratan dan sirkulasi dokumen di lingkungan instansi kepresidenan.</p>
-      <!-- LENGKAPI: rincian resmi dari tim JKreasi -->
-      <h4>Tantangan</h4>
-      <p class="case__todo">Rincian tantangan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Pendekatan</h4>
-      <p class="case__todo">Rincian pendekatan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Hasil</h4>
-      <p class="case__todo">Angka dampak sedang dilengkapi bersama tim JKreasi.</p>
-    </div>
-    <div class="case__body">
-      <dl class="case__meta">
-        <dt>Klien</dt><dd>PT Taman Wisata Candi (InJourney)</dd>
-        <dt>Sektor</dt><dd>Pariwisata / BUMN</dd>
-        <dt>Tahun</dt><dd>Menyusul</dd>
-        <dt>Layanan</dt><dd>Menyusul</dd>
-      </dl>
-      <h4>Ringkasan</h4>
-      <p>Sistem ticketing destinasi wisata bervolume tinggi, dirancang agar tetap stabil pada musim liburan.</p>
-      <!-- LENGKAPI: rincian resmi dari tim JKreasi -->
-      <h4>Tantangan</h4>
-      <p class="case__todo">Rincian tantangan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Pendekatan</h4>
-      <p class="case__todo">Rincian pendekatan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Hasil</h4>
-      <p class="case__todo">Angka dampak sedang dilengkapi bersama tim JKreasi.</p>
-    </div>
-    <div class="case__body">
-      <dl class="case__meta">
-        <dt>Klien</dt><dd>InJourney Destination Management</dd>
-        <dt>Sektor</dt><dd>Pariwisata / BUMN</dd>
-        <dt>Tahun</dt><dd>Menyusul</dd>
-        <dt>Layanan</dt><dd>Menyusul</dd>
-      </dl>
-      <h4>Ringkasan</h4>
-      <p>Aplikasi pendukung operasional pengelolaan destinasi.</p>
-      <!-- LENGKAPI: rincian resmi dari tim JKreasi -->
-      <h4>Tantangan</h4>
-      <p class="case__todo">Rincian tantangan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Pendekatan</h4>
-      <p class="case__todo">Rincian pendekatan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Hasil</h4>
-      <p class="case__todo">Angka dampak sedang dilengkapi bersama tim JKreasi.</p>
-    </div>
-    <div class="case__body">
-      <dl class="case__meta">
-        <dt>Klien</dt><dd>Pemerintah Kabupaten Mamasa</dd>
-        <dt>Sektor</dt><dd>Pemerintah Daerah</dd>
-        <dt>Tahun</dt><dd>Menyusul</dd>
-        <dt>Layanan</dt><dd>Menyusul</dd>
-      </dl>
-      <h4>Ringkasan</h4>
-      <p>Sistem manajemen kepegawaian daerah.</p>
-      <!-- LENGKAPI: rincian resmi dari tim JKreasi -->
-      <h4>Tantangan</h4>
-      <p class="case__todo">Rincian tantangan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Pendekatan</h4>
-      <p class="case__todo">Rincian pendekatan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Hasil</h4>
-      <p class="case__todo">Angka dampak sedang dilengkapi bersama tim JKreasi.</p>
-    </div>
-    <div class="case__body">
-      <dl class="case__meta">
-        <dt>Klien</dt><dd>Baseus Indonesia</dd>
-        <dt>Sektor</dt><dd>Ritel / Konsumen</dd>
-        <dt>Tahun</dt><dd>Menyusul</dd>
-        <dt>Layanan</dt><dd>Menyusul</dd>
-      </dl>
-      <h4>Ringkasan</h4>
-      <p>Platform e-commerce brand global untuk pasar Indonesia.</p>
-      <!-- LENGKAPI: rincian resmi dari tim JKreasi -->
-      <h4>Tantangan</h4>
-      <p class="case__todo">Rincian tantangan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Pendekatan</h4>
-      <p class="case__todo">Rincian pendekatan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Hasil</h4>
-      <p class="case__todo">Angka dampak sedang dilengkapi bersama tim JKreasi.</p>
-    </div>
-    <div class="case__body">
-      <dl class="case__meta">
-        <dt>Klien</dt><dd>Deras.id</dd>
-        <dt>Sektor</dt><dd>Media / Headless CMS</dd>
-        <dt>Tahun</dt><dd>Menyusul</dd>
-        <dt>Layanan</dt><dd>Menyusul</dd>
-      </dl>
-      <h4>Ringkasan</h4>
-      <p>Portal berita dengan arsitektur headless CMS.</p>
-      <!-- LENGKAPI: rincian resmi dari tim JKreasi -->
-      <h4>Tantangan</h4>
-      <p class="case__todo">Rincian tantangan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Pendekatan</h4>
-      <p class="case__todo">Rincian pendekatan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Hasil</h4>
-      <p class="case__todo">Angka dampak sedang dilengkapi bersama tim JKreasi.</p>
-    </div>
-    <div class="case__body">
-      <dl class="case__meta">
-        <dt>Klien</dt><dd>LPP</dd>
-        <dt>Sektor</dt><dd>Asesmen daring</dd>
-        <dt>Tahun</dt><dd>Menyusul</dd>
-        <dt>Layanan</dt><dd>Menyusul</dd>
-      </dl>
-      <h4>Ringkasan</h4>
-      <p>Platform asesmen dan penilaian daring.</p>
-      <!-- LENGKAPI: rincian resmi dari tim JKreasi -->
-      <h4>Tantangan</h4>
-      <p class="case__todo">Rincian tantangan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Pendekatan</h4>
-      <p class="case__todo">Rincian pendekatan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Hasil</h4>
-      <p class="case__todo">Angka dampak sedang dilengkapi bersama tim JKreasi.</p>
-    </div>
-    <div class="case__body">
-      <dl class="case__meta">
-        <dt>Klien</dt><dd>Menyusul</dd>
-        <dt>Sektor</dt><dd>Menyusul</dd>
-        <dt>Tahun</dt><dd>Menyusul</dd>
-        <dt>Layanan</dt><dd>Menyusul</dd>
-      </dl>
-      <h4>Ringkasan</h4>
-      <p>Rincian sistem menyusul konfirmasi dari tim JKreasi.</p>
-      <!-- LENGKAPI: rincian resmi dari tim JKreasi -->
-      <h4>Tantangan</h4>
-      <p class="case__todo">Rincian tantangan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Pendekatan</h4>
-      <p class="case__todo">Rincian pendekatan sedang dilengkapi bersama tim JKreasi.</p>
-      <h4>Hasil</h4>
-      <p class="case__todo">Angka dampak sedang dilengkapi bersama tim JKreasi.</p>
-    </div>
+  <div class="projects" id="projects" hidden>
+    <article class="proj" data-slug="studi-sirkulasi" data-img="asset/portofolio/portfolio_sirkulasi.png">
+      <h3>SIRKULASI System</h3>
+      <p data-f="client">Sekretariat Kabinet RI</p>
+      <p data-f="sector">Pemerintah Pusat</p>
+      <p data-f="summary">Sistem persuratan dan sirkulasi dokumen di lingkungan instansi kepresidenan.</p>
+    </article>
+    <article class="proj" data-slug="studi-twc-ticketing" data-img="asset/portofolio/portfolio_twc-2.png">
+      <h3>TWC Ticketing System</h3>
+      <p data-f="client">PT Taman Wisata Candi (InJourney)</p>
+      <p data-f="sector">Pariwisata / BUMN</p>
+      <p data-f="summary">Sistem ticketing destinasi wisata bervolume tinggi, dirancang agar tetap stabil pada musim liburan.</p>
+    </article>
+    <article class="proj" data-slug="studi-idm-application" data-img="asset/portofolio/portfolio_idm.png">
+      <h3>IDM Application</h3>
+      <p data-f="client">InJourney Destination Management</p>
+      <p data-f="sector">Pariwisata / BUMN</p>
+      <p data-f="summary">Aplikasi pendukung operasional pengelolaan destinasi.</p>
+    </article>
+    <article class="proj" data-slug="studi-mamasa-hr" data-img="asset/portofolio/portfolio_mamasa.png">
+      <h3>Mamasa HR System</h3>
+      <p data-f="client">Pemerintah Kabupaten Mamasa</p>
+      <p data-f="sector">Pemerintah Daerah</p>
+      <p data-f="summary">Sistem manajemen kepegawaian daerah.</p>
+    </article>
+    <article class="proj" data-slug="studi-baseus" data-img="asset/portofolio/portfolio_baseus.png">
+      <h3>Baseus E-commerce</h3>
+      <p data-f="client">Baseus Indonesia</p>
+      <p data-f="sector">Ritel / Konsumen</p>
+      <p data-f="summary">Platform e-commerce brand global untuk pasar Indonesia.</p>
+    </article>
+    <article class="proj" data-slug="studi-deras" data-img="asset/portofolio/portfolio_deras.png">
+      <h3>Deras News Portal</h3>
+      <p data-f="client">Deras.id</p>
+      <p data-f="sector">Media / Headless CMS</p>
+      <p data-f="summary">Portal berita dengan arsitektur headless CMS.</p>
+    </article>
+    <article class="proj" data-slug="studi-lpp-assessment" data-img="asset/portofolio/portfolio_lpp.png">
+      <h3>LPP Assessment</h3>
+      <p data-f="client">LPP</p>
+      <p data-f="sector">Asesmen daring</p>
+      <p data-f="summary">Platform asesmen dan penilaian daring.</p>
+    </article>
+    <article class="proj" data-slug="studi-ejfp" data-img="asset/portofolio/portfolio_ejfp.png">
+      <!-- KONFIRMASI: klien, sektor, dan ringkasan EJFP belum ada -->
+      <h3>EJFP System</h3>
+    </article>
   </div>
 </section>
 
-<!-- ===================== 02 · MASALAH =====================
-     Blok gelap sebagai jeda di tengah halaman terang. Tiga sebab
-     kegagalan dipecah jadi kolom bernomor dengan label pendek,
-     supaya bisa dipindai sekilas tanpa harus membaca utuh.
-     ========================================================= -->
+<!-- ===== 02 · MASALAH ===== -->
 <section class="prob" id="masalah">
   <div class="wrap">
     <p class="label up">02 / Masalah</p>
@@ -1822,12 +1466,7 @@ body.locked{overflow:hidden}
   </div>
 </section>
 
-<!-- ===================== 03 · LAYANAN =====================
-     Sarang lebah: satu pusat (merek) dikelilingi enam sel yang terhubung.
-     Lima sel adalah pilar layanan, satu sel adalah ajakan · sekaligus
-     melengkapi geometri enam tetangga heksagon.
-     Rincian tiap sel ada di <span class="svc__data" hidden> di dalamnya.
-     ========================================================= -->
+<!-- ===== 03 · LAYANAN ===== -->
 <section class="sec" id="layanan">
   <div class="wrap">
     <div class="comb-wrap">
@@ -2000,67 +1639,44 @@ body.locked{overflow:hidden}
   </div>
 </section>
 
-<!-- ===== SEKSI "CARA KAMI BEKERJA" DINONAKTIFKAN SEMENTARA =====
-     Cara mengaktifkan lagi:
-       1. Hapus baris pembuka komentar ini dan baris penutupnya di bawah.
-       2. Kembalikan penomoran: Tim 04 ke 05, Tanya Jawab 05 ke 06,
-          Kontak 06 ke 07, lalu pasang lagi tautan "Cara Kerja" di
-          navigasi dan menu ponsel (href="#kerja").
-       3. Ubah latar seksi Tim kembali ke putih (buang sec--alt).
-     CSS .trio sengaja TIDAK dihapus, jadi tinggal dibuka saja.
-     =============================================================
+<!-- ===== 04 · PERDAGANGAN ===== -->
+<section class="trade" id="perdagangan">
+  <a class="trade__a" href="perdagangan.html">
+    <div class="trade__photo" aria-hidden="true">
+      <img src="asset/perdagangan/sulfur-tongkang.jpg" alt="" loading="lazy" width="1280" height="720">
+    </div>
 
- ===================== 04 · CARA KAMI BEKERJA =====================
-     Enam tahap proses tidak lagi ditampilkan sebagai daftar; ia diserap
-     menjadi struktur seksi ini (sebelum / selama / setelah). Enam
-     pembeda dari copy deck §8 dilebur ke dalam tiga babak itu, jadi
-     yang dibaca tinggal tiga, bukan dua belas.
-     KONFIRMASI: peleburan ini merangkum copy deck §8 dan §9. Tidak ada
-     klaim baru, tetapi susunannya perlu ditinjau tim JKreasi.
-     ============================================================== 
-<section class="sec sec--alt" id="kerja">
-  <div class="wrap">
-    <div class="shead">
-      <p class="label up">04 / Cara Kami Bekerja</p>
-      <div class="shead__body">
-        <h2 class="up">Sebelum, selama, dan setelah proyek.</h2>
+    <div class="wrap trade__in">
+      <div class="trade__txt up">
+        <span class="label">04 / Perdagangan</span>
+        <h2>Kami juga melayani <em>perdagangan</em> sulfur dan bahan kimia industri.</h2>
+        <p class="trade__lead">
+          Sulfur dari produsen dalam negeri untuk pabrik pupuk, asam, dan industri kimia.
+          Tersedia curah maupun kemasan, dari ratusan sampai ribuan ton.
+        </p>
+        <span class="trade__go">
+          Lihat layanan perdagangan
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
       </div>
     </div>
 
-    <ol class="trio">
-      <li class="trio__i up">
-        <span class="trio__mark" aria-hidden="true"></span>
-        <p class="label label--blue">01 / Sebelum mulai</p>
-        <h3>Kami sudah paham ritmenya.</h3>
-        <p>Siklus anggaran, dokumen pengadaan, dan standar pelaporan instansi sudah kami kenal, sehingga proyek berjalan tanpa kejutan administratif.</p>
-      </li>
-      <li class="trio__i up" data-d="1">
-        <span class="trio__mark" aria-hidden="true"></span>
-        <p class="label label--blue">02 / Selama mengerjakan</p>
-        <h3>Satu tim, dari rancangan sampai rilis.</h3>
-        <p>Konsultan, desainer, developer, dan DevOps berada di tim yang sama. Keamanan ditanam sejak baris kode pertama, dan arsitekturnya dibangun untuk diperluas.</p>
-      </li>
-      <li class="trio__i up" data-d="2">
-        <span class="trio__mark" aria-hidden="true"></span>
-        <p class="label label--blue">03 / Setelah diserahkan</p>
-        <h3>Sistem tetap dijaga, ilmunya tinggal.</h3>
-        <p>Managed service memantau dan mengembangkan sistem, sementara dokumentasi dan pelatihan diserahkan agar tim internal Anda bisa mandiri.</p>
-      </li>
-    </ol>
-  </div>
+    <div class="trade__foot">
+      <div class="wrap trade__strip">
+        <span><i>Komoditas</i><b>Sulfur industri</b></span>
+        <span><i>Transaksi perdana</i><b class="n">2.652 MT</b></span>
+        <span><i>Pembeli</i><b>PT Petro Jordan Abadi</b></span>
+        <span><i>Bidang usaha</i><b>KBLI 46651</b></span>
+      </div>
+    </div>
+  </a>
 </section>
 
--->
-
-<!-- ===================== 04 · TIM =====================
-     Satu baris potret kecil berwarna, disusun melengkung (offset --o)
-     supaya tidak menjadi kisi kaku dan tidak memakan tinggi halaman.
-     FOTO: asset/tim/ · rasio 4:5, minimal 640x800px.
-     ================================================== -->
+<!-- ===== 05 · TIM ===== -->
 <section class="sec sec--alt" id="tim">
   <div class="wrap">
     <div class="shead">
-      <p class="label up">04 / Tim</p>
+      <p class="label up">05 / Tim</p>
       <div class="shead__body">
         <h2 class="up">Tim di balik JKreasi.</h2>
         <p class="up" data-d="1">Tenaga ahli senior yang menangani langsung proyek Anda, bukan tim yang berganti di tengah jalan.</p>
@@ -2068,30 +1684,19 @@ body.locked{overflow:hidden}
     </div>
 
     <ul class="crew">
-      <li class="mate up" style="--o:48px">
+      <li class="mate up">
         <span class="mate__no">01</span>
-        <span class="mate__shot">
-          <span class="mate__ph">DO</span>
-          <img src="asset/tim/dhachri.jpg" alt="Dhachri Oskandar" loading="lazy" onerror="this.remove()">
-        </span>
-        <span class="mate__n">
-          <b>Dhachri Oskandar</b>
-          <span class="mate__role">Director</span>
-        </span>
-      </li>
-      <li class="mate up" data-d="1" style="--o:24px">
-        <span class="mate__no">02</span>
         <span class="mate__shot">
           <span class="mate__ph">IM</span>
           <img src="asset/tim/ibnu.jpg" alt="Ibnu Munandar" loading="lazy" onerror="this.remove()">
         </span>
         <span class="mate__n">
           <b>Ibnu Munandar</b>
-          <span class="mate__role">Lead Consultant</span>
+          <span class="mate__role">Director</span>
         </span>
       </li>
-      <li class="mate up" data-d="2" style="--o:0px">
-        <span class="mate__no">03</span>
+      <li class="mate up" data-d="1">
+        <span class="mate__no">02</span>
         <span class="mate__shot">
           <span class="mate__ph">R</span>
           <img src="asset/tim/rizky.jpg" alt="Rizky" loading="lazy" onerror="this.remove()">
@@ -2101,8 +1706,8 @@ body.locked{overflow:hidden}
           <span class="mate__role">Project Manager</span>
         </span>
       </li>
-      <li class="mate up" data-d="3" style="--o:0px">
-        <span class="mate__no">04</span>
+      <li class="mate up" data-d="2">
+        <span class="mate__no">03</span>
         <span class="mate__shot">
           <span class="mate__ph">AQ</span>
           <img src="asset/tim/qorib.fw.png" alt="Ahmad Qorib" loading="lazy" onerror="this.remove()">
@@ -2112,8 +1717,8 @@ body.locked{overflow:hidden}
           <span class="mate__role">Senior Developer</span>
         </span>
       </li>
-      <li class="mate up" data-d="3" style="--o:24px">
-        <span class="mate__no">05</span>
+      <li class="mate up" data-d="3">
+        <span class="mate__no">04</span>
         <span class="mate__shot">
           <span class="mate__ph">W</span>
           <img src="asset/tim/wardhana.jpg" alt="Wardhana" loading="lazy" onerror="this.remove()">
@@ -2123,8 +1728,8 @@ body.locked{overflow:hidden}
           <span class="mate__role">Senior DevOps Engineer</span>
         </span>
       </li>
-      <li class="mate up" data-d="3" style="--o:48px">
-        <span class="mate__no">06</span>
+      <li class="mate up" data-d="3">
+        <span class="mate__no">05</span>
         <span class="mate__shot">
           <span class="mate__ph">AR</span>
           <img src="asset/tim/rizal.jpg" alt="Ahmad Rizal" loading="lazy" onerror="this.remove()">
@@ -2138,17 +1743,11 @@ body.locked{overflow:hidden}
   </div>
 </section>
 
-<!-- ===================== TESTIMONI =====================
-     Dikosongkan: belum ada testimoni tertulis (copy deck §11).
-     Pola yang cocok di halaman ini: satu kutipan besar di blok navy,
-     bukan grid kartu bintang lima.
-     ==================================================== -->
-
-<!-- ===================== 05 · TANYA JAWAB ===================== -->
+<!-- ===== 06 · TANYA JAWAB ===== -->
 <section class="sec" id="faq">
   <div class="wrap">
     <div class="chead up">
-      <span class="label">05 / Tanya Jawab</span>
+      <span class="label">06 / Tanya Jawab</span>
       <h2>Pertanyaan yang sering diajukan.</h2>
       <p>Hal-hal yang paling sering ditanyakan instansi sebelum memulai kerja sama.</p>
     </div>
@@ -2215,12 +1814,7 @@ body.locked{overflow:hidden}
   </div>
 </section>
 
-<!-- ===================== AJAKAN =====================
-     Air dikembalikan di sini sebagai penutup: halaman dibuka dengan
-     air di gerbang dan hero, lalu ditutup dengan air yang lebih tenang.
-     Kolom kanan diisi tiga langkah yang terjadi setelah pengunjung
-     menghubungi, supaya ruang kosong berubah jadi peredam keraguan.
-     ================================================== -->
+<!-- ===== AJAKAN ===== -->
 <section class="call">
   <canvas class="call__water" id="callWater" aria-hidden="true"></canvas>
   <span class="call__veil" aria-hidden="true"></span>
@@ -2253,11 +1847,11 @@ body.locked{overflow:hidden}
   </div>
 </section>
 
-<!-- ===================== 06 · KONTAK ===================== -->
+<!-- ===== 07 · KONTAK ===== -->
 <section class="sec sec--alt" id="kontak">
   <div class="wrap">
     <div class="chead up">
-      <span class="label">06 / Kontak</span>
+      <span class="label">07 / Kontak</span>
       <h2>Mari bicara kebutuhan Anda.</h2>
       <p>Ceritakan situasinya secara singkat. Tim kami akan menghubungi Anda dalam 1×24 jam kerja.</p>
     </div>
@@ -2299,7 +1893,8 @@ body.locked{overflow:hidden}
             <select id="kebutuhan" required>
               <option value="" disabled selected>Pilih salah satu</option>
               <option>Konsultasi IT</option><option>Pengembangan Aplikasi</option><option>Desain UI/UX</option>
-              <option>Cloud &amp; DevOps</option><option>Managed Service</option><option>Lainnya</option>
+              <option>Cloud &amp; DevOps</option><option>Managed Service</option>
+              <option>Perdagangan / Pasokan Sulfur</option><option>Lainnya</option>
             </select>
             <span class="e">Mohon pilih salah satu kebutuhan</span>
           </div>
@@ -2323,13 +1918,13 @@ body.locked{overflow:hidden}
 
 </main>
 
-<!-- ===================== FOOTER ===================== -->
+<!-- ===== FOOTER ===== -->
 <footer class="foot">
   <div class="wrap">
     <div class="foot__grid">
       <div>
         <div class="foot__logo"><img src="asset/Logo-01.png" alt="JKreasi" width="1180" height="267"></div>
-        <p class="foot__about">JKreasi (PT Jaya Kreasi Teknologi) adalah mitra transformasi digital bagi pemerintah dan korporasi di Indonesia sejak 2019.</p>
+        <p class="foot__about">JKreasi (PT Jaya Kreasi Teknologi) menjalankan dua lini usaha: solusi teknologi informasi bagi pemerintah dan korporasi sejak 2019, serta perdagangan komoditas industri sejak 2026.</p>
         <!-- KONFIRMASI: tautan sosial media masih placeholder "#" -->
         <div class="social">
           <a href="#" aria-label="LinkedIn JKreasi"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.76-2.05 4.02 0 4.76 2.5 4.76 5.75V21h-4v-5.7c0-1.36-.02-3.1-1.9-3.1-1.9 0-2.2 1.48-2.2 3v5.8h-4V9Z"/></svg></a>
@@ -2342,6 +1937,15 @@ body.locked{overflow:hidden}
         <div class="foot__links">
           <a href="#layanan">Konsultasi IT</a><a href="#layanan">Pengembangan Aplikasi</a><a href="#layanan">Desain UI/UX</a>
           <a href="#layanan">Cloud &amp; DevOps</a><a href="#layanan">Managed Service</a><a href="#layanan">System Integration</a>
+        </div>
+      </div>
+      <div>
+        <h4>Perdagangan</h4>
+        <div class="foot__links">
+          <a href="perdagangan.html">Sulfur Industri</a>
+          <a href="perdagangan.html#alur">Alur Transaksi</a>
+          <a href="perdagangan.html#transaksi">Rekam Transaksi</a>
+          <a href="perdagangan.html#legalitas">Legalitas &amp; Kepatuhan</a>
         </div>
       </div>
       <div>
@@ -2370,48 +1974,51 @@ body.locked{overflow:hidden}
 </a>
 
 
-<!-- ===================== PANEL STUDI KASUS =====================
-     Diisi oleh JS dari <div class="case__body"> pada kartu yang diklik.
-     ========================================================== -->
 <div class="case" id="case" role="dialog" aria-modal="true" aria-labelledby="caseTitle" hidden>
   <div class="case__bg" data-close></div>
   <article class="case__panel">
     <header class="case__top">
-      <span class="label" id="caseNo">01</span>
+      <span class="label" id="caseNo"></span>
       <button class="case__x" type="button" data-close aria-label="Tutup studi kasus">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
     </header>
 
     <div class="case__hero">
-      <div class="case__ph" id="casePh">01</div>
-      <img id="caseImg" alt="" hidden>
+      <span class="case__blur" id="caseBlur"></span>
+      <img id="caseImg" alt="">
     </div>
 
     <div class="case__in">
-      <span class="label" id="caseSector"></span>
+      <p class="label label--blue" id="caseSector"></p>
       <h2 id="caseTitle"></h2>
-      <p class="case__client" id="caseClient"></p>
-      <div id="caseBody"></div>
+      <p class="case__sum" id="caseSum"></p>
+      <dl class="case__facts" id="caseFacts"></dl>
+      <ol class="case__story" id="caseStory"></ol>
+
+      <aside class="case__cta">
+        <p><b>Punya kebutuhan serupa?</b> Ceritakan situasinya. Kami bisa memaparkan rincian proyek ini, termasuk arsitektur dan cara kerjanya, dalam sesi konsultasi.</p>
+        <a href="#kontak" class="btn btn--ink" data-close>
+          Jadwalkan Konsultasi
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </aside>
     </div>
 
     <nav class="case__nav">
-      <button type="button" id="casePrev">← Sebelumnya</button>
-      <button type="button" id="caseNext">Berikutnya →</button>
+      <button type="button" id="casePrev"></button>
+      <button type="button" id="caseNext"></button>
     </nav>
   </article>
 </div>
 
-<noscript><style>.gate{display:none}.gated{overflow:auto}.case{display:none}.case__body[hidden]{display:block}.up{opacity:1;transform:none}.qa__a{max-height:none}.stage{height:auto}.stage__pin{position:relative;height:auto;min-height:100vh;display:flex;align-items:center;padding-block:120px}.stage__body{position:relative;inset:auto}.act{display:none}.act--3{display:block;opacity:1;transform:none}.hud{display:none}</style></noscript>
+<noscript><style>.gate{display:none}.gated{overflow:auto}.cases{height:auto}.cases__pin{display:none}.projects[hidden]{display:grid;gap:28px;padding:var(--sec) var(--pad)}.up{opacity:1;transform:none}.qa__a{max-height:none}.stage{height:auto}.stage__pin{position:relative;height:auto;min-height:100vh;display:flex;align-items:center;padding-block:120px}.stage__body{position:relative;inset:auto}.act{display:none}.act--3{display:block;opacity:1;transform:none}.hud{display:none}</style></noscript>
 
 <script>
 (function () {
   'use strict';
 
-  /* ==========================================================
-     0. JARING PENGAMAN · halaman tidak boleh terkunci selamanya.
-        Bila skrip gagal sebelum gerbang siap, gulir dibuka paksa.
-     ========================================================== */
+  /* ========== 0. JARING PENGAMAN ========== */
   setTimeout(function () {
     var g = document.getElementById('gate');
     if (g && !g.hidden && g.getAttribute('data-ready') !== '1') {
@@ -2421,9 +2028,7 @@ body.locked{overflow:hidden}
     }
   }, 4000);
 
-  /* ==========================================================
-     KONFIGURASI · ubah di sini saja
-     ========================================================== */
+  /* ========== KONFIGURASI ========== */
   var CONFIG = {
     waNumber: '628111033334',   // 0811 1033 334
     formEndpoint: '',           // kosong = kirim via WhatsApp; isi URL untuk POST JSON
@@ -2435,9 +2040,7 @@ body.locked{overflow:hidden}
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var clamp = function (v, a, b) { return v < a ? a : v > b ? b : v; };
 
-  /* ==========================================================
-     1. AIR · satu mesin gelombang, dipakai gerbang dan hero
-     ========================================================== */
+  /* ========== 1. AIR ========== */
   var LAYERS = [
     { y: 0,    amp: 24, len: .0031, spd:  .00021, off: 0,   col: 'rgba(64,180,255,.20)' },
     { y: .055, amp: 19, len: .0044, spd: -.00030, off: 1.4, col: 'rgba(0,134,234,.30)' },
@@ -2507,9 +2110,7 @@ body.locked{overflow:hidden}
     return { size: size, paint: paint };
   }
 
-  /* ==========================================================
-     2. GERBANG · statis sampai diklik, lalu air membanjir & memudar
-     ========================================================== */
+  /* ========== 2. GERBANG ========== */
   var gate = $('#gate'), gateWater = makeWater($('#gateWater'));
   var gateOn = true, entering = false, tEnter = 0, cx = 0, cy = 0;
 
@@ -2538,7 +2139,7 @@ body.locked{overflow:hidden}
     entering = true;
     var pt = ptOf(e);
     cx = pt ? pt.x : window.innerWidth / 2;
-    cy = pt ? pt.y : window.innerHeight * .62;
+    cy = pt ? pt.y : window.innerHeight * .5;
     if (reduced) { finishGate(); return; }
     tEnter = performance.now();
     setTimeout(function () { gate.classList.add('out'); }, 620);
@@ -2579,9 +2180,7 @@ body.locked{overflow:hidden}
     });
   }
 
-  /* ==========================================================
-     3. AIR DI HERO · tenang, naik sedikit mengikuti scroll
-     ========================================================== */
+  /* ========== 3. AIR DI HERO ========== */
   var stage = $('#stage'), heroWater = makeWater($('#water'));
   var heroSeen = true, heroRaf = null, heroLevel = .20;
 
@@ -2603,9 +2202,7 @@ body.locked{overflow:hidden}
     }, { threshold: 0 }).observe(stage);
   }
 
-  /* ==========================================================
-     3b. AIR PENUTUP · mesin gelombang yang sama, permukaan lebih rendah
-     ========================================================== */
+  /* ========== 3b. AIR PENUTUP ========== */
   var callCv = $('#callWater'), callWater = callCv ? makeWater(callCv) : null;
   var callSeen = false, callRaf = null;
   var callLoop = function (t) {
@@ -2621,27 +2218,43 @@ body.locked{overflow:hidden}
     }, { threshold: 0 }).observe(callCv);
   }
 
-  /* ==========================================================
-     4. STUDI KASUS
-        a) Layar terkunci; gulir vertikal → gerak horizontal deret kartu.
-        b) Kartu aktif menentukan sorotan besar di atasnya.
-        c) Panel rincian penuh dibuka dari tautan di sorotan.
-        Gerak dihaluskan dengan peredaman (lerp) di dalam satu rAF,
-        bukan langsung dipetakan dari posisi scroll · supaya tidak menyentak.
-     ========================================================== */
+  /* ========== 4. STUDI KASUS ========== */
+  var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var two = function (n) { return (n < 10 ? '0' : '') + n; };
+
+  var projects = $$('#projects .proj').map(function (a) {
+    var f = function (k) { var el = $('[data-f="' + k + '"]', a); return el ? el.textContent.trim() : ''; };
+    return {
+      slug: a.getAttribute('data-slug') || '', img: a.getAttribute('data-img') || '',
+      title: $('h3', a).textContent.trim(), client: f('client'), sector: f('sector'), summary: f('summary'),
+      facts: $('[data-f="facts"]', a), story: $('[data-f="story"]', a)
+    };
+  });
+
   var casesEl  = $('#portofolio'),
       rail     = $('#rail'),
       track    = $('#railTrack'),
-      tiles    = $$('.tile', track),
-      slides   = $$('.slide', casesEl),
-      featShot = $('.feat__shot', casesEl),
+      featShot = $('#featShot'),
       featTxt  = $('#featTxt'),
       casesBar = $('#casesBar'),
-      store    = $$('.case__body', $('#caseStore')),
       panel    = $('#case'),
-      N        = tiles.length,
+      N        = projects.length,
       idx = -1, backTo = null, active = -1;
 
+  casesEl.style.setProperty('--n', N);
+  $('#featOf').textContent = '/ ' + two(N);
+
+  featShot.innerHTML = projects.map(function (p, i) {
+    return '<figure class="slide" data-i="' + i + '"><span class="shot__ph"><span>Foto menyusul</span><b>' + two(i + 1) + '</b></span>' +
+      (p.img ? '<img src="' + esc(p.img) + '" alt="' + esc(p.title) + '" loading="lazy" onerror="this.remove()">' : '') + '</figure>';
+  }).join('');
+  track.innerHTML = projects.map(function (p, i) {
+    return '<button class="tile" type="button" data-i="' + i + '"><span class="tile__shot"><span class="shot__ph"><span>Foto</span><b>' + two(i + 1) + '</b></span>' +
+      (p.img ? '<img src="' + esc(p.img) + '" alt="" loading="lazy" onerror="this.remove()">' : '') + '</span>' +
+      '<span class="tile__meta"><span class="tile__no">' + two(i + 1) + '</span><span class="tile__t">' + esc(p.title) + '</span></span></button>';
+  }).join('');
+
+  var tiles = $$('.tile', track), slides = $$('.slide', featShot);
   var mqCoarse = window.matchMedia('(hover:none) and (pointer:coarse)');
   var wide = function () { return window.innerWidth > 900 && !reduced && !mqCoarse.matches; };
 
@@ -2650,50 +2263,41 @@ body.locked{overflow:hidden}
     i = clamp(i, 0, N - 1);
     if (i === active) return;
     active = i;
-    var t = tiles[i];
-
+    var p = projects[i];
     tiles.forEach(function (el, k) { el.classList.toggle('on', k === i); });
     slides.forEach(function (el, k) { el.classList.toggle('on', k === i); });
 
-    // Isi ditulis seketika supaya tetap terbaca saat menggulir cepat;
-    // animasi masuk dijalankan terpisah, tidak menunda isinya.
-    $('#featNo').textContent     = t.getAttribute('data-no');
-    $('#featSector').textContent = t.getAttribute('data-sector');
-    $('#featTitle').textContent  = t.getAttribute('data-title');
-    $('#featClient').textContent = t.getAttribute('data-client');
-    $('#featDesc').textContent   = t.getAttribute('data-desc');
+    $('#featNo').textContent     = two(i + 1);
+    $('#featSector').textContent = p.sector;
+    $('#featTitle').textContent  = p.title;
+    $('#featClient').textContent = p.client;
+    $('#featDesc').textContent   = p.summary;
 
     if (!reduced && featTxt.animate) {
-      featTxt.animate(
-        [{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }],
-        { duration: 420, easing: 'cubic-bezier(.22,.75,.3,1)' }
-      );
+      featTxt.animate([{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'none' }],
+        { duration: 420, easing: 'cubic-bezier(.22,.75,.3,1)' });
     }
   };
 
   /* ---------- Gerak horizontal teredam ---------- */
-  var railX = 0, railTo = 0, casesSeen = false, casesRaf = null;
+  var railX = 0, casesSeen = false, casesRaf = null;
 
   var casesLoop = function () {
     if (!casesSeen) { casesRaf = null; return; }
-
     if (wide()) {
       var range = casesEl.offsetHeight - window.innerHeight;
       var p = range > 0 ? clamp(-casesEl.getBoundingClientRect().top / range, 0, 1) : 0;
       var max = Math.max(track.scrollWidth - rail.clientWidth, 0);
-
-      railTo = p * max;
-      railX += (railTo - railX) * .085;                  // peredaman
-      if (Math.abs(railTo - railX) < .25) railX = railTo;
+      var to = p * max;
+      railX += (to - railX) * .085;
+      if (Math.abs(to - railX) < .25) railX = to;
       track.style.transform = 'translate3d(' + (-railX).toFixed(2) + 'px,0,0)';
 
-      // Sorotan mengikuti posisi yang TERLIHAT, bukan posisi scroll mentah,
-      // supaya pergantian tidak mendahului gerak kartunya.
+      // Sorotan mengikuti posisi yang terlihat, bukan posisi gulir mentah
       var pe = max > 0 ? railX / max : 0;
       setActive(Math.round(pe * (N - 1)));
-
       casesBar.style.transform = 'scaleX(' + pe.toFixed(4) + ')';
-      featShot.style.setProperty('--px', pe.toFixed(4));   // parallax halus pada gambar
+      featShot.style.setProperty('--px', pe.toFixed(4));
     }
     casesRaf = requestAnimationFrame(casesLoop);
   };
@@ -2706,49 +2310,61 @@ body.locked{overflow:hidden}
     }, { threshold: 0 }).observe(casesEl);
   } else { casesSeen = true; startCases(); }
 
-  /* ---------- Klik kartu: lompat ke posisi gulirnya ---------- */
+  // Klik kartu: di desktop lompat ke posisi gulirnya
   tiles.forEach(function (t, i) {
     t.addEventListener('click', function () {
-      if (!wide()) { setActive(i); return; }
+      if (!wide() || N < 2) { setActive(i); return; }
       var range = casesEl.offsetHeight - window.innerHeight;
       window.scrollTo({ top: casesEl.offsetTop + (i / (N - 1)) * range, behavior: 'smooth' });
     });
   });
 
-  /* ---------- Panel rincian penuh ---------- */
+  /* ---------- Panel rincian ---------- */
+  var navBtn = function (btn, j, dir) {
+    var q = projects[j];
+    btn.disabled = !q;
+    btn.innerHTML = q ? (q.img ? '<img src="' + esc(q.img) + '" alt="">' : '') +
+      '<span><i>' + dir + '</i><b>' + esc(q.title) + '</b></span>' : '';
+  };
+
   var openCase = function (i, syncHash) {
     if (i < 0 || i >= N) return;
     idx = i;
-    var t = tiles[i], img = $('#caseImg');
+    var p = projects[i], img = $('#caseImg');
 
-    $('#caseNo').textContent     = t.getAttribute('data-no');
-    $('#casePh').textContent     = t.getAttribute('data-no');
-    $('#caseSector').textContent = t.getAttribute('data-sector');
-    $('#caseTitle').textContent  = t.getAttribute('data-title');
-    $('#caseClient').textContent = t.getAttribute('data-client');
-    $('#caseBody').innerHTML     = store[i].innerHTML;
+    $('#caseNo').textContent     = 'Studi kasus ' + two(i + 1) + ' / ' + two(N);
+    $('#caseSector').textContent = p.sector;
+    $('#caseTitle').textContent  = p.title;
+    $('#caseSum').textContent    = p.summary;
+    $('#caseBlur').style.backgroundImage = p.img ? 'url("' + p.img + '")' : '';
+    img.hidden = !p.img;
+    if (p.img) { img.src = p.img; img.alt = p.title; }
 
-    img.hidden = true;
-    img.onload  = function () { img.hidden = false; };
-    img.onerror = function () { img.hidden = true; };
-    img.alt = t.getAttribute('data-title');
-    img.src = t.getAttribute('data-img');
+    var facts = [];
+    if (p.client) facts.push(['Klien', p.client]);
+    if (p.facts) $$('dt', p.facts).forEach(function (dt) { facts.push([dt.textContent, dt.nextElementSibling ? dt.nextElementSibling.textContent : '']); });
+    $('#caseFacts').innerHTML = facts.map(function (f) { return '<div><dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd></div>'; }).join('');
 
-    $('#casePrev').disabled = (i === 0);
-    $('#caseNext').disabled = (i === N - 1);
+    $('#caseStory').innerHTML = p.story ? $$('h4', p.story).map(function (h) {
+      var body = h.nextElementSibling && h.nextElementSibling.tagName === 'P' ? h.nextElementSibling.innerHTML : '';
+      return '<li><h4>' + esc(h.textContent) + '</h4><p>' + body + '</p></li>';
+    }).join('') : '';
+
+    navBtn($('#casePrev'), i - 1, 'Sebelumnya');
+    navBtn($('#caseNext'), i + 1, 'Berikutnya');
 
     if (panel.hidden) {
       backTo = document.activeElement;
       panel.hidden = false;
       document.body.classList.add('locked');
-      void panel.offsetWidth;                 // paksa reflow agar transisi mulai dari keadaan awal
+      void panel.offsetWidth;                 // mulai transisi dari keadaan awal
       panel.classList.add('in');
       $('.case__x', panel).focus();
     }
     $('.case__panel', panel).scrollTop = 0;
 
-    if (syncHash !== false && window.history && history.replaceState) {
-      history.replaceState(null, '', '#' + t.getAttribute('data-slug'));
+    if (syncHash !== false && p.slug && window.history && history.replaceState) {
+      history.replaceState(null, '', '#' + p.slug);
     }
   };
 
@@ -2756,7 +2372,7 @@ body.locked{overflow:hidden}
     if (panel.hidden) return;
     panel.classList.remove('in');
     document.body.classList.remove('locked');
-    setTimeout(function () { panel.hidden = true; }, reduced ? 0 : 520);
+    setTimeout(function () { panel.hidden = true; }, reduced ? 0 : 560);
     if (window.history && history.replaceState && location.hash.indexOf('#studi-') === 0) {
       history.replaceState(null, '', location.pathname + location.search);
     }
@@ -2766,7 +2382,7 @@ body.locked{overflow:hidden}
   function openFromHash() {
     var h = location.hash.replace('#', '');
     for (var i = 0; i < N; i++) {
-      if (tiles[i].getAttribute('data-slug') === h) { setActive(i); openCase(i, false); return; }
+      if (projects[i].slug && projects[i].slug === h) { setActive(i); openCase(i, false); return; }
     }
   }
 
@@ -2782,11 +2398,14 @@ body.locked{overflow:hidden}
     if (e.key === 'ArrowRight') openCase(idx + 1);
   });
 
-  setActive(0);
+  if (N) setActive(0);
 
-  /* ==========================================================
-     5. MENU
-     ========================================================== */
+  /* ---------- Tim: lengkung foto mengikuti jumlah anggota ---------- */
+  var mates = $$('.crew .mate'), mid = (mates.length - 1) / 2;
+  mates.forEach(function (m, i) { m.style.setProperty('--o', (mid ? Math.abs(i - mid) / mid * 48 : 0).toFixed(1) + 'px'); });
+  $('#crewCount').setAttribute('data-count', mates.length);
+
+  /* ========== 5. MENU ========== */
   var burger = $('#burger'), sheet = $('#sheet'), nav = $('#nav'), prog = $('#prog');
   var shut = function () {
     sheet.classList.remove('open');
@@ -2802,9 +2421,7 @@ body.locked{overflow:hidden}
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') shut(); });
   window.addEventListener('resize', function () { if (window.innerWidth > 860) shut(); });
 
-  /* ==========================================================
-     6. REVEAL & ANGKA
-     ========================================================== */
+  /* ========== 6. REVEAL & ANGKA ========== */
   var ups = $$('.up');
   if ('IntersectionObserver' in window && !reduced) {
     var io = new IntersectionObserver(function (l) {
@@ -2831,11 +2448,13 @@ body.locked{overflow:hidden}
     nums.forEach(function (el) { nio.observe(el); });
   } else { nums.forEach(function (el) { el.textContent = el.getAttribute('data-count'); }); }
 
-  /* ==========================================================
-     7. SCROLL · bar progres, navbar membalik, scrollspy, garis proses
-     ========================================================== */
+  /* ========== 7. SCROLL ========== */
   var links = $$('.nav__menu a');
   var secs  = links.map(function (a) { return $(a.getAttribute('href')); }).filter(Boolean);
+
+  // Foto seksi perdagangan bergerak lebih lambat dari halaman (desktop saja)
+  var tradeSec = $('#perdagangan'), tradePhoto = $('.trade__photo');
+  var tradeDepth = !reduced && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
   var onScroll = function () {
     var y = window.scrollY;
@@ -2851,6 +2470,14 @@ body.locked{overflow:hidden}
       secs.forEach(function (s) { if (s.offsetTop <= pos) cur = s; });
       links.forEach(function (a) { a.classList.toggle('on', !!cur && a.getAttribute('href') === '#' + cur.id); });
     }
+
+    if (tradeDepth && tradePhoto && window.innerWidth > 900) {
+      var tr = tradeSec.getBoundingClientRect(), vh = window.innerHeight;
+      if (tr.bottom > 0 && tr.top < vh) {
+        var k = Math.max(-1, Math.min(1, (vh / 2 - (tr.top + tr.height / 2)) / vh));
+        tradePhoto.style.transform = 'translate3d(0,' + (k * 60).toFixed(1) + 'px,0)';
+      }
+    }
   };
 
   var queued = false;
@@ -2858,9 +2485,7 @@ body.locked{overflow:hidden}
     if (!queued) { queued = true; requestAnimationFrame(function () { onScroll(); queued = false; }); }
   }, { passive: true });
 
-  /* ==========================================================
-     8. AKORDEON
-     ========================================================== */
+  /* ========== 8. AKORDEON ========== */
   $$('.qa__i').forEach(function (item) {
     var btn = $('.qa__q', item), body = $('.qa__a', item);
     btn.addEventListener('click', function () {
@@ -2878,9 +2503,7 @@ body.locked{overflow:hidden}
     });
   });
 
-  /* ==========================================================
-     9. FORM
-     ========================================================== */
+  /* ========== 9. FORM ========== */
   var form = $('#form'), ok = $('#msgOk'), no = $('#msgNo');
   var check = function () {
     var valid = true;
@@ -2926,9 +2549,7 @@ body.locked{overflow:hidden}
   });
 
 
-  /* ==========================================================
-     9b. HONEYCOMB LAYANAN · pusat + enam sel terhubung
-     ========================================================== */
+  /* ========== 9b. HONEYCOMB LAYANAN ========== */
   var comb = $('#comb');
   if (comb) {
     var svcData = $$('.svc__data', $('#svcStore')),
@@ -2998,9 +2619,7 @@ body.locked{overflow:hidden}
     picked = 0;
   }
 
-  /* ==========================================================
-     10. START
-     ========================================================== */
+  /* ========== 10. START ========== */
   var boot = function () {
     gateWater.size();
     heroWater.size();
